@@ -52,6 +52,26 @@
     if (window.innerWidth > 1200 && nav.classList.contains('nav--open')) setMenu(false);
   });
 
+  /* ---------- logo vede zpátky nahoru ---------- */
+  /* href="./" v HTML je zaloha pro vypnuty JS - nacte stranku znovu. S JS je
+     ale reload jednostrankoveho webu skoda: prohlizec pri nem obnovi i pozici
+     posunuti, takze klik na logo vypadal, jako by nedelal vubec nic. Misto nej
+     se odscrolluje nahoru a z adresy se sundava kotva, at v ni po navratu na
+     zacatek nevisi #kontakt a Zpet se chova ocekavane.
+     Modifikatory se propousti dal - Ctrl+klik ma porad otevrit novou zalozku. */
+  Array.prototype.forEach.call(document.querySelectorAll('a.logo'), function (logo) {
+    logo.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      setMenu(false);
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      if (window.location.hash && window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    });
+  });
+
   /* ---------- rozbalovaci nabidka sluzeb ---------- */
   /* Mys a klavesnice si vystaci s CSS (:hover / :focus-within). JS resi dve veci,
      na ktere CSS nestaci: zavreni Escapem a dotykovy displej v desktopovem
