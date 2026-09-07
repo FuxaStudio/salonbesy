@@ -1,0 +1,16 @@
+DOČASNÉ DEMO FOTKY – PŘED SPUŠTĚNÍM SMAZAT
+==========================================
+
+Tyto fotky NEJSOU naše. Jsou stažené z veřejné galerie
+Psí salon Rájec-Jestřebí (https://www.psisalonrj.cz/galerie-spokojenych-zakazniku/)
+a slouží VÝHRADNĚ jako maketa, aby bylo vidět, jak sekce
+„Před a po“ vypadá se skutečnými fotkami místo stock fotek.
+
+Jsou chráněné autorským právem provozovatele toho salonu.
+NESMÍ jít na živý web.
+
+Před spuštěním:
+  1) nahradit skutečnými fotkami z našeho salonu,
+  2) smazat celou složku images/demo/ i tenhle soubor.
+
+Staženo 3. 9. 2026.

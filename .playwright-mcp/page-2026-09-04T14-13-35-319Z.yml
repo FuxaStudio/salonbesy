@@ -1,0 +1,481 @@
+- generic [active] [ref=f24e1]:
+  - banner [ref=f24e2]:
+    - generic [ref=f24e3]:
+      - link "Besy – psí salon, domů" [ref=f24e4] [cursor=pointer]:
+        - /url: "#top"
+        - generic [ref=f24e5]: Besy
+        - generic [ref=f24e6]: psí salon
+      - navigation "Hlavní navigace" [ref=f24e7]:
+        - generic [ref=f24e8]:
+          - link "Služby a ceník" [ref=f24e9] [cursor=pointer]:
+            - /url: "#sluzby"
+          - link "Galerie" [ref=f24e10] [cursor=pointer]:
+            - /url: "#galerie"
+          - link "Dotazy" [ref=f24e11] [cursor=pointer]:
+            - /url: "#dotazy"
+          - link "Kontakt" [ref=f24e12] [cursor=pointer]:
+            - /url: "#kontakt"
+        - link "+420 777 123 456" [ref=f24e13] [cursor=pointer]:
+          - /url: tel:+420777123456
+  - main [ref=f24e16]:
+    - generic [ref=f24e18]:
+      - generic [ref=f24e19]:
+        - paragraph [ref=f24e20]: Psí salon ve Městě, kterému pejsci důvěřují
+        - heading [level=1] [ref=f24e21]:
+          - text: Péče o psy
+          - emphasis [ref=f24e22]: se srdcem
+        - paragraph [ref=f24e23]: Střihy, koupele a péče o srst pro všechna plemena.
+        - generic [ref=f24e24]:
+          - link "Zavolat 777 123 456" [ref=f24e25] [cursor=pointer]:
+            - /url: tel:+420777123456
+          - link "Ceník" [ref=f24e28] [cursor=pointer]:
+            - /url: "#sluzby"
+        - paragraph [ref=f24e29]: Objednáváme se telefonicky – nejlépe Po–Pá 8:00–9:00 a po 17:00.
+      - figure [ref=f24e30]:
+        - img "Pejsek při koupeli v salonu" [ref=f24e32]
+    - generic [ref=f24e36]:
+      - generic [ref=f24e37]:
+        - figure [ref=f24e38]:
+          - img "Marie, majitelka salonu Besy, v náručí se psem" [ref=f24e40]
+        - generic [ref=f24e44]:
+          - paragraph [ref=f24e45]: Poznejte Besy
+          - heading [level=2] [ref=f24e46]:
+            - text: Salon vede
+            - emphasis [ref=f24e47]: Marie
+          - paragraph [ref=f24e48]: Psy stříhám dvanáctým rokem. Vyučila jsem se v pražském salonu, prošla kurzem trimování drsnosrstých plemen a každý rok jezdím na doškolení. Chci, aby se u mě potkávala řemeslná preciznost s tím, co je pro psa opravdu příjemné.
+          - paragraph [ref=f24e49]: Doma mám dva vlastní psy – knírače a kříženku z útulku. Díky nim dobře vím, jak vypadá pes, kterému se do vany nechce, a jak s ním pracovat, aby odcházel v klidu.
+          - paragraph [ref=f24e50]: V salonu je vždycky jen jeden pes. Žádné čekání v boxu, žádný štěkot okolo – jen vy, váš pejsek a já.
+      - generic [ref=f24e51]:
+        - generic [ref=f24e52]:
+          - generic [ref=f24e53]:
+            - heading [level=3] [ref=f24e54]:
+              - text: Poháry z
+              - emphasis [ref=f24e55]: groomingových soutěží
+            - paragraph [ref=f24e56]: Na soutěže v úpravě psů jezdím od roku 2016.
+          - generic [ref=f24e57]:
+            - button "Předchozí ocenění" [ref=f24e58] [cursor=pointer]
+            - button "Další ocenění" [ref=f24e61] [cursor=pointer]
+        - group "Ocenění ze soutěží, vodorovný seznam" [ref=f24e64]:
+          - listitem [aria-hidden] [ref=f24e65]:
+            - generic [ref=f24e67]: Mistrovství ČR 2025
+            - generic [ref=f24e68]: 1. místo, kategorie teriéři
+          - listitem [aria-hidden] [ref=f24e69]:
+            - generic [ref=f24e71]: Grooming Cup Praha 2024
+            - generic [ref=f24e72]: 2. místo, ruční trimování
+          - listitem [aria-hidden] [ref=f24e73]:
+            - generic [ref=f24e75]: Czech Grooming Open 2023
+            - generic [ref=f24e76]: 1. místo, pudli
+          - listitem [aria-hidden] [ref=f24e77]:
+            - generic [ref=f24e79]: Mistrovství ČR 2022
+            - generic [ref=f24e80]: 3. místo, malá plemena
+          - listitem [aria-hidden] [ref=f24e81]:
+            - generic [ref=f24e83]: Grooming Cup Praha 2021
+            - generic [ref=f24e84]: 2. místo, teriéři
+          - listitem [aria-hidden] [ref=f24e85]:
+            - generic [ref=f24e87]: Czech Grooming Open 2019
+            - generic [ref=f24e88]: 1. místo, drsnosrstá plemena
+          - listitem [aria-hidden] [ref=f24e89]:
+            - generic [ref=f24e91]: Mistrovství ČR 2018
+            - generic [ref=f24e92]: 3. místo, pudli
+          - listitem [ref=f24e93]:
+            - img "Pes s medailí a zlatým pohárem po soutěži" [ref=f24e94]
+            - generic [ref=f24e95]: Mistrovství ČR 2025
+            - generic [ref=f24e96]: 1. místo, kategorie teriéři
+          - listitem [ref=f24e97]:
+            - img "Zlatý pohár zblízka" [ref=f24e98]
+            - generic [ref=f24e99]: Grooming Cup Praha 2024
+            - generic [ref=f24e100]: 2. místo, ruční trimování
+          - listitem [ref=f24e101]:
+            - img "Zlatá medaile za 1. místo na stuze" [ref=f24e102]
+            - generic [ref=f24e103]: Czech Grooming Open 2023
+            - generic [ref=f24e104]: 1. místo, pudli
+          - listitem [ref=f24e105]:
+            - img "Pes s medailí u zlatého poháru" [ref=f24e106]
+            - generic [ref=f24e107]: Mistrovství ČR 2022
+            - generic [ref=f24e108]: 3. místo, malá plemena
+          - listitem [ref=f24e109]:
+            - img "Sada medailí a pohár na stole" [ref=f24e110]
+            - generic [ref=f24e111]: Grooming Cup Praha 2021
+            - generic [ref=f24e112]: 2. místo, teriéři
+          - listitem [ref=f24e113]:
+            - img "Zlaté poháry v protisvětle" [ref=f24e114]
+            - generic [ref=f24e115]: Czech Grooming Open 2019
+            - generic [ref=f24e116]: 1. místo, drsnosrstá plemena
+          - listitem [ref=f24e117]:
+            - img "Ruka drží zlatý pohár před policí s dalšími" [ref=f24e118]
+            - generic [ref=f24e119]: Mistrovství ČR 2018
+            - generic [ref=f24e120]: 3. místo, pudli
+          - listitem [aria-hidden] [ref=f24e121]:
+            - generic [ref=f24e123]: Mistrovství ČR 2025
+            - generic [ref=f24e124]: 1. místo, kategorie teriéři
+          - listitem [aria-hidden] [ref=f24e125]:
+            - generic [ref=f24e127]: Grooming Cup Praha 2024
+            - generic [ref=f24e128]: 2. místo, ruční trimování
+          - listitem [aria-hidden] [ref=f24e129]:
+            - generic [ref=f24e131]: Czech Grooming Open 2023
+            - generic [ref=f24e132]: 1. místo, pudli
+          - listitem [aria-hidden] [ref=f24e133]:
+            - generic [ref=f24e135]: Mistrovství ČR 2022
+            - generic [ref=f24e136]: 3. místo, malá plemena
+          - listitem [aria-hidden] [ref=f24e137]:
+            - generic [ref=f24e139]: Grooming Cup Praha 2021
+            - generic [ref=f24e140]: 2. místo, teriéři
+          - listitem [aria-hidden] [ref=f24e141]:
+            - generic [ref=f24e143]: Czech Grooming Open 2019
+            - generic [ref=f24e144]: 1. místo, drsnosrstá plemena
+          - listitem [aria-hidden] [ref=f24e145]:
+            - generic [ref=f24e147]: Mistrovství ČR 2018
+            - generic [ref=f24e148]: 3. místo, pudli
+    - generic [ref=f24e150]:
+      - list "Proč Besy" [ref=f24e151]:
+        - listitem [ref=f24e152]: Klidné prostředí salonu
+        - listitem [ref=f24e155]: Mimo ruch města
+        - listitem [ref=f24e158]: 100% přírodní kosmetika
+        - listitem [ref=f24e161]: Dvanáct let praxe
+        - listitem [ref=f24e164]: Na každého psa máme čas
+      - generic [ref=f24e167]:
+        - heading [level=2] [ref=f24e168]:
+          - text: Naše služby a
+          - emphasis [ref=f24e169]: ceník
+        - paragraph [ref=f24e170]: Od uklidňující koupele po precizní střih, všechno s ohledem na zdraví a pohodu vašeho chlupáče. U každé služby najdete orientační cenu. O výsledné částce rozhoduje typ a stav srsti a čas, který si pes vyžádá – ne jeho velikost. Pracujeme výhradně na objednávku, aby měl každý pes naši plnou pozornost.
+      - generic [ref=f24e171]:
+        - tablist "Seznam služeb" [ref=f24e172]:
+          - tab "Kompletní střih od 750 Kč" [selected] [ref=f24e173] [cursor=pointer]:
+            - generic [ref=f24e177]:
+              - text: Kompletní střih
+              - generic [ref=f24e178]: od 750 Kč
+          - tab "Koupel a rozčesání od 450 Kč" [ref=f24e179] [cursor=pointer]:
+            - generic [ref=f24e183]:
+              - text: Koupel a rozčesání
+              - generic [ref=f24e184]: od 450 Kč
+          - tab "Štěněcí střih od 400 Kč" [ref=f24e185] [cursor=pointer]:
+            - generic [ref=f24e189]:
+              - text: Štěněcí střih
+              - generic [ref=f24e190]: od 400 Kč
+          - tab "Ultrazvukové čištění zubů od 600 Kč" [ref=f24e191] [cursor=pointer]:
+            - generic [ref=f24e195]:
+              - text: Ultrazvukové čištění zubů
+              - generic [ref=f24e196]: od 600 Kč
+          - tab "Doplňkové procedury od 100 Kč" [ref=f24e197] [cursor=pointer]:
+            - generic [ref=f24e201]:
+              - text: Doplňkové procedury
+              - generic [ref=f24e202]: od 100 Kč
+        - tabpanel "Kompletní střih od 750 Kč" [ref=f24e204]:
+          - generic [ref=f24e205]:
+            - heading "Kompletní střih" [level=3] [ref=f24e206]
+            - paragraph [ref=f24e207]: Péče od čumáku po ocásek. Začínáme posouzením srsti a kůže, pokračujeme koupelí v prémiové kosmetice, kondicionérem a šetrným vysušením. Následuje úprava drápků, čištění uší, strojkový střih a ruční dočištění nůžkami. Na závěr pár finálních doteků, aby pejsek zářil.
+            - generic [ref=f24e208]:
+              - list [ref=f24e209]:
+                - listitem [ref=f24e210]:
+                  - generic [ref=f24e211]:
+                    - text: Malá plemena
+                    - emphasis [ref=f24e212]: do 10 kg – jorkšír, maltézák, shih-tzu, bišonek, čivava
+                  - generic [ref=f24e213]: od 750 Kč
+                - listitem [ref=f24e214]:
+                  - generic [ref=f24e215]:
+                    - text: Střední plemena
+                    - emphasis [ref=f24e216]: 10–25 kg – kokršpaněl, pudl střední, westík, špic
+                  - generic [ref=f24e217]: od 1 000 Kč
+                - listitem [ref=f24e218]:
+                  - generic [ref=f24e219]:
+                    - text: Velká plemena
+                    - emphasis [ref=f24e220]: nad 25 kg – zlatý retrívr, labrador, bernský salašnický
+                  - generic [ref=f24e221]: od 1 400 Kč
+              - paragraph [ref=f24e222]:
+                - generic [ref=f24e225]: Délka návštěvy 1,5–3 h podle plemene a stavu srsti.
+          - figure [ref=f24e226]:
+            - img "Kompletní střih psa" [ref=f24e228]
+      - generic [ref=f24e232]:
+        - generic [ref=f24e233]:
+          - heading "Co cenu ovlivňuje" [level=3] [ref=f24e234]
+          - list [ref=f24e235]:
+            - listitem [ref=f24e236]: Typ srsti a její stav – udržovaná srst je rychlejší práce než zacuchaná.
+            - listitem [ref=f24e237]: Jak dlouho pes vydrží stát a jak snáší fén a strojek.
+            - listitem [ref=f24e238]: Rozsah úpravy – kompletní střih, nebo jen zkrácení a dočištění.
+        - generic [ref=f24e239]:
+          - paragraph [ref=f24e240]: "Zacuchaná srst: příplatek od 200 Kč za každých započatých 30 minut rozčesávání navíc. Když je srst zaplstnatělá až na kůži, je jediné šetrné řešení ostříhat ji nakrátko – vždycky se předem domluvíme a řekneme cenu."
+          - paragraph [ref=f24e241]: "Neklidný pes: příplatek od 200 Kč, když je potřeba pracovat pomaleji nebo ve dvou."
+          - paragraph [ref=f24e242]: "Nedostavení se bez omluvy: 50 % ceny objednané služby."
+        - paragraph [ref=f24e243]:
+          - generic [ref=f24e246]: Finální cenu vám potvrdíme před začátkem práce, ne až u pokladny.
+    - generic [ref=f24e248]:
+      - generic [ref=f24e249]:
+        - paragraph [ref=f24e250]: Naše práce
+        - heading [level=2] [ref=f24e251]:
+          - text: Před a
+          - emphasis [ref=f24e252]: po
+        - paragraph [ref=f24e253]: Stejný pes, stejný den. Nic neretušujeme – tohle je prostě výsledek jednoho odpoledne v salonu.
+      - generic [ref=f24e254]:
+        - figure "Bella west highland teriér Půl roku bez střihu. Kompletní střih včetně ručního dočištění hlavy, dvě hodiny práce." [ref=f24e255]:
+          - button "Zobrazit fotky ve větším – Bella, west highland teriér" [ref=f24e256]:
+            - generic [ref=f24e257]:
+              - img "Bella (west highland teriér) před střihem" [ref=f24e258]
+              - generic [ref=f24e259]: Před
+            - generic [ref=f24e260]:
+              - img "Bella (west highland teriér) po střihu" [ref=f24e261]
+              - generic [ref=f24e262]: Po
+          - generic [ref=f24e266]:
+            - text: Bella
+            - generic [ref=f24e267]: west highland teriér
+            - generic [ref=f24e268]: Půl roku bez střihu. Kompletní střih včetně ručního dočištění hlavy, dvě hodiny práce.
+        - figure "Ferda jorkšír Zacuchaná srst na uších a tlapkách. Strojkový střih a dočištění nůžkami." [ref=f24e269]:
+          - button "Zobrazit fotky ve větším – Ferda, jorkšír" [ref=f24e270]:
+            - generic [ref=f24e271]:
+              - img "Ferda (jorkšír) před střihem" [ref=f24e272]
+              - generic [ref=f24e273]: Před
+            - generic [ref=f24e274]:
+              - img "Ferda (jorkšír) po střihu" [ref=f24e275]
+              - generic [ref=f24e276]: Po
+          - generic [ref=f24e280]:
+            - text: Ferda
+            - generic [ref=f24e281]: jorkšír
+            - generic [ref=f24e282]: Zacuchaná srst na uších a tlapkách. Strojkový střih a dočištění nůžkami.
+        - figure "Amos labradoodle Kudrnatá srst se rychle plstnatí. Koupel, fén a kompletní střih." [ref=f24e283]:
+          - button "Zobrazit fotky ve větším – Amos, labradoodle" [ref=f24e284]:
+            - generic [ref=f24e285]:
+              - img "Amos (labradoodle) před střihem" [ref=f24e286]
+              - generic [ref=f24e287]: Před
+            - generic [ref=f24e288]:
+              - img "Amos (labradoodle) po střihu" [ref=f24e289]
+              - generic [ref=f24e290]: Po
+          - generic [ref=f24e294]:
+            - text: Amos
+            - generic [ref=f24e295]: labradoodle
+            - generic [ref=f24e296]: Kudrnatá srst se rychle plstnatí. Koupel, fén a kompletní střih.
+        - figure "Rocky pšeničný teriér Srst zaplstnatělá až na kůži. Museli jsme zkrátit víc, než bychom chtěli." [ref=f24e297]:
+          - button "Zobrazit fotky ve větším – Rocky, pšeničný teriér" [ref=f24e298]:
+            - generic [ref=f24e299]:
+              - img "Rocky (pšeničný teriér) před střihem" [ref=f24e300]
+              - generic [ref=f24e301]: Před
+            - generic [ref=f24e302]:
+              - img "Rocky (pšeničný teriér) po střihu" [ref=f24e303]
+              - generic [ref=f24e304]: Po
+          - generic [ref=f24e308]:
+            - text: Rocky
+            - generic [ref=f24e309]: pšeničný teriér
+            - generic [ref=f24e310]: Srst zaplstnatělá až na kůži. Museli jsme zkrátit víc, než bychom chtěli.
+      - paragraph [ref=f24e311]:
+        - link "Kolik takový střih stojí" [ref=f24e312] [cursor=pointer]:
+          - /url: "#sluzby"
+    - generic [ref=f24e316]:
+      - generic [ref=f24e317]:
+        - paragraph [ref=f24e318]: Objednání
+        - heading [level=2] [ref=f24e319]:
+          - text: Jak to u nás
+          - emphasis [ref=f24e320]: probíhá
+        - paragraph [ref=f24e321]: Většina lidí k nám volá poprvé a neví, co čekat. Tak ať je jasno předem.
+      - list [ref=f24e322]:
+        - listitem [ref=f24e323]:
+          - generic [aria-hidden] [ref=f24e324]: "1"
+          - heading "Zavoláte" [level=3] [ref=f24e325]
+          - paragraph [ref=f24e326]: Objednáváme se jedině telefonicky, ať se hned domluvíme na tom, co váš pes potřebuje. Termíny máme obvykle dva až tři týdny dopředu, před Vánoci i déle.
+          - paragraph [ref=f24e327]: Nezvedáme? Během stříhání se věnujeme psovi. Prozvoňte nás a ozveme se, jakmile dostříháme.
+        - listitem [ref=f24e328]:
+          - generic [aria-hidden] [ref=f24e329]: "2"
+          - heading "Co si připravte k telefonu" [level=3] [ref=f24e330]
+          - paragraph [ref=f24e331]: "Ušetří nám to oběma pár minut a vám hlavně přesnější cenu a termín:"
+          - list [ref=f24e332]:
+            - listitem [ref=f24e333]: plemeno a jméno psa, přibližná váha
+            - listitem [ref=f24e334]: kdy byl naposledy stříhaný
+            - listitem [ref=f24e335]: jak snáší fén, strojek a cizí lidi
+            - listitem [ref=f24e336]: jestli je někde zacuchaný
+            - listitem [ref=f24e337]: zdravotní omezení, alergie, kožní problémy
+            - listitem [ref=f24e338]: jestli je fena hárající nebo pes po operaci
+        - listitem [ref=f24e339]:
+          - generic [aria-hidden] [ref=f24e340]: "3"
+          - heading "Návštěva" [level=3] [ref=f24e341]
+          - paragraph [ref=f24e342]: Psa si prohlédneme, potvrdíme cenu a pustíme se do práce. Koupel a fén trvá 45 až 90 minut, kompletní střih 1,5 až 3 hodiny. V salonu je vždycky jen jeden pes.
+          - paragraph [ref=f24e343]: S sebou nic nepotřebujete – jen vodítko a obojek. Před návštěvou psa prosím vyvenčete.
+        - listitem [ref=f24e344]:
+          - generic [aria-hidden] [ref=f24e345]: "4"
+          - heading "Vyzvednutí" [level=3] [ref=f24e346]
+          - paragraph [ref=f24e347]: Zavoláme vám, jakmile budeme hotoví. Řekneme, co jsme na psovi našli, jak o srst pečovat doma a kdy přijít příště. Platí se hotově nebo QR platbou.
+      - link "Zavolat 777 123 456" [ref=f24e349] [cursor=pointer]:
+        - /url: tel:+420777123456
+    - generic [ref=f24e353]:
+      - generic [ref=f24e354]:
+        - paragraph [ref=f24e355]: Proč právě Besy
+        - heading [level=2] [ref=f24e356]:
+          - emphasis [ref=f24e357]: Štěkot
+          - text: spokojenosti
+        - generic [ref=f24e358]:
+          - generic "Google" [ref=f24e359]
+          - generic [ref=f24e360]:
+            - strong [ref=f24e361]: 5,0
+            - generic "5 z 5 hvězd" [ref=f24e362]
+            - generic [ref=f24e373]: 138 recenzí
+      - generic [ref=f24e374]:
+        - article [ref=f24e375]:
+          - paragraph [ref=f24e390]: Besy nemůžu vynachválit. Úžasný tým a taková péče o každý detail.
+          - generic [ref=f24e391]: Kateřina Dvořákovábřezen 2026
+        - article [ref=f24e393]:
+          - paragraph [ref=f24e408]: Další skvělá práce od milých holek z Besy. Sedm hvězdiček!
+          - generic [ref=f24e409]:
+            - generic [ref=f24e410]: PN
+            - generic [ref=f24e411]: Petra Novákováprosinec 2025
+        - article [ref=f24e412]:
+          - paragraph [ref=f24e427]: Rollo a Tara byli po střihu jako vyměnění.
+          - generic [ref=f24e428]: Karolína Marešováčervenec 2025
+        - article [ref=f24e430]:
+          - paragraph [ref=f24e445]: Obrovské znalosti a spolehlivost napříč všemi plemeny.
+          - generic [ref=f24e446]: Markéta Horákovábřezen 2025
+        - article [ref=f24e448]:
+          - paragraph [ref=f24e463]: Holky byly milé, vstřícné a ochotné vyjít vstříc.
+          - generic [ref=f24e464]: Nikola Jelínkováprosinec 2025
+        - article [ref=f24e466]:
+          - paragraph [ref=f24e481]: Besy bych rozhodně doporučila na všechno, co váš pes potřebuje.
+          - generic [ref=f24e482]:
+            - generic [ref=f24e483]: ŠH
+            - generic [ref=f24e484]: Štěpánka Havlíčkovásrpen 2025
+        - article [ref=f24e485]:
+          - paragraph [ref=f24e500]: Moc milá střihačka, přátelská a je vidět, že ji práce opravdu baví.
+          - generic [ref=f24e501]: Karel Kopeckýduben 2025
+        - article [ref=f24e503]:
+          - paragraph [ref=f24e518]: Rychlá reakce na dotazy k objednání.
+          - generic [ref=f24e519]:
+            - generic [ref=f24e520]: AV
+            - generic [ref=f24e521]: Adéla Veseláúnor 2025
+      - button "Více recenzí" [ref=f24e523] [cursor=pointer]
+    - generic [ref=f24e525]:
+      - generic [ref=f24e526]:
+        - paragraph [ref=f24e527]: Než zavoláte
+        - heading [level=2] [ref=f24e528]:
+          - text: Časté
+          - emphasis [ref=f24e529]: dotazy
+      - generic [ref=f24e530]:
+        - group [ref=f24e531]:
+          - generic "Jak často mám psa nechat ostříhat?" [ref=f24e532] [cursor=pointer]
+        - group [ref=f24e533]:
+          - generic "Můžu být u stříhání se psem?" [ref=f24e534] [cursor=pointer]
+        - group [ref=f24e535]:
+          - generic "Co když se pes bojí nebo je agresivní?" [ref=f24e536] [cursor=pointer]
+        - group [ref=f24e537]:
+          - generic "Od kdy můžu přivést štěně?" [ref=f24e538] [cursor=pointer]
+        - group [ref=f24e539]:
+          - generic "Jak dlouho návštěva trvá?" [ref=f24e540] [cursor=pointer]
+        - group [ref=f24e541]:
+          - generic "Jak se u vás platí?" [ref=f24e542] [cursor=pointer]
+        - group [ref=f24e543]:
+          - generic "Co když je pes zacuchaný až na kůži?" [ref=f24e544] [cursor=pointer]
+        - group [ref=f24e545]:
+          - generic "Co když nemůžu na termín dorazit?" [ref=f24e546] [cursor=pointer]
+    - generic [ref=f24e548]:
+      - paragraph [ref=f24e549]: "Aktuálně: od 14. do 21. července máme dovolenou. Objednávky na srpen berem už teď."
+      - generic [ref=f24e550]:
+        - generic [ref=f24e551]:
+          - heading [level=2] [ref=f24e552]:
+            - text: Kde nás najdete
+            - emphasis [ref=f24e553]: v Městě
+          - list [ref=f24e554]:
+            - listitem [ref=f24e555]:
+              - generic [ref=f24e558]:
+                - heading "Telefon" [level=3] [ref=f24e559]
+                - paragraph [ref=f24e560]:
+                  - link "+420 777 123 456" [ref=f24e561] [cursor=pointer]:
+                    - /url: tel:+420777123456
+                - paragraph [ref=f24e562]: Objednáváme se jedině telefonicky. Nejlépe se dovoláte Po–Pá 8:00–9:00 a po 17:00. Během stříhání se věnujeme psovi a telefon nemusíme zvednout – prozvoňte nás a ozveme se, jakmile dostříháme.
+            - listitem [ref=f24e563]:
+              - generic [ref=f24e566]:
+                - heading "Otevírací doba" [level=3] [ref=f24e567]
+                - table [ref=f24e568]:
+                  - rowgroup [ref=f24e569]:
+                    - row [ref=f24e570]:
+                      - rowheader "Pondělí – pátek" [ref=f24e571]
+                      - cell "8:00–17:00" [ref=f24e572]
+                    - row [ref=f24e573]:
+                      - rowheader "Sobota" [ref=f24e574]
+                      - cell "9:00–13:00" [ref=f24e575]
+                    - row [ref=f24e576]:
+                      - rowheader "Neděle" [ref=f24e577]
+                      - cell "zavřeno" [ref=f24e578]
+                - paragraph [ref=f24e579]: Pracujeme výhradně na objednávku – bez domluveného termínu prosím nechoďte.
+            - listitem [ref=f24e580]:
+              - generic [ref=f24e583]:
+                - heading "Adresa salonu" [level=3] [ref=f24e584]
+                - paragraph [ref=f24e585]: Besy, psí salonZahradní 123100 00 Město
+                - paragraph [ref=f24e586]: Zaparkujete přímo před salonem, dvě místa jsou vyhrazená pro klienty. Vjezd je z boční ulice.
+                - link "Kudy k nám" [ref=f24e587] [cursor=pointer]:
+                  - /url: https://www.google.com/maps/dir/?api=1&destination=Zahradn%C3%AD%20123%2C%20100%2000%20M%C4%9Bsto
+            - listitem [ref=f24e590]:
+              - generic [ref=f24e593]:
+                - heading "E‑mail" [level=3] [ref=f24e594]
+                - paragraph [ref=f24e595]:
+                  - link "info@besy.cz" [ref=f24e596] [cursor=pointer]:
+                    - /url: mailto:info@besy.cz
+                - paragraph [ref=f24e597]: Na e‑mail odpovídáme jednou za pár dní. Na objednání je vždycky rychlejší telefon.
+                - paragraph [ref=f24e598]:
+                  - link "Facebook" [ref=f24e599] [cursor=pointer]:
+                    - /url: "#"
+                  - link "Instagram" [ref=f24e602] [cursor=pointer]:
+                    - /url: "#"
+        - iframe [ref=f24e606]
+    - generic [ref=f24e608]:
+      - generic [ref=f24e609]:
+        - heading [level=2] [ref=f24e610]:
+          - text: Připraveni
+          - emphasis [ref=f24e611]: se objednat?
+        - paragraph [ref=f24e612]: Zavolejte a domluvíme termín. Nejbližší volno máme obvykle za dva až tři týdny.
+        - link "Zavolat 777 123 456" [ref=f24e613] [cursor=pointer]:
+          - /url: tel:+420777123456
+      - figure [ref=f24e616]:
+        - img "Spokojený pes po návštěvě salonu" [ref=f24e618]
+  - contentinfo [ref=f24e622]:
+    - generic [ref=f24e623]:
+      - generic [ref=f24e624]:
+        - generic [ref=f24e625]:
+          - link "Besypsí salon" [ref=f24e626] [cursor=pointer]:
+            - /url: "#top"
+          - paragraph [ref=f24e627]: Péče o psy se srdcem
+          - generic [ref=f24e628]:
+            - generic [ref=f24e629]:
+              - heading "Salon" [level=4] [ref=f24e630]
+              - paragraph [ref=f24e631]: Zahradní 123100 00 Město
+            - generic [ref=f24e632]:
+              - heading "Otevírací doba" [level=4] [ref=f24e633]
+              - paragraph [ref=f24e634]: Po–Pá 8:00–17:00So 9:00–13:00Ne zavřeno
+          - generic [ref=f24e635]:
+            - link "Facebook" [ref=f24e636] [cursor=pointer]:
+              - /url: "#"
+            - link "Instagram" [ref=f24e640] [cursor=pointer]:
+              - /url: "#"
+          - link "+420 777 123 456" [ref=f24e644] [cursor=pointer]:
+            - /url: tel:+420777123456
+        - generic [ref=f24e647]:
+          - heading "Služby" [level=4] [ref=f24e648]
+          - link "Kompletní střih" [ref=f24e649] [cursor=pointer]:
+            - /url: "#sluzby"
+          - link "Koupel a rozčesání" [ref=f24e650] [cursor=pointer]:
+            - /url: "#sluzby"
+          - link "Štěněcí střih" [ref=f24e651] [cursor=pointer]:
+            - /url: "#sluzby"
+          - link "Čištění zubů" [ref=f24e652] [cursor=pointer]:
+            - /url: "#sluzby"
+          - link "Ceník" [ref=f24e653] [cursor=pointer]:
+            - /url: "#sluzby"
+        - generic [ref=f24e654]:
+          - heading "Salon" [level=4] [ref=f24e655]
+          - link "O nás" [ref=f24e656] [cursor=pointer]:
+            - /url: "#o-nas"
+          - link "Před a po" [ref=f24e657] [cursor=pointer]:
+            - /url: "#galerie"
+          - link "Recenze" [ref=f24e658] [cursor=pointer]:
+            - /url: "#recenze"
+          - link "Kontakt" [ref=f24e659] [cursor=pointer]:
+            - /url: "#kontakt"
+        - generic [ref=f24e660]:
+          - heading "Než přijedete" [level=4] [ref=f24e661]
+          - link "Jak to probíhá" [ref=f24e662] [cursor=pointer]:
+            - /url: "#jak-to-probiha"
+          - link "Co si připravit k telefonu" [ref=f24e663] [cursor=pointer]:
+            - /url: "#jak-to-probiha"
+          - link "Časté dotazy" [ref=f24e664] [cursor=pointer]:
+            - /url: "#dotazy"
+          - link "Zacuchaná srst" [ref=f24e665] [cursor=pointer]:
+            - /url: "#dotazy"
+      - generic [ref=f24e666]:
+        - paragraph [ref=f24e667]: "© 2026 Besy · Marie Nováková, IČO 123 45 678Sídlo: Zahradní 123, 100 00 Město"
+        - navigation "Právní informace" [ref=f24e668]:
+          - link "Zásady zpracování osobních údajů" [ref=f24e669] [cursor=pointer]:
+            - /url: "#"
+          - link "Rezervace a storno" [ref=f24e670] [cursor=pointer]:
+            - /url: "#dotazy"

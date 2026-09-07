@@ -1,0 +1,62 @@
+- generic [active] [ref=f4e1]:
+  - figure "1 baseline q=adresa" [ref=f4e2]:
+    - iframe [ref=f4e4]:
+      - generic [ref=f5e1]:
+        - link "Vyhledat trasu (otevře se na nové kartě)" [ref=f5e6] [cursor=pointer]:
+          - /url: https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x470dc9f5f96ed967:0x1c14b9bbb6e167ed!3e0?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF
+        - generic [ref=f5e13]:
+          - generic:
+            - button "Klávesové zkratky"
+          - region "Mapa" [ref=f5e14]
+          - generic [ref=f5e15]:
+            - iframe [aria-hidden] [ref=f5e43]
+            - button "Zobrazit satelitní snímky" [ref=f5e46] [cursor=pointer]
+            - img "Google" [ref=f5e51]
+            - generic [ref=f5e52]:
+              - button "Klávesové zkratky" [ref=f5e58] [cursor=pointer]
+              - generic [ref=f5e59]: Data map ©2026
+              - link "Smluvní podmínky (otevře se na nové kartě)" [ref=f5e68] [cursor=pointer]:
+                - /url: https://www.google.com/intl/cs-CZ_US/help/terms_maps.html
+                - text: Smluvní podmínky
+              - link "Nahlásit chybu v mapě (otevře se na nové kartě)" [ref=f5e73] [cursor=pointer]:
+                - /url: https://www.google.com/maps/@49.9445977,15.8050361,16z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3
+                - text: Nahlásit chybu v mapě
+  - figure "2 iwloc=near" [ref=f4e5]:
+    - iframe [ref=f4e7]:
+      - generic [ref=f6e6]:
+        - region "Mapa" [ref=f6e7]
+        - iframe [aria-hidden] [ref=f6e29]
+  - figure "3 iwloc prazdne" [ref=f4e8]:
+    - iframe [ref=f4e10]:
+      - generic [ref=f7e1]:
+        - link "Vyhledat trasu (otevře se na nové kartě)" [ref=f7e6] [cursor=pointer]:
+          - /url: https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x470dc9f5f96ed967:0x1c14b9bbb6e167ed!3e0?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF
+        - generic [ref=f7e13]:
+          - region "Mapa" [ref=f7e14]
+          - iframe [aria-hidden] [ref=f7e44]
+  - figure "4 iwloc=B" [ref=f4e11]:
+    - iframe [ref=f4e13]:
+      - generic [ref=f8e1]:
+        - link "Vyhledat trasu (otevře se na nové kartě)" [ref=f8e6] [cursor=pointer]:
+          - /url: https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x470dc9f5f96ed967:0x1c14b9bbb6e167ed!3e0?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF
+        - generic [ref=f8e13]:
+          - generic:
+            - button "Klávesové zkratky"
+          - region "Mapa" [ref=f8e14]
+          - generic [ref=f8e15]:
+            - iframe [aria-hidden] [ref=f8e43]
+            - button "Ovládání kamery na mapě" [ref=f8e45] [cursor=pointer]
+            - button "Zobrazit satelitní snímky" [ref=f8e48] [cursor=pointer]:
+              - generic [ref=f8e52]:
+                - region [ref=f8e53]
+                - iframe [aria-hidden] [ref=f8e58]
+            - img "Google" [ref=f8e60]
+            - generic [ref=f8e61]:
+              - button "Klávesové zkratky" [ref=f8e67] [cursor=pointer]
+              - generic [ref=f8e68]: Data map ©2026
+              - link "Smluvní podmínky (otevře se na nové kartě)" [ref=f8e77] [cursor=pointer]:
+                - /url: https://www.google.com/intl/cs-CZ_US/help/terms_maps.html
+                - text: Smluvní podmínky
+              - link "Nahlásit chybu v mapě (otevře se na nové kartě)" [ref=f8e82] [cursor=pointer]:
+                - /url: https://www.google.com/maps/@49.9445977,15.8050361,16z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3
+                - text: Nahlásit chybu v mapě

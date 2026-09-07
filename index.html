@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Psí salon Besy – stříhání a péče o psy v Chrudimi</title>
+  <meta name="description" content="Stříhám, koupu a trimuju psy v Chrudimi, letos třiatřicátým rokem. Dělám i výstavní úpravy. V salonu je vždycky jen jeden pes. Objednávky na +420 603 332 056.">
+  <link rel="canonical" href="https://www.besy.cz/">
+  <meta name="theme-color" content="#e7ecdb">
+
+  <!-- Favicon: zjednodušená silueta (favicon-simple ze sady) – detailní kresba se
+       v 16 px rozpadla na kaši, linky vyšly na méně než pixel.
+       Odkaz na favicon.svg je záměrně vypnutý: prohlížeč, který umí SVG, by si vzal
+       jeho a zjednodušená ikona by se nikdy neukázala. Samotný favicon.svg v kořeni
+       zůstává, na návrat detailní verze stačí vrátit ten jeden řádek.
+       Velké ikony (apple-touch, icon-192/512) mají dál detailní kresbu – tam je čitelná.
+       Absolutní cesty, soubory leží v kořeni webu. -->
+  <!-- Pro výsledky Googlu: bere čtvercovou ikonu o velikosti násobku 48 px a sám
+       si ji zmenší na 48. V té velikosti je detailní kresba čitelná, tak mu ji
+       nabízíme – icon-192.png je přesně 4 × 48 a nese původní logo.
+       Uvedeno PŘED favicon.ico schválně: prohlížeče, které si z několika ikon
+       berou tu poslední, tak sáhnou po .ico se zjednodušenou siluetou. -->
+  <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="Besy · psí salon">
+  <meta property="og:title" content="Psí salon Besy – stříhání a péče o psy v Chrudimi">
+  <meta property="og:description" content="Stříhám, koupu a trimuju psy v Chrudimi. V salonu je vždycky jen jeden pes.">
+  <meta property="og:url" content="https://www.besy.cz/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vendor/leaflet.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- LocalBusiness: adresa i telefon musí být znak po znaku shodné s Google Business Profile a Firmy.cz.
+       Záměrně bez aggregateRating – Google zakazuje označovat vlastní recenze na vlastním webu.
+       Záměrně bez openingHoursSpecification – salon nemá pevnou otevírací dobu, jede se
+       výhradně na domluvený termín. Uvádět vymyšlené hodiny by bylo horší než neuvádět žádné.
+       Záměrně bez sameAs – zatím nemáme URL profilů na sítích ani na Firmy.cz. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.besy.cz/#salon",
+    "name": "Besy · psí salon – Marie Kasanová",
+    "alternateName": "Besy",
+    "description": "Psí salon v Chrudimi. Stříhání, koupání, trimování a výstavní úpravy psů. Vede Marie Kasanová, 33 let praxe.",
+    "url": "https://www.besy.cz/",
+    "telephone": "+420603332056",
+    "email": "pudlin@seznam.cz",
+    "image": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80",
+    "priceRange": "450–1600 Kč",
+    "currenciesAccepted": "CZK",
+    "paymentAccepted": "Hotovost, QR platba",
+    "taxID": "65703278",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dr. Janského 668",
+      "addressLocality": "Chrudim",
+      "addressRegion": "Chrudim II",
+      "postalCode": "537 01",
+      "addressCountry": "CZ"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": "49.9446138", "longitude": "15.8050175" },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Dr.+Jansk%C3%A9ho+668%2C+537+01+Chrudim"
+  }
+  </script>
+
+  <!-- FAQPage musí ZNAK PO ZNAKU odpovídat viditelnému textu v sekci #dotazy –
+       Google jinak bohatý výsledek nezobrazí. Při změně otázky nebo odpovědi
+       přepsat obojí, ne jen jedno místo. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Jak často mám psa nechat ostříhat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "U plemen s dorůstající srstí (pudl, bišonek, shih-tzu, jorkšír) obvykle každých 6 až 10 týdnů. U línajících plemen stačí koupel a vyčesání podsady třikrát až čtyřikrát ročně. Konkrétní interval vám doporučím podle stavu srsti při první návštěvě." } },
+      { "@type": "Question", "name": "Můžu být u stříhání se psem?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Většina psů je v klidu, když pán odejde. V přítomnosti majitele se často víc vrtí a dožadují pozornosti. U první návštěvy nebo velmi nejistého psa se domluvíme individuálně. Zpravidla doporučuju zůstat pár minut na začátku a pak psa nechat u mě." } },
+      { "@type": "Question", "name": "Co když se pes bojí nebo je agresivní?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Řekněte mi to prosím dopředu, ať na něj vyhradím víc času a klidnější termín. Pracuju bez násilí a psa nikdy nefixuju proti jeho vůli. Když zvládne jen část procedury, udělám jen tu část a účtuju jen odvedenou práci." } },
+      { "@type": "Question", "name": "Od kdy můžu přivést štěně?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ideálně hned po dokončení základního očkování, obvykle od 4 měsíců. První návštěva je krátká a seznamovací. Jde hlavně o to, aby si štěně zvyklo na vodu, fén a zvuk strojku. Čím dřív, tím lépe se pak stříhá celý život." } },
+      { "@type": "Question", "name": "Jak dlouho návštěva trvá?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Koupel a fén 45 až 90 minut, kompletní střih 1,5 až 3 hodiny podle plemene a stavu srsti. Přesný čas vám řeknu při objednání, ať víte, jestli máte odjet, nebo počkat." } },
+      { "@type": "Question", "name": "Jak se u vás platí?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hotově nebo QR platbou. Platí se po vyzvednutí psa. Finální cenu vám vždycky potvrdím před začátkem práce, ne až na konci." } },
+      { "@type": "Question", "name": "Co když je pes zacuchaný až na kůži?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rozčesávání plstnaté srsti je pro psa bolestivé a kůži pod ní často poškozuje. V takovém případě je jediné šetrné řešení srst nakrátko ostříhat. Vždycky se s vámi předem domluvím a řeknu, kolik to bude stát. Nikdy vás nepřekvapím až u placení." } },
+      { "@type": "Question", "name": "Co když nemůžu na termín dorazit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Zavolejte prosím co nejdřív, ideálně 24 hodin předem. Termín pak nabídnu někomu dalšímu a vám najdu nový. Za nedostavení se bez omluvy účtuju 50 % ceny objednané služby." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- =========================================================
+     STAV DOPLNĚNÍ ÚDAJŮ
+     ---------------------------------------------------------
+     HOTOVO (ověřeno z Google profilu, Firmy.cz a od Marie):
+     [x] Název firmy      Besy · psí salon – Marie Kasanová
+     [x] Adresa           Dr. Janského 668, 537 01 Chrudim II
+     [x] Telefon          +420 603 332 056  (7 míst + JSON-LD)
+     [x] E-mail           pudlin@seznam.cz  (potvrzeno Marií, sedí s Firmy.cz)
+     [x] IČO              65703278
+     [x] geo lat/lng      49.9446138 / 15.8050175
+     [x] Mapa: q= i destination= v odkazech
+     [x] Město Chrudim v title, description, OG, H2 a JSON-LD
+     [x] Otevírací doba   pevná není, vše na domluvený termín
+                          (proto v JSON-LD žádný openingHoursSpecification)
+     [x] Nabídka služeb   stříhání, koupání, trimování, výstavní úpravy
+     [x] Praxe            od 17 let, celkem 33 let
+     [x] Google odznak    5,0 · 12 recenzí (odkaz maps.google.com/?cid=2442423570293532531)
+     [x] Firmy.cz odznak  5,0 · 2 hodnocení (obě 5*, ověřeno na profilu)
+     [x] Recenze v #recenze – všech 14 skutečných z Googlu a Firmy.cz,
+                        bez dat, texty doslovné (opravena jen interpunkce
+                        a verzálky). Profilovky a 2 fotky v images/reviews/.
+
+     ZBÝVÁ DOPLNIT / OVĚŘIT:
+     [ ] VŠECHNY CENY – 5 panelů v #sluzby, cenovky v záložkách
+                        a priceRange v JSON-LD. Čísla jsou zatím vymyšlená!
+     [ ] !! Google profil NENÍ NÁROKOVANÝ – Mapy nabízejí „Nárokovat tuto firmu“.
+                        Proto tam nejde doplnit web, fotky ani odpovídat na recenze.
+                        Nárokování je zdarma (ověření telefonem/pohlednicí).
+                        Až bude hotové: (1) doplnit web do profilu, (2) vzít
+                        z administrace krátký odkaz g.page/r/<kód>/review
+                        a nahradit jím „na Google“ v .reviews__ask.
+     [ ] Doména webu – canonical, og:url a @id ukazují na https://www.besy.cz/,
+                       do Google profilu ji nejde vložit, dokud není nárokovaný
+     [ ] Recenze Ivety Ježkové chválí „paní Beranovou“ – ověřit, kdo to je.
+                        Pokud se salonem nesouvisí, kartu z #recenze vypustit.
+     [ ] !! images/demo/ – CIZÍ FOTKY (Psí salon Rájec-Jestřebí), jen maketa.
+                        Nahradit fotkami z našeho salonu a složku SMAZAT.
+                        Viz images/demo/PUVOD.txt
+     [ ] Odkazy na Facebook / Instagram – řádky jsou zatím odstraněné z #kontakt
+                        i z footeru; až budou profily, vrátit i do sameAs v JSON-LD
+     [ ] Parkování u salonu – ověřit, jak to tam funguje
+     [ ] Platební metody – potvrdit, že se platí hotově a QR platbou
+                        (#dotazy, krok 4, paymentAccepted v JSON-LD)
+     [ ] Fotky psů (hero, služby, CTA) – zatím Unsplash
+     [ ] Portrét Marie v #o-nas – zatím stock žena se psem
+     [ ] Fotky pohárů + popisky ocenění v #o-nas – vymyšlené vzorky,
+                        ověřit, jestli vitrína ocenění vůbec má být
+     [ ] Soutěže v ÚPRAVĚ psů vs. VÝSTAVY psů – teď stránka tvrdí, že poháry
+                        jsou z groomingových soutěží, kde soutěží Marie. Pokud
+                        jsou to úspěchy psů, které připravovala do výstavního
+                        kruhu, přepsat .awards__head, .awards__note i větu
+                        p.panel__proof v panelu Výstavní úpravy.
+     [ ] Zbytek textu o Marii v #o-nas – jeden pes v salonu, plemena
+     ========================================================= -->
+
+<!-- Prvni vec v tab poradi: kdo jede klavesnici nebo ctenim, preskoci osm
+     polozek navigace jednim Enterem. Videt je az po zaostreni (viz .skip-link). -->
+<a class="skip-link" href="#top">Přeskočit na obsah</a>
+
+<!-- ===== SVG defs: clip tvary, ikony, doodly ===== -->
+<svg class="svg-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- ikony -->
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.4 7 .7-5.3 4.7 1.6 6.9-6.2-3.6-6.2 3.6 1.6-6.9L2.1 9.6l7-.7z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 12h16M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-caret" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.12 8.12 12 12M20 4 8.12 15.88M14.8 14.8 20 20"/></g></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.6 7.6V6.2a2.4 2.4 0 0 1 4.8 0v1.4"/><rect x="3" y="7.6" width="18" height="3.8" rx="1.5"/><path d="M6.6 11.4v4.4M11 11.4v5.4M15.4 11.4v5.4M19 11.4v4.2"/></g></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5.2" cy="9.5" r="1.8"/><circle cx="9.3" cy="5.2" r="2"/><circle cx="14.7" cy="5.2" r="2"/><circle cx="18.8" cy="9.5" r="1.8"/><path d="M12 10c-3.2 0-6 2.7-6 5.4 0 2 1.4 3.4 3.1 3.4 1.1 0 1.8-.6 2.9-.6s1.8.6 2.9.6c1.7 0 3.1-1.4 3.1-3.4C18 12.7 15.2 10 12 10z"/></g></symbol>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M9.5 3C6.9 3 5.3 5 5.3 7.6c0 3 1.6 4.2 2.1 7.2.3 2 .5 6.2 2 6.2s1.7-4 2.6-4 2 4 2.6 4 1.7-4.2 2-6.2c.5-3 2.1-4.2 2.1-7.2C18.7 5 17.1 3 14.5 3c-1 0-1.6.4-2.5.4S10.5 3 9.5 3z"/></symbol>
+    <symbol id="i-droplets" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></g></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M4 22h16"/></g></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4M22 4h-4"/><circle cx="4" cy="20" r="2"/></g></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.8v5.4l3.3 2"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0c0 5.3-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5 12 13l8.5-5.5"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5.5 4h3.2l1.8 4.6-2.3 1.6a11.5 11.5 0 0 0 5.6 5.6l1.6-2.3 4.6 1.8v3.2a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3.5 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8.2h3V4.5h-3A4.3 4.3 0 0 0 9.7 8.8V11H7v3.7h2.7V22h3.9v-7.3h3l.7-3.7h-3.7V9.2c0-.6.5-1 1-1z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></g></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M22 8s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.1-.9C16 4.6 12 4.6 12 4.6s-4 0-7 .2c-.4 0-1.3 0-2.1.9C2.2 6.4 2 8 2 8s-.2 1.9-.2 3.7v1.7c0 1.9.2 3.7.2 3.7s.2 1.6.9 2.3c.8.9 1.9.8 2.4.9 1.7.2 6.7.2 6.7.2s4 0 7-.2c.4-.1 1.3-.1 2.1-.9.7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.7C22.2 9.9 22 8 22 8zM10 15V9l5.5 3L10 15z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-google" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol>
+
+    <!-- vlnity prechod mezi sekcemi -->
+    <symbol id="d-wave" viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="currentColor" transform="rotate(180 600 60)" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="container container--wide nav__inner">
+    <a href="/" class="logo logo--mark" aria-label="Besy – psí salon, domů">
+      <!-- alt="" zamerne: jmeno salonu nese text vedle znacky a popis celeho
+           odkazu je v aria-label, jinak by ctecka precetla logo dvakrat.
+           logo.svg s currentColor tady nejde - v <img> se vyhodnoti jako cerna. -->
+      <img class="logo__mark" src="images/logo-black.svg" alt=""
+           width="47" height="48" decoding="async">
+      <span class="logo__name">Besy</span>
+    </a>
+    <nav class="nav__menu" id="nav-menu" aria-label="Hlavní navigace">
+      <span class="nav__links">
+        <a href="#o-nas">O&nbsp;mně</a>
+        <!-- Jediná položka s podseznamem. Služby jsou totiž jediný obsah stránky, který
+             je ve výchozím stavu schovaný – v ceníku vidí návštěvník 1 z 5 panelů, dokud
+             neklikne. Spouštěč zůstává skutečný <a href="#sluzby">, aby bez JS pořád
+             scrolloval na sekci; odkazy uvnitř nesou data-tab a přepnou záložku. -->
+        <span class="nav__group">
+          <a href="#sluzby" class="nav__group-btn" id="nav-services-btn"
+             aria-expanded="false" aria-controls="nav-services">Služby a&nbsp;ceník<svg class="ico ico--caret" aria-hidden="true"><use href="#i-caret"/></svg></a>
+          <span class="nav__drop" id="nav-services">
+            <a href="#sluzby" data-tab="tab-1"><svg class="ico"><use href="#i-scissors"/></svg><span>Stříhání</span><b>od 750&nbsp;Kč</b></a>
+            <a href="#sluzby" data-tab="tab-2"><svg class="ico"><use href="#i-droplets"/></svg><span>Koupání a&nbsp;rozčesání</span><b>od 450&nbsp;Kč</b></a>
+            <a href="#sluzby" data-tab="tab-3"><svg class="ico"><use href="#i-brush"/></svg><span>Trimování</span><b>od 900&nbsp;Kč</b></a>
+            <a href="#sluzby" data-tab="tab-4"><svg class="ico"><use href="#i-trophy"/></svg><span>Výstavní úpravy<span class="nav__flag">Specialita</span></span><b>od 1&nbsp;200&nbsp;Kč</b></a>
+            <a href="#sluzby" data-tab="tab-5"><svg class="ico"><use href="#i-sparkles"/></svg><span>Doplňkové procedury</span><b>od 100&nbsp;Kč</b></a>
+          </span>
+        </span>
+        <a href="#galerie">Galerie</a>
+        <a href="#jak-to-probiha">Jak to&nbsp;probíhá</a>
+        <a href="#recenze">Recenze</a>
+        <a href="#dotazy">Dotazy</a>
+        <a href="#kontakt">Kontakt</a>
+      </span>
+      <a href="tel:+420603332056" class="btn btn--primary btn--sm nav__cta" aria-label="Zavolat +420 603 332 056"><svg class="ico"><use href="#i-phone"/></svg><span class="btn__label"><span class="nav__cta-verb">Zavolat</span><span class="btn__num"> +420&nbsp;603&nbsp;332&nbsp;056</span></span></a>
+    </nav>
+    <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Otevřít menu">
+      <svg class="ico ico--menu"><use href="#i-menu"/></svg>
+      <svg class="ico ico--close"><use href="#i-close"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+
+<!-- ===== HERO ===== -->
+<section class="hero has-wave" id="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow hero__a">Psí salon v&nbsp;Chrudimi, kterému pejsci důvěřují</p>
+      <h1 class="hero__a">Péče o&nbsp;psy<br><em>se srdcem</em></h1>
+      <p class="lead hero__a">Stříhání, koupání, trimování i&nbsp;výstavní úpravy všech plemen.</p>
+      <div class="btn-row hero__a">
+        <a href="tel:+420603332056" class="btn btn--primary" aria-label="Zavolat +420 603 332 056"><svg class="ico"><use href="#i-phone"/></svg><span class="btn__label"><span class="btn__verb">Zavolat</span><span class="btn__num">+420&nbsp;603&nbsp;332&nbsp;056</span></span></a>
+        <a href="#sluzby" class="btn btn--ghost">Ceník</a>
+      </div>
+    </div>
+    <figure class="blob-figure blob-figure--hero hero__b" style="--back-w:78%;--back-x:22%;--back-y:38%">
+      <img class="blob-figure__back" src="Blobs/Masks/za_obrz.svg" alt="" aria-hidden="true"
+           width="491" height="457">
+      <!-- fetchpriority="high": tahle fotka je LCP prvek stranky, bez nej si ji
+           prohlizec stahne az za pismy a mericim skriptem -->
+      <img class="blob-figure__photo" src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1100&q=80" alt="Pejsek při koupeli v salonu" width="900" height="900" fetchpriority="high">
+      <span class="blob-figure__deco" aria-hidden="true">
+        <img class="blob-figure__accent" src="Blobs/accents/Srdce.svg" alt="" aria-hidden="true"
+             style="--x:-6%;--y:45%;--w:13%;--rotate:-8deg">
+        <img class="blob-figure__accent" src="Blobs/accents/dlouha_tecka.svg" alt="" aria-hidden="true"
+             style="--x:86%;--y:88%;--w:5.5%;--rotate:-25deg">
+        <img class="blob-figure__accent blob-figure__accent--sm-hide" src="Blobs/accents/siroka_tecka.svg" alt="" aria-hidden="true"
+             style="--x:88%;--y:15%;--w:5%;--rotate:22deg">
+        <img class="blob-figure__accent" src="Blobs/Groups/kolecka.svg" alt="" aria-hidden="true"
+             style="--x:14%;--y:63%;--w:19%;--rotate:0deg">
+      </span>
+    </figure>
+  </div>
+  <svg class="wave" style="color:var(--cream)"><use href="#d-wave"/></svg>
+</section>
+
+<!-- ===== O NÁS ===== -->
+<section class="about" id="o-nas">
+  <img class="section-shape section-shape--edge-top" src="Blobs/Sections/hero_prechod.svg"
+       alt="" aria-hidden="true" width="137" height="384">
+  <div class="container about__grid">
+    <figure class="blob-figure blob-figure--about reveal">
+      <img class="blob-figure__back" src="Blobs/Masks/za_obrz.svg" alt="" aria-hidden="true"
+           width="491" height="457">
+      <img class="blob-figure__photo" src="https://images.unsplash.com/photo-1727681200732-0086492c217d?auto=format&fit=crop&w=1000&q=80" alt="Marie, majitelka salonu Besy, v náručí se psem" width="900" height="900">
+      <span class="blob-figure__deco" aria-hidden="true">
+        <img class="blob-figure__accent" src="Blobs/Groups/kolecka.svg" alt="" aria-hidden="true"
+             style="--x:10%;--y:62%;--w:21%;--rotate:0deg">
+        <img class="blob-figure__accent" src="Blobs/Groups/tri_zlute_tecky.svg" alt="" aria-hidden="true"
+             style="--x:88%;--y:86%;--w:13%;--rotate:0deg">
+      </span>
+    </figure>
+    <div class="about__copy reveal">
+      <h2>Salon vede <em>Marie</em></h2>
+      <p>Jmenuju se Marie Kasanová a&nbsp;psy upravuju od&nbsp;svých sedmnácti let. Letos je to třiatřicátý rok u&nbsp;nůžek. Za&nbsp;tu dobu mi pod rukama prošla snad všechna plemena a&nbsp;naučila jsem se poznat, co která srst potřebuje a&nbsp;kolik toho který pes v&nbsp;klidu vydrží.</p>
+      <p>Kromě běžného stříhání a&nbsp;koupání dělám i&nbsp;ruční trimování drsnosrstých plemen a&nbsp;výstavní úpravy podle standardu plemene. Chci, aby se u&nbsp;mě potkávala řemeslná preciznost s&nbsp;tím, co je pro psa opravdu příjemné.</p>
+      <!-- TODO: ověřit s Marií – jestli v salonu opravdu bývá jen jeden pes -->
+      <p>V&nbsp;salonu je vždycky jen jeden pes. Žádné čekání v&nbsp;boxu, žádný štěkot okolo. Jen vy, váš pejsek a&nbsp;já.</p>
+    </div>
+  </div>
+
+  <!-- ===== OCENĚNÍ =====
+       Vodorovný pás, ne mřížka – ocenění je hodně a mřížka by sekci utopila.
+       Posouvá se prstem / trackpadem, šipkami v hlavičce nebo klávesnicí
+       (pás má tabindex="0"). Nová položka = zkopírovat <li class="award">,
+       šipky i posun o dlaždici se dopočítají samy.
+       FOTKY JSOU DOČASNÉ – stock z Pexels, nahradit fotkami Mariiných pohárů. -->
+  <div class="container awards reveal">
+    <div class="awards__head">
+      <div>
+        <h3 class="h-medium">Poháry z&nbsp;<em>groomingových soutěží</em></h3>
+        <!-- TODO: ověřit s Marií – od kdy na soutěže jezdí a kolik ocenění celkem má -->
+        <p class="awards__note">Na&nbsp;soutěže v&nbsp;úpravě psů jezdím od&nbsp;roku 2016. Stejnou preciznost dostane každý pes, který ode mě jde do&nbsp;výstavního kruhu.</p>
+        <!-- data-tab: odkaz skočí na Služby a rovnou přepne na záložku Výstavní úpravy -->
+        <p class="awards__link"><a class="link-arrow" href="#sluzby" data-tab="tab-4">Výstavní úpravy v&nbsp;ceníku<svg class="ico"><use href="#i-arrow"/></svg></a></p>
+      </div>
+      <div class="awards__nav" id="awards-nav">
+        <button class="awards__arrow awards__arrow--prev" type="button" id="awards-prev" aria-label="Předchozí ocenění"><svg class="ico"><use href="#i-arrow"/></svg></button>
+        <button class="awards__arrow" type="button" id="awards-next" aria-label="Další ocenění"><svg class="ico"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+    <!-- TODO: nahradit fotkami pohárů a skutečnými popisky (roky, soutěže, umístění) -->
+    <ul class="awards__row" id="awards-row" tabindex="0" role="group" aria-label="Ocenění ze soutěží, vodorovný seznam">
+      <li class="award">
+        <img src="https://images.pexels.com/photos/5731841/pexels-photo-5731841.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop" alt="Pes s&nbsp;medailí a&nbsp;zlatým pohárem po&nbsp;soutěži" loading="lazy" width="640" height="640">
+        <b>Mistrovství ČR 2025</b>
+        <span>1.&nbsp;místo, kategorie teriéři</span>
+      </li>
+      <li class="award">
+        <img src="https://images.pexels.com/photos/6532362/pexels-photo-6532362.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop" alt="Zlatý pohár zblízka" loading="lazy" width="640" height="640">
+        <b>Grooming Cup Praha 2024</b>
+        <span>2.&nbsp;místo, ruční trimování</span>
+      </li>
+      <li class="award">
+        <img src="https://images.pexels.com/photos/7267587/pexels-photo-7267587.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop" alt="Zlatá medaile za&nbsp;1.&nbsp;místo na&nbsp;stuze" loading="lazy" width="640" height="640">
+        <b>Czech Grooming Open 2023</b>
+        <span>1.&nbsp;místo, pudli</span>
+      </li>
+      <li class="award">
+        <img src="https://images.pexels.com/photos/5731850/pexels-photo-5731850.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop" alt="Pes s&nbsp;medailí u&nbsp;zlatého poháru" loading="lazy" width="640" height="640">
+        <b>Mistrovství ČR 2022</b>
+        <span>3.&nbsp;místo, malá plemena</span>
+      </li>
+      <li class="award">
+        <img src="https://images.pexels.com/photos/6345328/pexels-photo-6345328.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop" alt="Sada medailí a&nbsp;pohár na&nbsp;stole" loading="lazy" width="640" height="640">
+        <b>Grooming Cup Praha 2021</b>
+        <span>2.&nbsp;místo, teriéři</span>
+      </li>
+      <li class="award">
+        <img src="https://images.pexels.com/photos/6532363/pexels-photo-6532363.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop" alt="Zlaté poháry v&nbsp;protisvětle" loading="lazy" width="640" height="640">
+        <b>Czech Grooming Open 2019</b>
+        <span>1.&nbsp;místo, drsnosrstá plemena</span>
+      </li>
+      <li class="award">
+        <img src="https://images.pexels.com/photos/6565248/pexels-photo-6565248.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop" alt="Ruka drží zlatý pohár před&nbsp;policí s&nbsp;dalšími" loading="lazy" width="640" height="640">
+        <b>Mistrovství ČR 2018</b>
+        <span>3.&nbsp;místo, pudli</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== SLUŽBY ===== -->
+<section class="services" id="sluzby">
+  <img class="section-shape section-shape--edge-bottom" src="Blobs/Sections/blob.svg"
+       alt="" aria-hidden="true" width="72" height="143">
+  <div class="container">
+    <div class="services__head reveal">
+      <h2>Moje služby a&nbsp;<em>ceník</em></h2>
+      <p>U&nbsp;každé služby najdete orientační cenu. O&nbsp;výsledné částce rozhoduje typ a&nbsp;stav srsti a&nbsp;čas, který si pes vyžádá, ne jeho velikost. Pracuju výhradně na&nbsp;objednávku, aby měl každý pes moji plnou pozornost.</p>
+    </div>
+
+    <!-- TODO: !! VŠECHNY CENY NÍŽE JSOU VYMYŠLENÉ !! Doplnit skutečný ceník od Marie –
+         v .price-rows každého panelu, v .tab__price u odpovídající záložky
+         a v priceRange v JSON-LD v hlavičce. Všechna tři místa musí sedět. -->
+    <div class="services__layout reveal">
+      <div class="tabs" role="tablist" aria-label="Seznam služeb">
+        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1"><span class="tab__icon"><svg class="ico"><use href="#i-scissors"/></svg></span><span class="tab__label">Stříhání<span class="tab__price">od 750&nbsp;Kč</span></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1"><span class="tab__icon"><svg class="ico"><use href="#i-droplets"/></svg></span><span class="tab__label">Koupání a&nbsp;rozčesání<span class="tab__price">od 450&nbsp;Kč</span></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1"><span class="tab__icon"><svg class="ico"><use href="#i-brush"/></svg></span><span class="tab__label">Trimování<span class="tab__price">od 900&nbsp;Kč</span></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4" tabindex="-1"><span class="tab__icon"><svg class="ico"><use href="#i-trophy"/></svg></span><span class="tab__label">Výstavní úpravy<span class="tab__meta"><span class="tab__price">od 1&nbsp;200&nbsp;Kč</span><span class="tab__flag">Specialita</span></span></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-5" id="tab-5" tabindex="-1"><span class="tab__icon"><svg class="ico"><use href="#i-sparkles"/></svg></span><span class="tab__label">Doplňkové procedury<span class="tab__price">od 100&nbsp;Kč</span></span></button>
+      </div>
+
+      <div class="panels">
+        <div class="panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <div class="panel__copy">
+            <h3>Stříhání</h3>
+            <p>Nejdřív si prohlédnu srst a&nbsp;kůži, ať vím, s&nbsp;čím pracuju. Pak přijde koupel, kondicionér a&nbsp;šetrné vysušení. Nakonec zkrátím drápky, vyčistím uši, projedu psa strojkem a&nbsp;dočistím nůžkami.</p>
+            <div class="panel__prices">
+              <ul class="price-rows">
+                <li><span>Malá plemena <em>do 10&nbsp;kg – jorkšír, maltézák, shih-tzu, bišonek, čivava</em></span><b>od 750&nbsp;Kč</b></li>
+                <li><span>Střední plemena <em>10–25&nbsp;kg – kokršpaněl, pudl střední, westík, špic</em></span><b>od 1&nbsp;000&nbsp;Kč</b></li>
+                <li><span>Velká plemena <em>nad 25&nbsp;kg – zlatý retrívr, labrador, bernský salašnický</em></span><b>od 1&nbsp;400&nbsp;Kč</b></li>
+              </ul>
+            <p class="panel__dur"><svg class="ico"><use href="#i-clock"/></svg><span>Délka návštěvy 1,5–3&nbsp;h podle plemene a&nbsp;stavu srsti.</span></p>
+            </div>
+          </div>
+          <figure class="blob-figure blob-figure--service">
+            <img class="blob-figure__back" src="Blobs/Masks/za_obrz.svg" alt="" aria-hidden="true"
+                 width="491" height="457">
+            <img class="blob-figure__photo" src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&w=800&q=80" alt="Kompletní střih psa" width="700" height="700">
+            <span class="blob-figure__deco" aria-hidden="true">
+              <img class="blob-figure__accent" src="Blobs/accents/kolecko_plne.svg" alt="" aria-hidden="true"
+                   style="--x:14%;--y:76%;--w:8%;--rotate:0deg">
+              <img class="blob-figure__accent" src="Blobs/accents/stredni_tecka.svg" alt="" aria-hidden="true"
+                   style="--x:88%;--y:16%;--w:8%;--rotate:18deg">
+            </span>
+          </figure>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+          <div class="panel__copy">
+            <h3>Koupání a&nbsp;rozčesání</h3>
+            <p>Udržovací návštěva mezi střihy. Psa umyju, dám kondicionér, rozčešu podsadu a&nbsp;uvolním drobná zacuchání. Zkrátím drápky a&nbsp;vyčistím uši. Nejčastěji sem chodí psi, kteří línají nebo se jim srst rychle plstnatí.</p>
+            <div class="panel__prices">
+              <ul class="price-rows">
+                <li><span>Malá plemena <em>do 10&nbsp;kg</em></span><b>od 450&nbsp;Kč</b></li>
+                <li><span>Střední plemena <em>10–25&nbsp;kg</em></span><b>od 650&nbsp;Kč</b></li>
+                <li><span>Velká plemena <em>nad 25&nbsp;kg</em></span><b>od 900&nbsp;Kč</b></li>
+              </ul>
+            <p class="panel__dur"><svg class="ico"><use href="#i-clock"/></svg><span>Délka návštěvy 45–90&nbsp;minut podle velikosti psa a&nbsp;množství podsady.</span></p>
+            </div>
+          </div>
+          <figure class="blob-figure blob-figure--service">
+            <img class="blob-figure__back" src="Blobs/Masks/za_obrz.svg" alt="" aria-hidden="true"
+                 width="491" height="457">
+            <img class="blob-figure__photo" src="https://images.unsplash.com/photo-1633722715463-d30f4f325e24?auto=format&fit=crop&w=800&q=80" alt="Koupel a rozčesání psa" width="700" height="700" loading="lazy">
+            <span class="blob-figure__deco" aria-hidden="true">
+              <img class="blob-figure__accent" src="Blobs/accents/kolecko_obrys.svg" alt="" aria-hidden="true"
+                   style="--x:12%;--y:74%;--w:11%;--rotate:-12deg">
+              <img class="blob-figure__accent" src="Blobs/accents/dlouha_tecka.svg" alt="" aria-hidden="true"
+                   style="--x:89%;--y:76%;--w:7%;--rotate:-25deg">
+            </span>
+          </figure>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+          <div class="panel__copy">
+            <h3>Trimování</h3>
+            <p>Ruční vytrhávání odumřelé srsti u&nbsp;drsnosrstých plemen, jako je foxteriér, knírač, jezevčík, westík nebo airedale. Na&nbsp;rozdíl od&nbsp;strojku se struktura srsti nezničí: zůstane tvrdá, správně zbarvená a&nbsp;odolná proti vodě. Je to pomalá ruční práce, proto trvá déle než běžný střih.</p>
+            <div class="panel__prices">
+              <ul class="price-rows">
+                <li><span>Malá plemena <em>do 10&nbsp;kg – jezevčík, westík, foxteriér</em></span><b>od 900&nbsp;Kč</b></li>
+                <li><span>Střední plemena <em>10–25&nbsp;kg – knírač střední, airedale teriér</em></span><b>od 1&nbsp;200&nbsp;Kč</b></li>
+                <li><span>Udržovací trim <em>mezi kompletními trimy</em></span><b>od 600&nbsp;Kč</b></li>
+              </ul>
+            <p class="panel__dur"><svg class="ico"><use href="#i-clock"/></svg><span>Kompletní trim trvá 2–4&nbsp;hodiny podle plemene.</span></p>
+            </div>
+          </div>
+          <figure class="blob-figure blob-figure--service">
+            <img class="blob-figure__back" src="Blobs/Masks/za_obrz.svg" alt="" aria-hidden="true"
+                 width="491" height="457">
+            <img class="blob-figure__photo" src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=800&q=80" alt="Ruční trimování drsnosrstého psa" width="700" height="700" loading="lazy">
+            <span class="blob-figure__deco" aria-hidden="true">
+              <img class="blob-figure__accent" src="Blobs/Groups/kolecka.svg" alt="" aria-hidden="true"
+                   style="--x:80%;--y:8%;--w:20%;--rotate:0deg">
+            </span>
+          </figure>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+          <div class="panel__copy">
+            <h3>Výstavní úpravy</h3>
+            <p>Úprava podle platného standardu plemene pro psy, kteří jdou do&nbsp;výstavního kruhu. Řeším linii, proporce a&nbsp;detaily, na&nbsp;kterých rozhodčí staví posouzení. Termín domluvíme vzhledem k&nbsp;datu výstavy. Některá plemena je potřeba připravovat několik týdnů dopředu.</p>
+            <!-- TODO: ověřit s Marií – tahle věta propojuje výstavní úpravy s pásem ocenění
+                 v sekci „O nás“. Pokud poháry nejsou z groomingových soutěží, ale z výstav
+                 psů, které Marie připravovala, přepsat formulaci zde i v .awards__note. -->
+            <p class="panel__proof">Je to nejnáročnější úprava, kterou dělám, a&nbsp;zároveň stejné řemeslo, se kterým jezdím na&nbsp;soutěže v&nbsp;úpravě psů.<a class="link-arrow" href="#o-nas">Poháry a&nbsp;umístění<svg class="ico"><use href="#i-arrow"/></svg></a></p>
+            <div class="panel__prices">
+              <ul class="price-rows">
+                <li><span>Výstavní úprava <em>malá a&nbsp;střední plemena</em></span><b>od 1&nbsp;200&nbsp;Kč</b></li>
+                <li><span>Výstavní úprava <em>velká plemena</em></span><b>od 1&nbsp;600&nbsp;Kč</b></li>
+                <li><span>Dolaďování před výstavou <em>navazující návštěva</em></span><b>od 500&nbsp;Kč</b></li>
+              </ul>
+            <p class="panel__dur"><svg class="ico"><use href="#i-clock"/></svg><span>Počítejte s&nbsp;delší návštěvou a&nbsp;objednáním v&nbsp;předstihu.</span></p>
+            </div>
+          </div>
+          <figure class="blob-figure blob-figure--service">
+            <img class="blob-figure__back" src="Blobs/Masks/za_obrz.svg" alt="" aria-hidden="true"
+                 width="491" height="457">
+            <img class="blob-figure__photo" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" alt="Pes ve výstavní úpravě" width="700" height="700" loading="lazy">
+            <span class="blob-figure__deco" aria-hidden="true">
+              <img class="blob-figure__accent" src="Blobs/accents/Srdce.svg" alt="" aria-hidden="true"
+                   style="--x:-6%;--y:18%;--w:17%;--rotate:-14deg">
+              <img class="blob-figure__accent" src="Blobs/accents/siroka_tecka.svg" alt="" aria-hidden="true"
+                   style="--x:90%;--y:78%;--w:7%;--rotate:-10deg">
+            </span>
+          </figure>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
+          <div class="panel__copy">
+            <h3>Doplňkové procedury</h3>
+            <p>Jednotlivé úkony zvládnu i&nbsp;samostatně, bez střihu. Klidně přijďte jen na&nbsp;drápky nebo uši. Štěňata beru na&nbsp;krátkou seznamovací návštěvu, ať si zvyknou na&nbsp;vodu, fén i&nbsp;zvuk strojku dřív, než přijde první opravdový střih.</p>
+            <div class="panel__prices">
+              <ul class="price-rows">
+                <li><span>Zkrácení drápků</span><b>100&nbsp;Kč</b></li>
+                <li><span>Čištění uší</span><b>100&nbsp;Kč</b></li>
+                <li><span>Odstranění slzných skvrn</span><b>od 150&nbsp;Kč</b></li>
+                <li><span>Uvolňující masáž pro seniory</span><b>od 250&nbsp;Kč</b></li>
+                <li><span>Odblešení antiparazitní koupelí</span><b>od 300&nbsp;Kč</b></li>
+                <li><span>Vyčesání podsady <em>kúra proti nadměrnému línání</em></span><b>od 350&nbsp;Kč</b></li>
+                <li><span>Štěněcí seznámení <em>krátká první návštěva, do 6&nbsp;měsíců</em></span><b>400&nbsp;Kč</b></li>
+              </ul>
+            <p class="panel__dur"><svg class="ico"><use href="#i-clock"/></svg><span>Délku návštěvy odhadnu podle úkonů, které si vyberete.</span></p>
+            </div>
+          </div>
+          <figure class="blob-figure blob-figure--service">
+            <img class="blob-figure__back" src="Blobs/Masks/za_obrz.svg" alt="" aria-hidden="true"
+                 width="491" height="457">
+            <img class="blob-figure__photo" src="https://images.unsplash.com/photo-1615751072497-5f5169febe17?auto=format&fit=crop&w=800&q=80" alt="Doplňkové procedury pro psy" width="700" height="700" loading="lazy">
+            <span class="blob-figure__deco" aria-hidden="true">
+              <img class="blob-figure__accent" src="Blobs/Groups/tri_zlute_tecky.svg" alt="" aria-hidden="true"
+                   style="--x:86%;--y:58%;--w:15%;--rotate:0deg">
+              <img class="blob-figure__accent" src="Blobs/accents/kolecko_plne.svg" alt="" aria-hidden="true"
+                   style="--x:10%;--y:20%;--w:7%;--rotate:0deg">
+            </span>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-note reveal">
+      <div>
+        <h3>Co cenu ovlivňuje</h3>
+        <ul class="note-list">
+          <li>Typ srsti a&nbsp;její stav. Udržovaná srst je rychlejší práce než zacuchaná.</li>
+          <li>Jak dlouho pes vydrží stát a&nbsp;jak snáší fén a&nbsp;strojek.</li>
+          <li>Jestli jde o&nbsp;kompletní střih, nebo jen o&nbsp;zkrácení a&nbsp;dočištění.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="surcharge"><b>Zacuchaná srst:</b> příplatek od&nbsp;200&nbsp;Kč za&nbsp;každých započatých 30&nbsp;minut rozčesávání navíc. Když je srst zaplstnatělá až&nbsp;na kůži, je jediné šetrné řešení ostříhat ji nakrátko. Vždycky se předem domluvíme a&nbsp;cenu vám řeknu dopředu.</p>
+        <p class="surcharge"><b>Neklidný pes:</b> příplatek od&nbsp;200&nbsp;Kč, když je potřeba pracovat pomaleji a&nbsp;po&nbsp;částech.</p>
+        <p class="surcharge"><b>Nedostavení se bez omluvy:</b> 50&nbsp;% ceny objednané služby.</p>
+      </div>
+      <p class="promise"><svg class="ico"><use href="#i-sparkles"/></svg><span>Finální cenu vám potvrdím před začátkem práce, ne až&nbsp;po střihu.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIE PŘED / PO ===== -->
+<section class="gallery has-wave" id="galerie">
+  <div class="container">
+    <div class="gallery__head reveal">
+      <p class="eyebrow">Moje práce</p>
+      <h2>Před a&nbsp;<em>po</em></h2>
+      <p>Stejný pes, stejný den. Nic neretušuju. Tohle je prostě výsledek jednoho odpoledne v&nbsp;salonu.</p>
+    </div>
+
+    <!-- ====================================================================
+         DOČASNÉ DEMO FOTKY – NESMÍ JÍT NA ŽIVÝ WEB!
+         Fotky v images/demo/ patří Psímu salonu Rájec-Jestřebí, jsou tu jen
+         jako maketa. Podrobnosti v images/demo/PUVOD.txt.
+         Před spuštěním nahradit fotkami z našeho salonu a složku smazat.
+         ==================================================================== -->
+    <div class="gallery__grid reveal">
+      <figure class="pair">
+        <button class="pair__imgs" type="button" aria-label="Zobrazit fotky ve větším – Bella, west highland teriér">
+          <div class="pair__side">
+            <img src="images/demo/westik-pred.jpg" alt="Bella (west highland teriér) před střihem" loading="lazy">
+            <span class="pair__tag">Před</span>
+          </div>
+          <div class="pair__side">
+            <img src="images/demo/westik-po.jpg" alt="Bella (west highland teriér) po střihu" loading="lazy">
+            <span class="pair__tag pair__tag--after">Po</span>
+          </div>
+          <span class="pair__zoom" aria-hidden="true"><svg class="ico"><use href="#i-zoom"/></svg></span>
+        </button>
+        <figcaption><b>Bella</b> <span class="pair__breed">west highland teriér</span><span class="pair__desc">Půl roku bez střihu. Kompletní střih včetně ručního dočištění hlavy, dvě hodiny práce.</span></figcaption>
+      </figure>
+
+      <figure class="pair">
+        <button class="pair__imgs" type="button" aria-label="Zobrazit fotky ve větším – Ferda, jorkšír">
+          <div class="pair__side">
+            <img src="images/demo/jorksir-pred.jpg" alt="Ferda (jorkšír) před střihem" loading="lazy">
+            <span class="pair__tag">Před</span>
+          </div>
+          <div class="pair__side">
+            <img src="images/demo/jorksir-po.jpg" alt="Ferda (jorkšír) po střihu" loading="lazy">
+            <span class="pair__tag pair__tag--after">Po</span>
+          </div>
+          <span class="pair__zoom" aria-hidden="true"><svg class="ico"><use href="#i-zoom"/></svg></span>
+        </button>
+        <figcaption><b>Ferda</b> <span class="pair__breed">jorkšír</span><span class="pair__desc">Zacuchaná srst na uších a&nbsp;tlapkách. Strojkový střih a&nbsp;dočištění nůžkami.</span></figcaption>
+      </figure>
+
+      <figure class="pair">
+        <button class="pair__imgs" type="button" aria-label="Zobrazit fotky ve větším – Amos, labradoodle">
+          <div class="pair__side">
+            <img src="images/demo/labradudl-pred.jpg" alt="Amos (labradoodle) před střihem" loading="lazy">
+            <span class="pair__tag">Před</span>
+          </div>
+          <div class="pair__side">
+            <img src="images/demo/labradudl-po.jpg" alt="Amos (labradoodle) po střihu" loading="lazy">
+            <span class="pair__tag pair__tag--after">Po</span>
+          </div>
+          <span class="pair__zoom" aria-hidden="true"><svg class="ico"><use href="#i-zoom"/></svg></span>
+        </button>
+        <figcaption><b>Amos</b> <span class="pair__breed">labradoodle</span><span class="pair__desc">Kudrnatá srst se rychle plstnatí. Koupel, fén a&nbsp;kompletní střih.</span></figcaption>
+      </figure>
+
+      <figure class="pair">
+        <button class="pair__imgs" type="button" aria-label="Zobrazit fotky ve větším – Rocky, pšeničný teriér">
+          <div class="pair__side">
+            <img src="images/demo/psenicny-pred.jpg" alt="Rocky (pšeničný teriér) před střihem" loading="lazy">
+            <span class="pair__tag">Před</span>
+          </div>
+          <div class="pair__side">
+            <img src="images/demo/psenicny-po.jpg" alt="Rocky (pšeničný teriér) po střihu" loading="lazy">
+            <span class="pair__tag pair__tag--after">Po</span>
+          </div>
+          <span class="pair__zoom" aria-hidden="true"><svg class="ico"><use href="#i-zoom"/></svg></span>
+        </button>
+        <figcaption><b>Rocky</b> <span class="pair__breed">pšeničný teriér</span><span class="pair__desc">Srst zaplstnatělá až&nbsp;na kůži. Musela jsem zkrátit víc, než bych chtěla.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+  <svg class="wave" style="color:var(--primary-100)"><use href="#d-wave"/></svg>
+</section>
+
+<!-- ===== JAK TO PROBÍHÁ ===== -->
+<section class="process has-wave" id="jak-to-probiha">
+  <div class="container">
+    <div class="process__head reveal">
+      <h2>Jak to u&nbsp;mě <em>probíhá</em></h2>
+      <p>Většina lidí mi volá poprvé a&nbsp;neví, co čekat. Tak ať je jasno předem.</p>
+    </div>
+
+    <ol class="steps reveal">
+      <li class="step">
+        <span class="step__num" aria-hidden="true">1</span>
+        <h3>Zavoláte</h3>
+        <p>Objednávky beru jedině telefonicky, ať se hned domluvíme na&nbsp;tom, co váš pes potřebuje. Termíny mám obvykle dva až&nbsp;tři týdny dopředu, před Vánoci i&nbsp;déle.</p>
+        <p class="step__note">Nezvedám? Během stříhání se věnuju psovi. Prozvoňte mě a&nbsp;ozvu se, jakmile dostříhám.</p>
+      </li>
+      <li class="step">
+        <span class="step__num" aria-hidden="true">2</span>
+        <h3>Co si připravte k&nbsp;telefonu</h3>
+        <p>Ušetří nám to oběma pár minut a&nbsp;vám hlavně přesnější cenu a&nbsp;termín:</p>
+        <ul class="checklist">
+          <li>plemeno a&nbsp;jméno psa, přibližná váha</li>
+          <li>kdy byl naposledy stříhaný</li>
+          <li>jak snáší fén, strojek a&nbsp;cizí lidi</li>
+          <li>jestli je někde zacuchaný</li>
+          <li>zdravotní omezení, alergie, kožní problémy</li>
+          <li>jestli je fena hárající nebo pes po operaci</li>
+        </ul>
+      </li>
+      <li class="step">
+        <span class="step__num" aria-hidden="true">3</span>
+        <h3>Návštěva</h3>
+        <p>Psa si prohlédnu, potvrdím cenu a&nbsp;pustím se do&nbsp;práce. Koupel a&nbsp;fén trvá 45&nbsp;až&nbsp;90&nbsp;minut, kompletní střih 1,5&nbsp;až&nbsp;3&nbsp;hodiny. V&nbsp;salonu je vždycky jen jeden pes.</p>
+        <p class="step__note">S&nbsp;sebou nic nepotřebujete, jen vodítko a&nbsp;obojek. Před návštěvou psa prosím vyvenčete.</p>
+      </li>
+      <li class="step">
+        <span class="step__num" aria-hidden="true">4</span>
+        <h3>Vyzvednutí</h3>
+        <p>Zavolám vám, jakmile budu hotová. Řeknu vám, co jsem na&nbsp;psovi našla, jak o&nbsp;srst pečovat doma a&nbsp;kdy přijít příště. Platí se hotově nebo QR&nbsp;platbou.</p>
+      </li>
+    </ol>
+
+    <div class="center reveal">
+      <a href="tel:+420603332056" class="btn btn--primary" aria-label="Zavolat +420 603 332 056"><svg class="ico"><use href="#i-phone"/></svg><span class="btn__label"><span class="btn__verb">Zavolat</span><span class="btn__num">+420&nbsp;603&nbsp;332&nbsp;056</span></span></a>
+    </div>
+  </div>
+  <svg class="wave wave--flip" style="color:var(--cream)"><use href="#d-wave"/></svg>
+</section>
+
+<!-- ===== RECENZE ===== -->
+<section class="reviews" id="recenze">
+  <img class="section-accent section-accent--reviews" src="Blobs/Groups/kolecka.svg"
+       alt="" aria-hidden="true" width="104" height="120">
+  <div class="container">
+    <div class="reviews__head reveal">
+      <p class="eyebrow">Proč právě Besy</p>
+      <h2><em>Štěkot</em> spokojenosti</h2>
+
+      <!-- Odznaky vedou na PROFILY, kde se recenze ctou. Psani recenze je az
+           ve vete pod nimi - odznak s prumerem, ktery vede na formular, mate.
+           TODO: az Marie narokuje Google profil, prehodit odkaz "na Google"
+           ve vete .reviews__ask na kratky odkaz g.page/r/<kod>/review z administrace.
+           Do te doby vede na profil, kde je tlacitko Napsat recenzi videt. -->
+      <div class="rating-badges">
+        <a class="rating-badge" href="https://maps.google.com/?cid=2442423570293532531"
+           target="_blank" rel="noopener">
+          <span class="google-word" aria-label="Google"><b>G</b><b>o</b><b>o</b><b>g</b><b>l</b><b>e</b></span>
+          <span class="google-rating"><strong>5,0</strong>
+            <span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span>
+            <span class="muted">12 recenzí</span>
+          </span>
+        </a>
+        <span class="rating-badges__sep" aria-hidden="true"></span>
+        <a class="rating-badge" href="https://www.firmy.cz/detail/1971263-marie-kasanova-strihani-psu-chrudim-ii.html#hodnoceni"
+           target="_blank" rel="noopener">
+          <span class="firmy-word" aria-label="Firmy.cz">Firmy<span>.cz</span></span>
+          <span class="google-rating"><strong>5,0</strong>
+            <span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span>
+            <span class="muted">2 hodnocení</span>
+          </span>
+        </a>
+      </div>
+
+      <p class="reviews__ask">
+        Byli jste u&nbsp;mě? Když budete mít chvilku, napište pár řádků
+        <a href="https://maps.google.com/?cid=2442423570293532531" target="_blank" rel="noopener">na&nbsp;Google</a>
+        nebo <a href="https://www.firmy.cz/detail/1971263-marie-kasanova-strihani-psu-chrudim-ii.html#hodnoceni" target="_blank" rel="noopener">na&nbsp;Firmy.cz</a>.
+        Pomůže to lidem, kteří pro svého psa salon teprve hledají.
+      </p>
+    </div>
+
+    <!-- Recenze jsou doslovne z Google a Firmy.cz profilu, opravena je jen
+         interpunkce (chybejici mezery, "4roky") a verzalky u Firmy.cz.
+         Poradi je od nejdelsiho textu: prvnich 8 je videt hned, zbytek
+         (vcetne hodnoceni bez komentare) az po kliknuti na Vice recenzi.
+         Karty bez textu nemaji .review__quote, proto jsou nizsi - to je zamer. -->
+    <div class="reviews__grid reveal" id="reviews-grid">
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><span class="firmy-mark" aria-label="Firmy.cz">Firmy<span>.cz</span></span></div>
+        <p class="review__quote">Perfektně provedená práce, skvělý přístup k&nbsp;našemu psímu příteli. Mohu jen doporučit.</p>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">S</span><b class="review__name">Sendingcheckpikron</b></footer>
+      </article>
+
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <p class="review__quote">S&nbsp;firmou jsem spokojená. Dávám sem stříhat psa již 4&nbsp;roky.</p>
+        <footer class="review__author"><img class="avatar" src="images/reviews/jitka-kosinova.jpg" alt="" width="96" height="96" loading="lazy"><b class="review__name">Jitka Košínová</b></footer>
+      </article>
+
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <p class="review__quote">Moc příjemné prostředí. Paní majitelka je&nbsp;suprová.</p>
+        <footer class="review__author"><img class="avatar" src="images/reviews/fany-74.jpg" alt="" width="96" height="96" loading="lazy"><b class="review__name">Fany 74</b></footer>
+      </article>
+
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <p class="review__quote">Nejlepší psí kadeřnice, můžu jen doporučit.</p>
+        <footer class="review__author">
+          <img class="avatar" src="images/reviews/ka-cu-le.jpg" alt="" width="96" height="96" loading="lazy">
+          <b class="review__name">Ka Ču Le</b>
+          <a class="review__photo" href="images/reviews/foto-ka-cu-le.jpg" data-author="Ka Ču Le">
+            <img src="images/reviews/foto-ka-cu-le-nahled.jpg" alt="Pes po úpravě, fotka od zákazníka" width="160" height="160" loading="lazy">
+          </a>
+        </footer>
+      </article>
+
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <p class="review__quote">Paní super, bezva služby za&nbsp;krásnou cenu.</p>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">DZ</span><b class="review__name">Dana Zajíčková</b></footer>
+      </article>
+
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <p class="review__quote">Úžasná, pes vždy dokonale ostříhán.</p>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">MS</span><b class="review__name">Martina Stejskalová</b></footer>
+      </article>
+
+      <!-- TODO: overit s Marii, kdo je "pani Beranova" - kolegyne, drivejsi
+           prijmeni? Pokud se salonem nesouvisi, tuhle recenzi vypustit:
+           ctenar by chvalu priradil nekomu jinemu. -->
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <p class="review__quote">Jsem s&nbsp;paní Beranovou spokojená.</p>
+        <footer class="review__author">
+          <span class="avatar avatar--initial" aria-hidden="true">IJ</span>
+          <b class="review__name">Iveta Ježková</b>
+          <a class="review__photo" href="images/reviews/foto-iveta-jezkova.jpg" data-author="Iveta Ježková">
+            <img src="images/reviews/foto-iveta-jezkova-nahled.jpg" alt="Pes po úpravě, fotka od zákaznice" width="160" height="160" loading="lazy">
+          </a>
+        </footer>
+      </article>
+
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <p class="review__quote">Pohoda!</p>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">JD</span><b class="review__name">Jiří Drábek</b></footer>
+      </article>
+
+      <!-- ===== od tohoto mista az po kliknuti na Vice recenzi ===== -->
+
+      <article class="review">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <p class="review__quote">Super</p>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">EK</span><b class="review__name">Eva Kucerova</b></footer>
+      </article>
+
+      <article class="review review--brief">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">KH</span><b class="review__name">Kateřina Hanesová</b></footer>
+      </article>
+
+      <article class="review review--brief">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">JH</span><b class="review__name">Jan Hloušek</b></footer>
+      </article>
+
+      <article class="review review--brief">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">PB</span><b class="review__name">Peter Blazo</b></footer>
+      </article>
+
+      <article class="review review--brief">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
+        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">JP</span><b class="review__name">Jiří Pazdera</b></footer>
+      </article>
+
+      <article class="review review--brief">
+        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><span class="firmy-mark" aria-label="Firmy.cz">Firmy<span>.cz</span></span></div>
+        <footer class="review__author"><img class="avatar" src="images/reviews/alena-novakova.jpg" alt="" width="96" height="96" loading="lazy"><b class="review__name">Alena Nováková</b></footer>
+      </article>
+    </div>
+
+    <div class="center reveal">
+      <button class="btn btn--ghost" id="reviews-more" type="button"
+              aria-expanded="false" aria-controls="reviews-grid">Více recenzí</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ČASTÉ DOTAZY ===== -->
+<!-- Při změně otázek upravit i FAQPage JSON-LD v <head>. -->
+<section class="faq has-wave" id="dotazy">
+  <div class="container">
+    <div class="faq__head reveal">
+      <p class="eyebrow">Než zavoláte</p>
+      <h2>Časté <em>dotazy</em></h2>
+    </div>
+
+    <div class="faq__list reveal">
+      <details class="faq__item">
+        <summary>Jak často mám psa nechat ostříhat?</summary>
+        <div class="faq__body"><p>U&nbsp;plemen s&nbsp;dorůstající srstí (pudl, bišonek, shih-tzu, jorkšír) obvykle každých 6&nbsp;až&nbsp;10&nbsp;týdnů. U&nbsp;línajících plemen stačí koupel a&nbsp;vyčesání podsady třikrát až&nbsp;čtyřikrát ročně. Konkrétní interval vám doporučím podle stavu srsti při první návštěvě.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Můžu být u&nbsp;stříhání se psem?</summary>
+        <div class="faq__body"><p>Většina psů je v&nbsp;klidu, když pán odejde. V&nbsp;přítomnosti majitele se často víc vrtí a&nbsp;dožadují pozornosti. U&nbsp;první návštěvy nebo velmi nejistého psa se domluvíme individuálně. Zpravidla doporučuju zůstat pár minut na&nbsp;začátku a&nbsp;pak psa nechat u&nbsp;mě.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Co když se pes bojí nebo je agresivní?</summary>
+        <div class="faq__body"><p>Řekněte mi to prosím dopředu, ať na&nbsp;něj vyhradím víc času a&nbsp;klidnější termín. Pracuju bez násilí a&nbsp;psa nikdy nefixuju proti jeho vůli. Když zvládne jen část procedury, udělám jen tu část a&nbsp;účtuju jen odvedenou práci.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Od kdy můžu přivést štěně?</summary>
+        <div class="faq__body"><p>Ideálně hned po&nbsp;dokončení základního očkování, obvykle od&nbsp;4&nbsp;měsíců. První návštěva je krátká a&nbsp;seznamovací. Jde hlavně o&nbsp;to, aby si štěně zvyklo na&nbsp;vodu, fén a&nbsp;zvuk strojku. Čím dřív, tím lépe se pak stříhá celý život.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Jak dlouho návštěva trvá?</summary>
+        <div class="faq__body"><p>Koupel a&nbsp;fén 45&nbsp;až&nbsp;90&nbsp;minut, kompletní střih 1,5&nbsp;až&nbsp;3&nbsp;hodiny podle plemene a&nbsp;stavu srsti. Přesný čas vám řeknu při objednání, ať víte, jestli máte odjet, nebo počkat.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Jak se u&nbsp;vás platí?</summary>
+        <div class="faq__body"><p>Hotově nebo QR&nbsp;platbou. Platí se po&nbsp;vyzvednutí psa. Finální cenu vám vždycky potvrdím před začátkem práce, ne až&nbsp;na konci.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Co když je pes zacuchaný až&nbsp;na kůži?</summary>
+        <div class="faq__body"><p>Rozčesávání plstnaté srsti je pro psa bolestivé a&nbsp;kůži pod&nbsp;ní často poškozuje. V&nbsp;takovém případě je jediné šetrné řešení srst nakrátko ostříhat. Vždycky se s&nbsp;vámi předem domluvím a&nbsp;řeknu, kolik to bude stát. Nikdy vás nepřekvapím až&nbsp;u&nbsp;placení.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Co když nemůžu na&nbsp;termín dorazit?</summary>
+        <div class="faq__body"><p>Zavolejte prosím co nejdřív, ideálně 24&nbsp;hodin předem. Termín pak nabídnu někomu dalšímu a&nbsp;vám najdu nový. Za&nbsp;nedostavení se bez omluvy účtuju 50&nbsp;% ceny objednané služby.</p></div>
+      </details>
+    </div>
+  </div>
+  <svg class="wave" style="color:var(--primary-100)"><use href="#d-wave"/></svg>
+</section>
+
+<!-- ===== KONTAKT / LOKACE ===== -->
+<section class="location has-wave" id="kontakt">
+  <div class="container">
+    <!-- Pruh .notice je pro aktuální hlášku (dovolená, plno na měsíc dopředu…).
+         Až bude co hlásit, vrátit sem:
+         <p class="notice reveal"><b>Aktuálně:</b> …</p> -->
+
+    <div class="location__grid">
+      <div class="reveal">
+        <h2>Kde mě najdete<br><em>v&nbsp;Chrudimi</em></h2>
+        <ul class="contact-list">
+          <li class="contact">
+            <svg class="ico"><use href="#i-phone"/></svg>
+            <div>
+              <h3>Telefon</h3>
+              <p class="contact__big"><a href="tel:+420603332056">+420&nbsp;603&nbsp;332&nbsp;056</a></p>
+              <p class="note">Během stříhání telefon nemusím zvednout. Prozvoňte mě a&nbsp;ozvu se, jakmile dostříhám.</p>
+            </div>
+          </li>
+          <li class="contact">
+            <svg class="ico"><use href="#i-clock"/></svg>
+            <div>
+              <h3>Otevírací doba</h3>
+              <p class="contact__big">Jen na&nbsp;objednávku</p>
+              <p class="note">Bez domluveného termínu prosím nechoďte, pracuju vždycky jen s&nbsp;jedním psem.</p>
+            </div>
+          </li>
+          <li class="contact">
+            <svg class="ico"><use href="#i-pin"/></svg>
+            <div>
+              <h3>Adresa salonu</h3>
+              <p>Besy · Marie Kasanová<br>Dr.&nbsp;Janského 668<br>537&nbsp;01 Chrudim&nbsp;II</p>
+              <!-- TODO: ověřit s Marií, jak to u salonu funguje s parkováním -->
+              <p class="note">Zaparkujete přímo v&nbsp;ulici před domem.</p>
+              <a class="btn btn--ghost btn--sm" href="https://www.google.com/maps/dir/?api=1&destination=Dr.%20Jansk%C3%A9ho%20668%2C%20537%2001%20Chrudim" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg>Kudy ke&nbsp;mně</a>
+            </div>
+          </li>
+          <li class="contact">
+            <svg class="ico"><use href="#i-mail"/></svg>
+            <div>
+              <h3>E‑mail</h3>
+              <p><a href="mailto:pudlin@seznam.cz">pudlin@seznam.cz</a></p>
+              <p class="note">Odpovídám jednou za&nbsp;pár dní.</p>
+              <!-- TODO: až budou profily na sítích, vrátit sem řádek .contact__socials
+                   (viz footer) a doplnit URL i do sameAs v JSON-LD -->
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="map reveal">
+        <!-- Mapu vykresluje Leaflet (js/main.js, sekce „mapa“) nad dlaždicemi z OpenStreetMap.
+             Kvůli markeru s logem – vložená Google mapa je iframe, do kterého zvenčí nesáhneme,
+             a vlastní marker by znamenal Maps JavaScript API s placeným účtem. -->
+        <div id="map-canvas" class="map__canvas" data-lat="49.9446134" data-lng="15.8050232" data-zoom="16"></div>
+        <noscript>
+          <a class="map__fallback" href="https://www.google.com/maps/search/?api=1&query=Besy%20-%20Marie%20Kasanov%C3%A1%2C%20Dr.%20Jansk%C3%A9ho%20668%2C%20537%2001%20Chrudim" target="_blank" rel="noopener">Zobrazit salon na&nbsp;Google Mapách</a>
+        </noscript>
+      </div>
+    </div>
+  </div>
+  <svg class="wave wave--flip" style="color:var(--cream)"><use href="#d-wave"/></svg>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta has-wave" id="objednat">
+  <div class="container cta__grid">
+    <div class="reveal">
+      <h2>Připraveni<br><em>se objednat?</em></h2>
+      <p class="lead">Zavolejte a&nbsp;domluvíme termín. Nejbližší volno mám obvykle za&nbsp;dva až&nbsp;tři týdny.</p>
+      <a href="tel:+420603332056" class="btn btn--primary" aria-label="Zavolat +420 603 332 056"><svg class="ico"><use href="#i-phone"/></svg><span class="btn__label"><span class="btn__verb">Zavolat</span><span class="btn__num">+420&nbsp;603&nbsp;332&nbsp;056</span></span></a>
+    </div>
+    <figure class="blob-figure blob-figure--cta reveal" style="--back-w:80%;--back-x:24%">
+      <img class="blob-figure__back" src="Blobs/Masks/za_obrz.svg" alt="" aria-hidden="true"
+           width="491" height="457">
+      <img class="blob-figure__photo" src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=1000&q=80" alt="Spokojený pes po návštěvě salonu" width="900" height="900" loading="lazy">
+      <span class="blob-figure__deco" aria-hidden="true">
+        <img class="blob-figure__accent blob-figure__accent--sm-hide" src="Blobs/Groups/Kolem_obrz.svg" alt="" aria-hidden="true"
+             style="--x:-15%;--y:20%;--w:25%;--rotate:0deg">
+        <img class="blob-figure__accent" src="Blobs/Groups/tri_zlute_tecky.svg" alt="" aria-hidden="true"
+             style="--x:85%;--y:66%;--w:15%;--rotate:0deg">
+      </span>
+    </figure>
+  </div>
+  <svg class="wave wave--flip"><use href="#d-wave"/></svg>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo logo--light logo--mark" aria-label="Besy – psí salon, domů">
+          <!-- na tmave paticce (--dark) musi byt bila varianta znacky -->
+          <img class="logo__mark" src="images/logo-white.svg" alt=""
+               width="47" height="48" loading="lazy" decoding="async">
+          <span class="logo__name">Besy</span>
+        </a>
+        <p class="footer__tagline">Péče o&nbsp;psy se srdcem</p>
+        <!-- "a sídlo" v popisku: sídlo živnosti je táž adresa jako salon, takže
+             ji patička uvádí jednou. Bez toho by se opakovala ve spodním řádku. -->
+        <div class="footer__addresses">
+          <div><h3>Salon a&nbsp;sídlo</h3><p>Dr.&nbsp;Janského 668<br>537&nbsp;01 Chrudim&nbsp;II</p></div>
+          <div><h3>Otevírací doba</h3><p>Pevná není,<br>vždy na&nbsp;domluvený termín</p></div>
+        </div>
+        <!-- TODO: až budou profily na sítích, vrátit blok .socials a doplnit URL i do sameAs v JSON-LD:
+        <div class="socials">
+          <a href="…" aria-label="Facebook"><svg class="ico"><use href="#i-fb"/></svg><span>Facebook</span></a>
+          <a href="…" aria-label="Instagram"><svg class="ico"><use href="#i-ig"/></svg><span>Instagram</span></a>
+        </div> -->
+        <!-- Sloveso/cislo se prepina na 768 px stejne jako u ostatnich tlacitek
+             (.btn__verb / .btn__num) - na mobilu tap vytaci sam, takze cislo
+             v tlacitku netiskneme. aria-label ho drzi pro ctecky vzdy. -->
+        <a href="tel:+420603332056" class="btn btn--light btn--sm footer__cta" aria-label="Zavolat +420 603 332 056"><svg class="ico"><use href="#i-phone"/></svg><span class="btn__label"><span class="btn__verb">Zavolat</span><span class="btn__num">+420&nbsp;603&nbsp;332&nbsp;056</span></span></a>
+      </div>
+      <div>
+        <h3>Služby</h3>
+        <a class="footer__link" href="#sluzby" data-tab="tab-1">Stříhání</a>
+        <a class="footer__link" href="#sluzby" data-tab="tab-2">Koupání a&nbsp;rozčesání</a>
+        <a class="footer__link" href="#sluzby" data-tab="tab-3">Trimování</a>
+        <a class="footer__link" href="#sluzby" data-tab="tab-4">Výstavní úpravy</a>
+        <a class="footer__link" href="#sluzby">Ceník</a>
+      </div>
+      <!-- Zrcadlo listy bez "Sluzby a cenik" - ty maji vlastni sloupec vedle.
+           Drive tu byly sloupce "Salon" a "Nez prijedete", ale ctyri z jejich
+           odkazu mirily na tutez kotvu jako odkaz o radek vys. -->
+      <div>
+        <h3>Navigace</h3>
+        <a class="footer__link" href="#o-nas">O&nbsp;mně</a>
+        <a class="footer__link" href="#galerie">Galerie</a>
+        <a class="footer__link" href="#jak-to-probiha">Jak to&nbsp;probíhá</a>
+        <a class="footer__link" href="#recenze">Recenze</a>
+        <a class="footer__link" href="#dotazy">Dotazy</a>
+        <a class="footer__link" href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+    <!-- § 435 obcanskeho zakoniku chce na webu podnikatele jmeno, sidlo, ICO
+         a udaj o zapisu do rejstriku. Sidlo je vys u salonu, zbytek je tady.
+         ICO je osmimistne cislo, pise se vcelku - zadne mezery po trojicich. -->
+    <div class="footer__legal">
+      <p>© 2026 Besy · Marie Kasanová, IČO 65703278 · zapsána v&nbsp;živnostenském rejstříku</p>
+      <p class="footer__credit">Realizace webu: <a href="https://fuxastudio.cz/" target="_blank" rel="noopener">FuxaStudio</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX: dvojice před/po ve větším ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
+  <button class="lightbox__close" id="lightbox-close" type="button" aria-label="Zavřít"><svg class="ico"><use href="#i-close"/></svg></button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" type="button" aria-label="Předchozí dvojice"><svg class="ico"><use href="#i-arrow"/></svg></button>
+  <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" type="button" aria-label="Další dvojice"><svg class="ico"><use href="#i-arrow"/></svg></button>
+  <div class="lightbox__box">
+    <div class="lightbox__imgs">
+      <figure class="lightbox__side">
+        <img id="lightbox-before" alt="">
+        <figcaption><span class="pair__tag">Před</span></figcaption>
+      </figure>
+      <figure class="lightbox__side">
+        <img id="lightbox-after" alt="">
+        <figcaption><span class="pair__tag pair__tag--after">Po</span></figcaption>
+      </figure>
+    </div>
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+    <p class="lightbox__counter" id="lightbox-counter"></p>
+  </div>
+</div>
+
+<!-- ===== PHOTOBOX: fotka, kterou k recenzi přidal zákazník =====
+     Vlastní dialog, ne lightbox galerie – ten umí jen dvojice před/po. -->
+<div class="photobox" id="photobox" role="dialog" aria-modal="true" aria-labelledby="photobox-cap" hidden>
+  <button class="photobox__close" id="photobox-close" type="button" aria-label="Zavřít"><svg class="ico"><use href="#i-close"/></svg></button>
+  <div class="photobox__box">
+    <!-- bez src: prazdny src="" prohlizec vyhodnoti jako odkaz na tuhle stranku
+         a stahne cely dokument znovu jako obrazek. src doplni main.js pri otevreni. -->
+    <img class="photobox__img" id="photobox-img" alt="">
+    <p class="photobox__cap" id="photobox-cap"></p>
+  </div>
+</div>
+
+<!-- ===== MOBILNÍ LIŠTA (do 1200 px stejně jako hamburger, objeví se po odscrollování hera) ===== -->
+<div class="callbar" id="callbar">
+  <a href="tel:+420603332056" class="btn btn--primary"><svg class="ico"><use href="#i-phone"/></svg>Zavolat</a>
+  <a href="#sluzby" class="btn btn--ghost">Ceník</a>
+  <button class="callbar__close" id="callbar-close" type="button" aria-label="Skrýt lištu s&nbsp;telefonem"><svg class="ico"><use href="#i-close"/></svg></button>
+</div>
+
+<script src="js/vendor/leaflet.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

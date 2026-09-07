@@ -1,0 +1,254 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - paragraph [ref=f1e4]: NĂˇvrh Â· patiÄŤka
+    - heading "PatiÄŤka jako vizitka, ne rozcestnĂk" [level=1] [ref=f1e5]
+    - paragraph [ref=f1e6]: "TĹ™i sloupce mĂsto ÄŤtyĹ™: znaÄŤka s kontaktem, sluĹľby, navigace. PatiÄŤky nĂĹľ jsou vykreslenĂ© doopravdy â€“ stejnĂ© tokeny, fonty i logo jako web â€“, takĹľe si je mĹŻĹľeĹˇ zvÄ›tĹˇit a prohlĂ©dnout zblĂzka."
+  - generic [ref=f1e7]:
+    - generic [ref=f1e8]:
+      - heading "Desktop, 1440 px" [level=2] [ref=f1e9]
+      - paragraph [ref=f1e10]: PĹ™epni mezi dneĹˇkem a nĂˇvrhem.
+    - group "Varianta patiÄŤky" [ref=f1e11]:
+      - button "NĂˇvrh" [pressed] [ref=f1e12]
+      - button "Dnes" [ref=f1e13]
+    - figure "NĂˇvrh vĂ˝Ĺˇka 324 px" [ref=f1e14]:
+      - generic [ref=f1e15]:
+        - generic [ref=f1e16]: NĂˇvrh
+        - generic [ref=f1e17]: vĂ˝Ĺˇka 324 px
+      - generic [ref=f1e22]:
+        - generic [ref=f1e23]:
+          - generic [ref=f1e24]:
+            - link "Besy â€“ psĂ salon, domĹŻ" [ref=f1e25] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f1e26]: Besy
+            - paragraph [ref=f1e27]: PĂ©ÄŤe o psy se srdcem
+            - generic [ref=f1e28]:
+              - generic [ref=f1e29]:
+                - heading "Salon" [level=4] [ref=f1e30]
+                - paragraph [ref=f1e31]: Dr. JanskĂ©ho 668537 01 Chrudim II
+              - generic [ref=f1e32]:
+                - heading "OtevĂracĂ doba" [level=4] [ref=f1e33]
+                - paragraph [ref=f1e34]: PevnĂˇ nenĂ,vĹľdy na domluvenĂ˝ termĂn
+            - link "+420 603 332 056" [ref=f1e35] [cursor=pointer]:
+              - /url: tel:+420603332056
+          - generic [ref=f1e38]:
+            - heading "SluĹľby" [level=4] [ref=f1e39]
+            - link "StĹ™ĂhĂˇnĂ" [ref=f1e40] [cursor=pointer]:
+              - /url: "#"
+            - link "KoupĂˇnĂ a rozÄŤesĂˇnĂ" [ref=f1e41] [cursor=pointer]:
+              - /url: "#"
+            - link "TrimovĂˇnĂ" [ref=f1e42] [cursor=pointer]:
+              - /url: "#"
+            - link "VĂ˝stavnĂ Ăşpravy" [ref=f1e43] [cursor=pointer]:
+              - /url: "#"
+            - link "CenĂk" [ref=f1e44] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f1e45]:
+            - heading "Navigace" [level=4] [ref=f1e46]
+            - link "O mnÄ›" [ref=f1e47] [cursor=pointer]:
+              - /url: "#"
+            - link "Galerie" [ref=f1e48] [cursor=pointer]:
+              - /url: "#"
+            - link "Jak to probĂhĂˇ" [ref=f1e49] [cursor=pointer]:
+              - /url: "#"
+            - link "Recenze" [ref=f1e50] [cursor=pointer]:
+              - /url: "#"
+            - link "Dotazy" [ref=f1e51] [cursor=pointer]:
+              - /url: "#"
+            - link "Kontakt" [ref=f1e52] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f1e53]:
+          - paragraph [ref=f1e54]: "Â© 2026 Besy Â· Marie KasanovĂˇ, IÄŚO 65 703 278SĂdlo: Dr. JanskĂ©ho 668, 537 01 Chrudim II"
+          - navigation "PrĂˇvnĂ informace" [ref=f1e55]:
+            - link "ZĂˇsady zpracovĂˇnĂ osobnĂch ĂşdajĹŻ" [ref=f1e56] [cursor=pointer]:
+              - /url: "#"
+            - link "Rezervace a storno" [ref=f1e57] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=f1e58]:
+      - generic [ref=f1e59]:
+        - term [ref=f1e60]: VĂ˝Ĺˇka desktop
+        - definition [ref=f1e61]: 553 px â†’ 531 px
+      - generic [ref=f1e62]:
+        - term [ref=f1e63]: VĂ˝Ĺˇka mobil
+        - definition [ref=f1e64]: 1324 px â†’ 933 px
+      - generic [ref=f1e65]:
+        - term [ref=f1e66]: OdkazĹŻ celkem
+        - definition [ref=f1e67]: 13 â†’ 11
+      - generic [ref=f1e68]:
+        - term [ref=f1e69]: Z toho duplicit
+        - definition [ref=f1e70]: 4 â†’ 0
+  - generic [ref=f1e71]:
+    - generic [ref=f1e72]:
+      - heading "UĹľĹˇĂ okna" [level=2] [ref=f1e73]
+      - paragraph [ref=f1e74]: Na tabletu se znaÄŤka roztĂˇhne pĹ™es celou ĹˇĂĹ™ku a oba seznamy si stoupnou vedle sebe â€“ dva sloupce vyplnĂ mĹ™ĂĹľku beze zbytku. Dnes tam tĹ™i seznamy padaly jako 2+1 a nechĂˇvaly dĂru.
+    - generic [ref=f1e75]:
+      - figure "Tablet 1024 px vĂ˝Ĺˇka 373 px" [ref=f1e76]:
+        - generic [ref=f1e77]:
+          - generic [ref=f1e78]: Tablet
+          - generic [ref=f1e79]: 1024 px
+          - generic [ref=f1e80]: vĂ˝Ĺˇka 373 px
+        - generic [ref=f1e84]:
+          - generic [ref=f1e85]:
+            - generic [ref=f1e86]:
+              - link "Besy â€“ psĂ salon, domĹŻ" [ref=f1e87] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=f1e88]: Besy
+              - paragraph [ref=f1e89]: PĂ©ÄŤe o psy se srdcem
+              - generic [ref=f1e90]:
+                - generic [ref=f1e91]:
+                  - heading "Salon" [level=4] [ref=f1e92]
+                  - paragraph [ref=f1e93]: Dr. JanskĂ©ho 668537 01 Chrudim II
+                - generic [ref=f1e94]:
+                  - heading "OtevĂracĂ doba" [level=4] [ref=f1e95]
+                  - paragraph [ref=f1e96]: PevnĂˇ nenĂ,vĹľdy na domluvenĂ˝ termĂn
+              - link "+420 603 332 056" [ref=f1e97] [cursor=pointer]:
+                - /url: tel:+420603332056
+            - generic [ref=f1e100]:
+              - heading "SluĹľby" [level=4] [ref=f1e101]
+              - link "StĹ™ĂhĂˇnĂ" [ref=f1e102] [cursor=pointer]:
+                - /url: "#"
+              - link "KoupĂˇnĂ a rozÄŤesĂˇnĂ" [ref=f1e103] [cursor=pointer]:
+                - /url: "#"
+              - link "TrimovĂˇnĂ" [ref=f1e104] [cursor=pointer]:
+                - /url: "#"
+              - link "VĂ˝stavnĂ Ăşpravy" [ref=f1e105] [cursor=pointer]:
+                - /url: "#"
+              - link "CenĂk" [ref=f1e106] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f1e107]:
+              - heading "Navigace" [level=4] [ref=f1e108]
+              - link "O mnÄ›" [ref=f1e109] [cursor=pointer]:
+                - /url: "#"
+              - link "Galerie" [ref=f1e110] [cursor=pointer]:
+                - /url: "#"
+              - link "Jak to probĂhĂˇ" [ref=f1e111] [cursor=pointer]:
+                - /url: "#"
+              - link "Recenze" [ref=f1e112] [cursor=pointer]:
+                - /url: "#"
+              - link "Dotazy" [ref=f1e113] [cursor=pointer]:
+                - /url: "#"
+              - link "Kontakt" [ref=f1e114] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f1e115]:
+            - paragraph [ref=f1e116]: "Â© 2026 Besy Â· Marie KasanovĂˇ, IÄŚO 65 703 278SĂdlo: Dr. JanskĂ©ho 668, 537 01 Chrudim II"
+            - navigation "PrĂˇvnĂ informace" [ref=f1e117]:
+              - link "ZĂˇsady zpracovĂˇnĂ osobnĂch ĂşdajĹŻ" [ref=f1e118] [cursor=pointer]:
+                - /url: "#"
+              - link "Rezervace a storno" [ref=f1e119] [cursor=pointer]:
+                - /url: "#"
+      - figure "Mobil 390 px vĂ˝Ĺˇka 751 px" [ref=f1e120]:
+        - generic [ref=f1e121]:
+          - generic [ref=f1e122]: Mobil
+          - generic [ref=f1e123]: 390 px
+          - generic [ref=f1e124]: vĂ˝Ĺˇka 751 px
+        - generic [ref=f1e128]:
+          - generic [ref=f1e129]:
+            - generic [ref=f1e130]:
+              - link "Besy â€“ psĂ salon, domĹŻ" [ref=f1e131] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=f1e132]: Besy
+              - paragraph [ref=f1e133]: PĂ©ÄŤe o psy se srdcem
+              - generic [ref=f1e134]:
+                - generic [ref=f1e135]:
+                  - heading "Salon" [level=4] [ref=f1e136]
+                  - paragraph [ref=f1e137]: Dr. JanskĂ©ho 668537 01 Chrudim II
+                - generic [ref=f1e138]:
+                  - heading "OtevĂracĂ doba" [level=4] [ref=f1e139]
+                  - paragraph [ref=f1e140]: PevnĂˇ nenĂ,vĹľdy na domluvenĂ˝ termĂn
+              - link "+420 603 332 056" [ref=f1e141] [cursor=pointer]:
+                - /url: tel:+420603332056
+            - generic [ref=f1e144]:
+              - heading "SluĹľby" [level=4] [ref=f1e145]
+              - link "StĹ™ĂhĂˇnĂ" [ref=f1e146] [cursor=pointer]:
+                - /url: "#"
+              - link "KoupĂˇnĂ a rozÄŤesĂˇnĂ" [ref=f1e147] [cursor=pointer]:
+                - /url: "#"
+              - link "TrimovĂˇnĂ" [ref=f1e148] [cursor=pointer]:
+                - /url: "#"
+              - link "VĂ˝stavnĂ Ăşpravy" [ref=f1e149] [cursor=pointer]:
+                - /url: "#"
+              - link "CenĂk" [ref=f1e150] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f1e151]:
+              - heading "Navigace" [level=4] [ref=f1e152]
+              - link "O mnÄ›" [ref=f1e153] [cursor=pointer]:
+                - /url: "#"
+              - link "Galerie" [ref=f1e154] [cursor=pointer]:
+                - /url: "#"
+              - link "Jak to probĂhĂˇ" [ref=f1e155] [cursor=pointer]:
+                - /url: "#"
+              - link "Recenze" [ref=f1e156] [cursor=pointer]:
+                - /url: "#"
+              - link "Dotazy" [ref=f1e157] [cursor=pointer]:
+                - /url: "#"
+              - link "Kontakt" [ref=f1e158] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f1e159]:
+            - paragraph [ref=f1e160]: "Â© 2026 Besy Â· Marie KasanovĂˇ, IÄŚO 65 703 278SĂdlo: Dr. JanskĂ©ho 668, 537 01 Chrudim II"
+            - navigation "PrĂˇvnĂ informace" [ref=f1e161]:
+              - link "ZĂˇsady zpracovĂˇnĂ osobnĂch ĂşdajĹŻ" [ref=f1e162] [cursor=pointer]:
+                - /url: "#"
+              - link "Rezervace a storno" [ref=f1e163] [cursor=pointer]:
+                - /url: "#"
+  - generic [ref=f1e164]:
+    - heading "Co se mÄ›nĂ" [level=2] [ref=f1e166]
+    - generic [ref=f1e167]:
+      - generic [ref=f1e168]:
+        - generic [ref=f1e169]: Oprava
+        - paragraph [ref=f1e171]:
+          - text: TelefonnĂ tlaÄŤĂtko se pĹ™estane roztahovat. Selektor
+          - code [ref=f1e172]: .footer__top > div > a
+          - text: (specificita 0â€‘1â€‘2) pĹ™ebĂjĂ
+          - code [ref=f1e173]: .footer__cta
+          - text: (0â€‘1â€‘0), takĹľe tlaÄŤĂtko dostane
+          - code [ref=f1e174]: "display: block"
+          - text: ", roztĂˇhne se na 459 px a ikona vypadne z Ĺ™Ăˇdku. OdkazĹŻm dĂˇm vlastnĂ tĹ™Ădu"
+          - code [ref=f1e175]: .footer__link
+          - text: a ten selektor zruĹˇĂm â€“ zĂˇplata pĹ™es
+          - code [ref=f1e176]: :not()
+          - text: by past nechala nastraĹľenou.
+      - generic [ref=f1e177]:
+        - generic [ref=f1e178]: Sloupce
+        - paragraph [ref=f1e180]: "Ze ÄŤtyĹ™ na tĹ™i: ZnaÄŤka (logo, adresa, otevĂracĂ doba, telefon), SluĹľby a Navigace. Sloupce â€žSalonâ€ś a â€žNeĹľ pĹ™ijedeteâ€ś konÄŤĂ â€“ byly to vymyĹˇlenĂ© kategorie, kterĂ© se musely vycpat, aby mĹ™ĂĹľka nezela prĂˇzdnotou."
+      - generic [ref=f1e181]:
+        - generic [ref=f1e182]: Duplicity
+        - generic [ref=f1e183]:
+          - paragraph [ref=f1e184]: "ÄŚtyĹ™i odkazy mĂĹ™ily tam, kam uĹľ vedl odkaz o Ĺ™Ăˇdek vĂ˝Ĺˇ:"
+          - generic [ref=f1e185]:
+            - generic [ref=f1e186]:
+              - generic [ref=f1e187]: Co si pĹ™ipravit k telefonu
+              - generic [ref=f1e188]: "â†’ #jak-to-probiha, stejnÄ› jako â€žJak to probĂhĂˇâ€ś"
+            - generic [ref=f1e189]:
+              - generic [ref=f1e190]: ZacuchanĂˇ srst
+              - generic [ref=f1e191]: "â†’ #dotazy, stejnÄ› jako â€žÄŚastĂ© dotazyâ€ś"
+            - generic [ref=f1e192]:
+              - generic [ref=f1e193]: PĹ™ed a po
+              - generic [ref=f1e194]: â†’ pĹ™ejmenovĂˇno na â€žGalerieâ€ś podle liĹˇty
+      - generic [ref=f1e195]:
+        - generic [ref=f1e196]: Telefon
+        - paragraph [ref=f1e198]:
+          - text: ZĹŻstĂˇvĂˇ tlaÄŤĂtkem, jak jsi chtÄ›l â€“ jen koneÄŤnÄ› vykreslenĂ© sprĂˇvnÄ›, v pĹ™irozenĂ© ĹˇĂĹ™ce podle obsahu. ProvedenĂ je poĹ™Ăˇd
+          - code [ref=f1e199]: btn btn--light btn--sm
+          - text: ", tedy obtaĹľenĂˇ pilulka v krĂ©movĂ©."
+      - generic [ref=f1e200]:
+        - generic [ref=f1e201]: Reveal
+        - paragraph [ref=f1e203]:
+          - text: NiĹľĹˇĂ patiÄŤka znamenĂˇ, Ĺľe efekt odhalovĂˇnĂ zabere i na kratĹˇĂch oknech. PodmĂnka v
+          - code [ref=f1e204]: main.js
+          - text: znĂ
+          - code [ref=f1e205]: footerH + waveH + 24 â‰¤ innerHeight
+          - text: â€“ ÄŤĂm niĹľĹˇĂ patiÄŤka, tĂm menĹˇĂ okno ji jeĹˇtÄ› pustĂ.
+  - generic [ref=f1e206]:
+    - heading "NeĹľ to zapĂĹˇu do projektu" [level=2] [ref=f1e208]
+    - generic [ref=f1e209]:
+      - paragraph [ref=f1e211]:
+        - text: Tenhle nĂˇhled je samostatnĂˇ strĂˇnka â€“ do
+        - code [ref=f1e212]: index.html
+        - text: ani
+        - code [ref=f1e213]: css/styles.css
+        - text: jsem zatĂm nesĂˇhl. AĹľ Ĺ™ekneĹˇ, pĹ™epĂĹˇu patiÄŤku v obou souborech, srovnĂˇm breakpointy na 1024 a 480 px a doplnĂm sekci 4 v
+        - code [ref=f1e214]: BRIEF.md
+        - text: ", kde je poĹ™Ăˇd popsanĂˇ starĂˇ trojice sloupcĹŻ."
+      - paragraph [ref=f1e216]:
+        - text: "Jedna vÄ›c na rozmyĹˇlenou: tlaÄŤĂtko je obtaĹľenĂ©, ne plnĂ©. Na tmavĂ©m podkladu drĹľĂ zpĂˇtky, protoĹľe plnou zelenou nese CTA v sekci nad patiÄŤkou. Kdybys chtÄ›l v patiÄŤce vĂc dĹŻrazu, je to zmÄ›na jednĂ© tĹ™Ădy na"
+        - code [ref=f1e217]: btn--primary
+        - text: â€“ Ĺ™ekni a udÄ›lĂˇm to rovnou.

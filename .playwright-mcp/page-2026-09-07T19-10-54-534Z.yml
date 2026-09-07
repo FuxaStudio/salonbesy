@@ -1,0 +1,269 @@
+- generic [ref=f4e2]:
+  - banner [ref=f4e3]:
+    - paragraph [ref=f4e4]: Návrh · patička
+    - heading "Patička jako vizitka, ne rozcestník" [level=1] [ref=f4e5]
+    - paragraph [ref=f4e6]: "Tři sloupce místo čtyř: značka s kontaktem, služby, navigace. Patičky níž jsou vykreslené doopravdy – stejné tokeny, fonty i logo jako web –, takže si je můžeš zvětšit a prohlédnout zblízka."
+  - generic [ref=f4e7]:
+    - generic [ref=f4e8]:
+      - heading "Desktop, 1440 px" [level=2] [ref=f4e9]
+      - paragraph [ref=f4e10]: Přepni mezi dneškem a návrhem.
+    - group "Varianta patičky" [ref=f4e11]:
+      - button "Návrh" [pressed] [ref=f4e12]
+      - button "Dnes" [ref=f4e13]
+    - figure "Návrh výška 488 px" [ref=f4e14]:
+      - generic [ref=f4e15]:
+        - generic [ref=f4e16]: Návrh
+        - generic [ref=f4e17]: výška 488 px
+      - generic [ref=f4e22]:
+        - generic [ref=f4e23]:
+          - generic [ref=f4e24]:
+            - link "Besy – psí salon, domů" [ref=f4e25] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f4e26]: Besy
+            - paragraph [ref=f4e27]: Péče o psy se srdcem
+            - generic [ref=f4e28]:
+              - generic [ref=f4e29]:
+                - heading "Salon a sídlo" [level=4] [ref=f4e30]
+                - paragraph [ref=f4e31]: Dr. Janského 668537 01 Chrudim II
+              - generic [ref=f4e32]:
+                - heading "Otevírací doba" [level=4] [ref=f4e33]
+                - paragraph [ref=f4e34]: Pevná není,vždy na domluvený termín
+            - link "+420 603 332 056" [ref=f4e35] [cursor=pointer]:
+              - /url: tel:+420603332056
+          - generic [ref=f4e38]:
+            - heading "Služby" [level=4] [ref=f4e39]
+            - link "Stříhání" [ref=f4e40] [cursor=pointer]:
+              - /url: "#"
+            - link "Koupání a rozčesání" [ref=f4e41] [cursor=pointer]:
+              - /url: "#"
+            - link "Trimování" [ref=f4e42] [cursor=pointer]:
+              - /url: "#"
+            - link "Výstavní úpravy" [ref=f4e43] [cursor=pointer]:
+              - /url: "#"
+            - link "Ceník" [ref=f4e44] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=f4e45]:
+            - heading "Navigace" [level=4] [ref=f4e46]
+            - link "O mně" [ref=f4e47] [cursor=pointer]:
+              - /url: "#"
+            - link "Galerie" [ref=f4e48] [cursor=pointer]:
+              - /url: "#"
+            - link "Jak to probíhá" [ref=f4e49] [cursor=pointer]:
+              - /url: "#"
+            - link "Recenze" [ref=f4e50] [cursor=pointer]:
+              - /url: "#"
+            - link "Dotazy" [ref=f4e51] [cursor=pointer]:
+              - /url: "#"
+            - link "Kontakt" [ref=f4e52] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=f4e53]:
+          - paragraph [ref=f4e54]: © 2026 Besy · Marie Kasanová, IČO 65 703 278 · zapsána v živnostenském rejstříku
+          - paragraph [ref=f4e55]:
+            - text: "Realizace webu:"
+            - link "FuxaStudio" [ref=f4e56] [cursor=pointer]:
+              - /url: https://fuxastudio.cz/
+    - generic [ref=f4e57]:
+      - generic [ref=f4e58]:
+        - term [ref=f4e59]: Výška desktop
+        - definition [ref=f4e60]: 529 px → 488 px
+      - generic [ref=f4e61]:
+        - term [ref=f4e62]: Výška mobil
+        - definition [ref=f4e63]: 1324 px → 865 px
+      - generic [ref=f4e64]:
+        - term [ref=f4e65]: Odkazů ve sloupcích
+        - definition [ref=f4e66]: 13 → 11
+      - generic [ref=f4e67]:
+        - term [ref=f4e68]: Z toho duplicit
+        - definition [ref=f4e69]: 4 → 0
+  - generic [ref=f4e70]:
+    - generic [ref=f4e71]:
+      - heading "Užší okna" [level=2] [ref=f4e72]
+      - paragraph [ref=f4e73]: Na tabletu se značka roztáhne přes celou šířku a oba seznamy si stoupnou vedle sebe – dva sloupce vyplní mřížku beze zbytku. Dnes tam tři seznamy padaly jako 2+1 a nechávaly díru.
+    - generic [ref=f4e74]:
+      - figure "Tablet 1024 px výška 786 px" [ref=f4e75]:
+        - generic [ref=f4e76]:
+          - generic [ref=f4e77]: Tablet
+          - generic [ref=f4e78]: 1024 px
+          - generic [ref=f4e79]: výška 786 px
+        - generic [ref=f4e83]:
+          - generic [ref=f4e84]:
+            - generic [ref=f4e85]:
+              - link "Besy – psí salon, domů" [ref=f4e86] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=f4e87]: Besy
+              - paragraph [ref=f4e88]: Péče o psy se srdcem
+              - generic [ref=f4e89]:
+                - generic [ref=f4e90]:
+                  - heading "Salon a sídlo" [level=4] [ref=f4e91]
+                  - paragraph [ref=f4e92]: Dr. Janského 668537 01 Chrudim II
+                - generic [ref=f4e93]:
+                  - heading "Otevírací doba" [level=4] [ref=f4e94]
+                  - paragraph [ref=f4e95]: Pevná není,vždy na domluvený termín
+              - link "+420 603 332 056" [ref=f4e96] [cursor=pointer]:
+                - /url: tel:+420603332056
+            - generic [ref=f4e99]:
+              - heading "Služby" [level=4] [ref=f4e100]
+              - link "Stříhání" [ref=f4e101] [cursor=pointer]:
+                - /url: "#"
+              - link "Koupání a rozčesání" [ref=f4e102] [cursor=pointer]:
+                - /url: "#"
+              - link "Trimování" [ref=f4e103] [cursor=pointer]:
+                - /url: "#"
+              - link "Výstavní úpravy" [ref=f4e104] [cursor=pointer]:
+                - /url: "#"
+              - link "Ceník" [ref=f4e105] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f4e106]:
+              - heading "Navigace" [level=4] [ref=f4e107]
+              - link "O mně" [ref=f4e108] [cursor=pointer]:
+                - /url: "#"
+              - link "Galerie" [ref=f4e109] [cursor=pointer]:
+                - /url: "#"
+              - link "Jak to probíhá" [ref=f4e110] [cursor=pointer]:
+                - /url: "#"
+              - link "Recenze" [ref=f4e111] [cursor=pointer]:
+                - /url: "#"
+              - link "Dotazy" [ref=f4e112] [cursor=pointer]:
+                - /url: "#"
+              - link "Kontakt" [ref=f4e113] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f4e114]:
+            - paragraph [ref=f4e115]: © 2026 Besy · Marie Kasanová, IČO 65 703 278 · zapsána v živnostenském rejstříku
+            - paragraph [ref=f4e116]:
+              - text: "Realizace webu:"
+              - link "FuxaStudio" [ref=f4e117] [cursor=pointer]:
+                - /url: https://fuxastudio.cz/
+      - figure "Mobil 390 px výška 865 px" [ref=f4e118]:
+        - generic [ref=f4e119]:
+          - generic [ref=f4e120]: Mobil
+          - generic [ref=f4e121]: 390 px
+          - generic [ref=f4e122]: výška 865 px
+        - generic [ref=f4e126]:
+          - generic [ref=f4e127]:
+            - generic [ref=f4e128]:
+              - link "Besy – psí salon, domů" [ref=f4e129] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=f4e130]: Besy
+              - paragraph [ref=f4e131]: Péče o psy se srdcem
+              - generic [ref=f4e132]:
+                - generic [ref=f4e133]:
+                  - heading "Salon a sídlo" [level=4] [ref=f4e134]
+                  - paragraph [ref=f4e135]: Dr. Janského 668537 01 Chrudim II
+                - generic [ref=f4e136]:
+                  - heading "Otevírací doba" [level=4] [ref=f4e137]
+                  - paragraph [ref=f4e138]: Pevná není,vždy na domluvený termín
+              - link "+420 603 332 056" [ref=f4e139] [cursor=pointer]:
+                - /url: tel:+420603332056
+            - generic [ref=f4e142]:
+              - heading "Služby" [level=4] [ref=f4e143]
+              - link "Stříhání" [ref=f4e144] [cursor=pointer]:
+                - /url: "#"
+              - link "Koupání a rozčesání" [ref=f4e145] [cursor=pointer]:
+                - /url: "#"
+              - link "Trimování" [ref=f4e146] [cursor=pointer]:
+                - /url: "#"
+              - link "Výstavní úpravy" [ref=f4e147] [cursor=pointer]:
+                - /url: "#"
+              - link "Ceník" [ref=f4e148] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f4e149]:
+              - heading "Navigace" [level=4] [ref=f4e150]
+              - link "O mně" [ref=f4e151] [cursor=pointer]:
+                - /url: "#"
+              - link "Galerie" [ref=f4e152] [cursor=pointer]:
+                - /url: "#"
+              - link "Jak to probíhá" [ref=f4e153] [cursor=pointer]:
+                - /url: "#"
+              - link "Recenze" [ref=f4e154] [cursor=pointer]:
+                - /url: "#"
+              - link "Dotazy" [ref=f4e155] [cursor=pointer]:
+                - /url: "#"
+              - link "Kontakt" [ref=f4e156] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f4e157]:
+            - paragraph [ref=f4e158]: © 2026 Besy · Marie Kasanová, IČO 65 703 278 · zapsána v živnostenském rejstříku
+            - paragraph [ref=f4e159]:
+              - text: "Realizace webu:"
+              - link "FuxaStudio" [ref=f4e160] [cursor=pointer]:
+                - /url: https://fuxastudio.cz/
+  - generic [ref=f4e161]:
+    - heading "Co se mění" [level=2] [ref=f4e163]
+    - generic [ref=f4e164]:
+      - generic [ref=f4e165]:
+        - generic [ref=f4e166]: Oprava
+        - paragraph [ref=f4e168]:
+          - text: Telefonní tlačítko se přestane roztahovat. Selektor
+          - code [ref=f4e169]: .footer__top > div > a
+          - text: (specificita 0‑1‑2) přebíjí
+          - code [ref=f4e170]: .footer__cta
+          - text: (0‑1‑0), takže tlačítko dostane
+          - code [ref=f4e171]: "display: block"
+          - text: ", roztáhne se na 459 px a ikona vypadne z řádku. Odkazům dám vlastní třídu"
+          - code [ref=f4e172]: .footer__link
+          - text: a ten selektor zruším – záplata přes
+          - code [ref=f4e173]: :not()
+          - text: by past nechala nastraženou.
+      - generic [ref=f4e174]:
+        - generic [ref=f4e175]: Sloupce
+        - paragraph [ref=f4e177]: "Ze čtyř na tři: Značka (logo, adresa, otevírací doba, telefon), Služby a Navigace. Sloupce „Salon“ a „Než přijedete“ končí – byly to vymyšlené kategorie, které se musely vycpat, aby mřížka nezela prázdnotou."
+      - generic [ref=f4e178]:
+        - generic [ref=f4e179]: Duplicity
+        - generic [ref=f4e180]:
+          - paragraph [ref=f4e181]: "Čtyři odkazy mířily tam, kam už vedl odkaz o řádek výš:"
+          - generic [ref=f4e182]:
+            - generic [ref=f4e183]:
+              - generic [ref=f4e184]: Co si připravit k telefonu
+              - generic [ref=f4e185]: "→ #jak-to-probiha, stejně jako „Jak to probíhá“"
+            - generic [ref=f4e186]:
+              - generic [ref=f4e187]: Zacuchaná srst
+              - generic [ref=f4e188]: "→ #dotazy, stejně jako „Časté dotazy“"
+            - generic [ref=f4e189]:
+              - generic [ref=f4e190]: Rezervace a storno
+              - generic [ref=f4e191]: "→ #dotazy, kde to stejně je"
+            - generic [ref=f4e192]:
+              - generic [ref=f4e193]: Před a po
+              - generic [ref=f4e194]: → přejmenováno na „Galerie“ podle lišty
+      - generic [ref=f4e195]:
+        - generic [ref=f4e196]: Spodní řádek
+        - generic [ref=f4e197]:
+          - paragraph [ref=f4e198]: "Ze dvou řádků jeden. „Sídlo: Dr. Janského 668“ opakovalo slovo od slova adresu salonu o dva řádky výš – popisek v levém sloupci proto zní „Salon a sídlo“ a adresa je na stránce jen jednou."
+          - paragraph [ref=f4e199]: Právní údaje zůstávají, jen se zhustily. Přibylo „zapsána v živnostenském rejstříku“ – § 435 občanského zákoníku ho po webu podnikatele chce a v patičce dosud chyběl. IČO se nikam nestěhuje, je pořád tam, kde bylo.
+      - generic [ref=f4e200]:
+        - generic [ref=f4e201]: Vpravo dole
+        - paragraph [ref=f4e203]: "Místo dvou odkazů Realizace webu: FuxaStudio, otevře se v nové kartě. Zásady zpracování osobních údajů odcházejí: web nemá formulář, cookies ani analytiku, objednává se telefonem, takže není co popisovat. Kdyby přibyl formulář, pixel nebo měření návštěvnosti, musí se odkaz vrátit."
+      - generic [ref=f4e204]:
+        - generic [ref=f4e205]: Telefon
+        - paragraph [ref=f4e207]:
+          - text: Zůstává tlačítkem, jak jsi chtěl – jen konečně vykreslené správně, v přirozené šířce podle obsahu. Provedení je pořád
+          - code [ref=f4e208]: btn btn--light btn--sm
+          - text: ", tedy obtažená pilulka v krémové."
+      - generic [ref=f4e209]:
+        - generic [ref=f4e210]: Reveal
+        - paragraph [ref=f4e212]:
+          - text: Nižší patička znamená, že efekt odhalování zabere i na kratších oknech. Podmínka v
+          - code [ref=f4e213]: main.js
+          - text: zní
+          - code [ref=f4e214]: footerH + waveH + 24 ≤ innerHeight
+          - text: – čím nižší patička, tím menší okno ji ještě pustí.
+  - generic [ref=f4e215]:
+    - heading "Než to zapíšu do projektu" [level=2] [ref=f4e217]
+    - generic [ref=f4e218]:
+      - paragraph [ref=f4e220]:
+        - text: Tenhle náhled je samostatná stránka – do
+        - code [ref=f4e221]: index.html
+        - text: ani
+        - code [ref=f4e222]: css/styles.css
+        - text: jsem zatím nesáhl. Až řekneš, přepíšu patičku v obou souborech, srovnám breakpointy na 1024 a 480 px, škrtnu řádek o zásadách zpracování z checklistu „PŘED SPUŠTĚNÍM DOPLNIT“ a doplním sekci 4 v
+        - code [ref=f4e223]: BRIEF.md
+        - text: ", kde je pořád popsaná stará trojice sloupců."
+      - generic [ref=f4e224]:
+        - paragraph [ref=f4e225]:
+          - text: "Zbývá rozhodnout: tlačítko je obtažené, ne plné. Na tmavém podkladu drží zpátky, protože plnou zelenou nese CTA v sekci nad patičkou. Kdybys chtěl v patičce víc důrazu, je to změna jedné třídy na"
+          - code [ref=f4e226]: btn--primary
+          - text: .
+        - paragraph [ref=f4e227]:
+          - text: "A jedna nabídka: IČO je na webu jen jako text. Do"
+          - code [ref=f4e228]: LocalBusiness
+          - text: v JSON‑LD se dá přidat
+          - code [ref=f4e229]: "\"taxID\": \"65703278\""
+          - text: – nepovinné, ale bylo by to jediné strojově čitelné místo, kde IČO je.

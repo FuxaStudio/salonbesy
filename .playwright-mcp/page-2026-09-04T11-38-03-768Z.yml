@@ -1,0 +1,192 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: Besy Â· sekce O nĂˇs
+      - heading [level=1] [ref=e5]:
+        - text: Kam s
+        - emphasis [ref=e6]: pohĂˇry
+      - paragraph [ref=e7]: ÄŚtyĹ™i zpĹŻsoby, jak dostat Mariina ocenÄ›nĂ do sekce â€žSalon vede Marieâ€ś. KaĹľdĂ˝ nĂˇhled je vykreslenĂ˝ ve skuteÄŤnĂ© paletÄ› a typografii webu, takĹľe vidĂĹˇ, jak by to na strĂˇnce opravdu vypadalo.
+      - paragraph [ref=e8]:
+        - text: Projdi je a napiĹˇ mi pĂsmeno â€“ zbytek dodÄ›lĂˇme v
+        - code [ref=e9]: index.html
+        - text: . KlidnÄ› i kombinaci, A a B jdou dohromady.
+      - generic [ref=e10]: NĂˇzvy soutÄ›ĹľĂ, roky i poÄŤty jsou vymyĹˇlenĂ© vzorky, aby byl vidÄ›t rytmus sazby. SkuteÄŤnĂˇ ocenÄ›nĂ mi poĹˇli a pĹ™epĂĹˇu je.
+  - main [ref=e14]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [aria-hidden] [ref=e18]: A
+        - generic [ref=e19]:
+          - heading "Odznak na fotce" [level=2] [ref=e20]
+          - paragraph [ref=e21]: Jedno ÄŤĂslo v koleÄŤku na kraji portrĂ©tu. Nikde se nevypisuje, co pĹ™esnÄ› Marie vyhrĂˇla â€“ jen se v jednom pohledu Ĺ™ekne, Ĺľe jich je hodnÄ›. Do strĂˇnky nepĹ™idĂˇ ani Ĺ™Ăˇdek textu.
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: NĂˇhled Â· sekce O nĂˇs
+          - generic [ref=e25]: varianta A
+        - generic [ref=e27]:
+          - figure [ref=e28]:
+            - img "PortrĂ©t Marie, majitelky salonu, se psem v nĂˇruÄŤĂ" [ref=e30]
+            - generic [ref=e32]:
+              - generic [ref=e33]: 14Ă—
+              - generic [ref=e34]: ocenÄ›nĂˇ
+          - generic [ref=e35]:
+            - paragraph [ref=e36]: Poznejte Besy
+            - paragraph [ref=e37]:
+              - text: Salon vede
+              - emphasis [ref=e38]: Marie
+            - paragraph [ref=e39]: Psy stĹ™ĂhĂˇm dvanĂˇctĂ˝m rokem. VyuÄŤila jsem se v praĹľskĂ©m salonu, proĹˇla kurzem trimovĂˇnĂ drsnosrstĂ˝ch plemen a kaĹľdĂ˝ rok jezdĂm na doĹˇkolenĂ.
+            - paragraph [ref=e40]: V salonu je vĹľdycky jen jeden pes. Ĺ˝ĂˇdnĂ© ÄŤekĂˇnĂ v boxu, ĹľĂˇdnĂ˝ ĹˇtÄ›kot okolo â€“ jen vy, vĂˇĹˇ pejsek a jĂˇ.
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: SedĂ, kdyĹľ
+          - paragraph [ref=e47]: NechceĹˇ sekci prodluĹľovat a staÄŤĂ ti, Ĺľe si nĂˇvĹˇtÄ›vnĂk vĹˇimne ÄŤĂsla. Funguje i bez jedinĂ© fotky pohĂˇru.
+        - generic [ref=e48]:
+          - generic [ref=e49]: PoÄŤĂtej s tĂm
+          - paragraph [ref=e53]: SamotnĂ© ÄŤĂslo nedokazuje nic â€“ kdo je skeptickĂ˝, pĹ™ejde ho. A odznak zabĂrĂˇ roh fotky, takĹľe portrĂ©t musĂ mĂt volnĂ© mĂsto tam, kde koleÄŤko sedĂ.
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [aria-hidden] [ref=e57]: B
+        - generic [ref=e58]:
+          - heading "VĂ˝pis pod textem doporuÄŤuju" [level=2] [ref=e59]:
+            - text: VĂ˝pis pod textem
+            - generic [ref=e60]: doporuÄŤuju
+          - paragraph [ref=e61]: "TĹ™i aĹľ ÄŤtyĹ™i nejsilnÄ›jĹˇĂ ocenÄ›nĂ jako sazba pod odstavci: rok, umĂstÄ›nĂ, soutÄ›Ĺľ. KonkrĂ©tnĂ jmĂ©na a roky jsou to, ÄŤemu ÄŤlovÄ›k vÄ›Ĺ™Ă â€“ â€ž1. mĂsto, MistrovstvĂ ÄŚR 2025â€ś unese vĂc neĹľ jakĂ©koli ÄŤĂslo v koleÄŤku."
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]: NĂˇhled Â· pravĂ˝ sloupec sekce
+          - generic [ref=e65]: varianta B
+        - generic [ref=e67]:
+          - paragraph [ref=e68]: Poznejte Besy
+          - paragraph [ref=e69]:
+            - text: Salon vede
+            - emphasis [ref=e70]: Marie
+          - paragraph [ref=e71]: Psy stĹ™ĂhĂˇm dvanĂˇctĂ˝m rokem. VyuÄŤila jsem se v praĹľskĂ©m salonu, proĹˇla kurzem trimovĂˇnĂ drsnosrstĂ˝ch plemen a kaĹľdĂ˝ rok jezdĂm na doĹˇkolenĂ.
+          - paragraph [ref=e72]: V salonu je vĹľdycky jen jeden pes â€“ jen vy, vĂˇĹˇ pejsek a jĂˇ.
+          - generic [ref=e73]:
+            - generic [ref=e74]: Ze soutÄ›ĹľĂ
+            - list [ref=e78]:
+              - listitem [ref=e79]:
+                - generic [ref=e80]: "2025"
+                - generic [ref=e81]: 1. mĂsto â€” MistrovstvĂ ÄŚR v ĂşpravÄ› psĹŻ, kategorie teriĂ©Ĺ™i
+              - listitem [ref=e82]:
+                - generic [ref=e83]: "2024"
+                - generic [ref=e84]: 2. mĂsto â€” Grooming Cup Praha, ruÄŤnĂ trimovĂˇnĂ
+              - listitem [ref=e85]:
+                - generic [ref=e86]: "2023"
+                - generic [ref=e87]: 1. mĂsto â€” Czech Grooming Open, pudli
+            - paragraph [ref=e88]: A dalĹˇĂch jedenĂˇct umĂstÄ›nĂ od roku 2016
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]: SedĂ, kdyĹľ
+          - paragraph [ref=e97]: MĂˇĹˇ seznam ocenÄ›nĂ s roky a nĂˇzvy soutÄ›ĹľĂ. NepotĹ™ebuje ĹľĂˇdnou fotku, drĹľĂ se stĂˇvajĂcĂho layoutu a dĂˇ se kdykoli doplnit o dalĹˇĂ Ĺ™Ăˇdek.
+        - generic [ref=e98]:
+          - generic [ref=e99]: PoÄŤĂtej s tĂm
+          - paragraph [ref=e103]: VĂc neĹľ ÄŤtyĹ™i Ĺ™Ăˇdky sekci utopĂ â€“ zbytek shrne poslednĂ vÄ›ta. TextovĂ˝ sloupec taky povyroste, takĹľe na desktopu bude o kus vyĹˇĹˇĂ neĹľ fotka vedle.
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [aria-hidden] [ref=e107]: C
+        - generic [ref=e108]:
+          - heading "VitrĂna pohĂˇrĹŻ" [level=2] [ref=e109]
+          - paragraph [ref=e110]: "MĹ™ĂĹľka fotek skuteÄŤnĂ˝ch pohĂˇrĹŻ a medailĂ s popiskem, vsazenĂˇ pod sekci O nĂˇs. Ze vĹˇech variant je nejpĹ™esvÄ›dÄŤivÄ›jĹˇĂ â€“ pohĂˇry jsou vidÄ›t â€“ a zĂˇroveĹ\x88 nejnĂˇroÄŤnÄ›jĹˇĂ na podklady."
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]: NĂˇhled Â· pod odstavci o Marii
+          - generic [ref=e114]: varianta C
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - paragraph [ref=e117]:
+              - text: PohĂˇry z
+              - emphasis [ref=e118]: groomingovĂ˝ch soutÄ›ĹľĂ
+            - paragraph [ref=e119]: Vzorek â€“ sem pĹ™ijdou fotky ze salonu
+          - generic [ref=e120]:
+            - figure "MistrovstvĂ ÄŚR 2025 1. mĂsto, teriĂ©Ĺ™i" [ref=e121]:
+              - generic [ref=e125]:
+                - generic [ref=e126]: MistrovstvĂ ÄŚR 2025
+                - text: 1. mĂsto, teriĂ©Ĺ™i
+            - figure "Grooming Cup 2024 2. mĂsto, trimovĂˇnĂ" [ref=e127]:
+              - generic [ref=e131]:
+                - generic [ref=e132]: Grooming Cup 2024
+                - text: 2. mĂsto, trimovĂˇnĂ
+            - figure "Czech Open 2023 1. mĂsto, pudli" [ref=e133]:
+              - generic [ref=e137]:
+                - generic [ref=e138]: Czech Open 2023
+                - text: 1. mĂsto, pudli
+            - figure "MistrovstvĂ ÄŚR 2022 3. mĂsto, malĂˇ plemena" [ref=e139]:
+              - generic [ref=e143]:
+                - generic [ref=e144]: MistrovstvĂ ÄŚR 2022
+                - text: 3. mĂsto, malĂˇ plemena
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]: SedĂ, kdyĹľ
+          - paragraph [ref=e151]: "MĂˇĹˇ pohĂˇry vyfocenĂ© na jednotnĂ©m pozadĂ, aspoĹ\x88 1600 px na delĹˇĂ stranÄ›. NejsilnÄ›jĹˇĂ dĹŻkaz, jakĂ˝ na strĂˇnku mĹŻĹľeĹˇ dĂˇt."
+        - generic [ref=e152]:
+          - generic [ref=e153]: PoÄŤĂtej s tĂm
+          - paragraph [ref=e157]: RozhĂˇzenĂ© fotky na rĹŻznĂ˝ch pozadĂch vypadajĂ hĹŻĹ™ neĹľ ĹľĂˇdnĂ©. Sekce se vĂ˝raznÄ› prodlouĹľĂ a galerie pĹ™ed / po se posune nĂĹľ â€“ a ta prodĂˇvĂˇ lĂp.
+    - generic [ref=e159]:
+      - generic [ref=e160]:
+        - generic [aria-hidden] [ref=e161]: D
+        - generic [ref=e162]:
+          - heading "PĂˇs pĹ™es celou ĹˇĂĹ™ku" [level=2] [ref=e163]
+          - paragraph [ref=e164]: BĂlĂˇ karta mezi sekcĂ O nĂˇs a sluĹľbami â€“ stejnĂ˝ prvek, jakĂ˝ uĹľ na strĂˇnce je (pĂˇs pÄ›ti vĂ˝hod), jen s ocenÄ›nĂmi. NĂˇvĹˇtÄ›vnĂk ho nemine ani pĹ™i rychlĂ©m scrollovĂˇnĂ.
+      - generic [ref=e165]:
+        - generic [ref=e166]:
+          - generic [ref=e167]: NĂˇhled Â· mezi sekcemi O nĂˇs a SluĹľby
+          - generic [ref=e168]: varianta D
+        - generic [ref=e170]:
+          - generic [ref=e174]:
+            - text: 14Ă—
+            - generic [ref=e175]: ocenÄ›nĂˇ
+          - list [ref=e176]:
+            - listitem [ref=e177]:
+              - generic [ref=e178]: MistrovstvĂ ÄŚR 2025
+              - text: 1. mĂsto, teriĂ©Ĺ™i
+            - listitem [ref=e179]:
+              - generic [ref=e180]: Grooming Cup 2024
+              - text: 2. mĂsto, ruÄŤnĂ trimovĂˇnĂ
+            - listitem [ref=e181]:
+              - generic [ref=e182]: Czech Grooming Open 2023
+              - text: 1. mĂsto, pudli
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - generic [ref=e185]: SedĂ, kdyĹľ
+          - paragraph [ref=e189]: ChceĹˇ, aby ocenÄ›nĂ vidÄ›l i ten, kdo sekci O nĂˇs pĹ™eskoÄŤĂ. PouĹľĂvĂˇ hotovou komponentu, takĹľe je to nejrychlejĹˇĂ Ăşprava.
+        - generic [ref=e190]:
+          - generic [ref=e191]: PoÄŤĂtej s tĂm
+          - paragraph [ref=e195]: DvÄ› skoro stejnĂ© bĂlĂ© karty pod sebou (vĂ˝hody a ocenÄ›nĂ) se navzĂˇjem oslabĂ. BuÄŹ se jedna z nich odliĹˇĂ, nebo se vĂ˝hody a ocenÄ›nĂ spojĂ do jednoho pĂˇsu.
+  - generic [ref=e197]:
+    - heading "Co k tomu potĹ™ebuju" [level=2] [ref=e198]
+    - paragraph [ref=e199]: AĹĄ padne jakĂˇkoli varianta, tohle je jedinĂ©, co musĂ pĹ™ijĂt od Marie â€“ bez toho se dĂˇ vysĂˇzet jen rozvrĹľenĂ, ne obsah.
+    - generic [ref=e200]:
+      - generic [ref=e201]:
+        - heading "Seznam ocenÄ›nĂ" [level=3] [ref=e202]
+        - list [ref=e203]:
+          - listitem [ref=e204]: rok, pĹ™esnĂ˝ nĂˇzev soutÄ›Ĺľe, umĂstÄ›nĂ a kategorie
+          - listitem [ref=e205]: tĹ™i aĹľ ÄŤtyĹ™i, kterĂˇ povaĹľuje za nejsilnÄ›jĹˇĂ
+          - listitem [ref=e206]: celkovĂ˝ poÄŤet, pokud chceme ÄŤĂslo do odznaku
+      - generic [ref=e207]:
+        - heading "Fotky (jen u varianty C)" [level=3] [ref=e208]
+        - list [ref=e209]:
+          - listitem [ref=e210]: "pohĂˇry nafocenĂ© na jednotnĂ©m pozadĂ, aspoĹ\x88 1600 px"
+          - listitem [ref=e211]: ideĂˇlnÄ› vĹˇechny najednou, ne kaĹľdĂ˝ jinde a jindy
+          - listitem [ref=e212]:
+            - text: patĹ™Ă do
+            - code [ref=e213]: images/
+            - text: ", ne do"
+            - code [ref=e214]: images/demo/
+      - generic [ref=e215]:
+        - heading "Co doplnĂm jĂˇ" [level=3] [ref=e216]
+        - list [ref=e217]:
+          - listitem [ref=e218]:
+            - text: ikonu pohĂˇru jako novĂ˝
+            - code [ref=e219]: "#i-trophy"
+            - text: do defs
+          - listitem [ref=e220]:
+            - text: styly do
+            - code [ref=e221]: css/styles.css
+            - text: ke stĂˇvajĂcĂ sekci
+            - code [ref=e222]: .about
+          - listitem [ref=e223]:
+            - text: ocenÄ›nĂ do
+            - code [ref=e224]: LocalBusiness
+            - text: jako vlastnost
+            - code [ref=e225]: award
+            - text: â€“ platnĂ© oznaÄŤenĂ, Google z nÄ›j sice nedÄ›lĂˇ rich result, ale je to korektnĂ Ăşdaj navĂc

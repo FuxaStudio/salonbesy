@@ -1,0 +1,1410 @@
+/* =========================================================
+   Besy · psí salon – styly
+   Tokeny převzaty z palety originálu (upperhound.co.uk)
+   ========================================================= */
+:root {
+  --primary-50: #f4f7ee;
+  --primary-100: #e7ecdb;
+  --primary-200: #d0dbbb;
+  --primary-300: #b1c492;
+  --primary-400: #94ad6e;
+  --primary-500: #6d854a;
+  --primary-600: #5c733d;
+  --primary-700: #485932;
+  --primary-900: #343f28;
+  --primary-950: #1a2112;
+  --cream: #fff9f1;
+  --white: #fff;
+  --orange: #f6ae2d;
+  --peru: #bd9058;
+  --dark: #3a3c36;
+  /* --grey a --text-3 jsou o stupen tmavsi, nez byly (#7a816f / #757575).
+     V puvodnich hodnotach nedosahl doprovodny text na 4,5:1 podle WCAG AA:
+     perex v hero mel 3,35, sedive popisky 4,25 az 4,40. Olivovy nadech
+     --grey zustal, jen ztmavl - je to porad ta sama barva, ne nova. */
+  --grey: #646b5b;
+  --text-2: #3b3b3b;
+  --text-3: #6b6b6b;
+
+  /* display = nadpisy a logo, body = bezny text; nazvy popisuji roli, ne tvar,
+     protoze obe pisma jsou bezpatkova */
+  --font-display: "Baloo 2", "Segoe UI", sans-serif;
+  --font-body: "Karla", "Segoe UI", sans-serif;
+
+  --radius-btn: 2.5rem;
+  --radius-card: 1rem;
+  --radius-card-sm: .5rem;
+  --shadow: 0 8px 14px rgba(67, 73, 58, .04), 0 1px 3px rgba(67, 73, 58, .05);
+  --shadow-lg: 0 18px 40px rgba(67, 73, 58, .10);
+
+  --section-pad: clamp(3.5rem, 7vw, 6rem);
+  --wave-h: clamp(36px, 4.8vw, 72px);
+  /* sirka obsahu kopiruje upperhound.co.uk: do 1440 px ridi okraje --gutter,
+     nad 1440 px roste dal stejnym tempem (85rem @1440 -> ~95.6rem @1920) */
+  --container: clamp(85rem, 53.125rem + 35.4vw, 120rem);
+  --gutter: 2.5rem;
+}
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-2);
+  background: var(--cream);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg, iframe { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+ul { list-style: none; }
+figure { margin: 0; }
+.svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+[hidden] { display: none !important; }
+/* kotvy nesmi skoncit pod sticky navigaci (vyska .nav__inner je 5rem) */
+section[id], main[id] { scroll-margin-top: 5.75rem; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+/* Skip link. Neschovava se pres .sr-only, ale vysunutim nad okno - takhle
+   zustane fokusovatelny a po Tabu sjede dolu, misto aby skocil bez animace.
+   z-index nad listu (60) i nad rozbalenou nabidku sluzeb (70). */
+.skip-link {
+  position: fixed; top: 0; left: 50%; z-index: 120;
+  transform: translate(-50%, -120%);
+  padding: .7rem 1.4rem; border-radius: 0 0 var(--radius-card) var(--radius-card);
+  background: var(--primary-700); color: var(--cream);
+  font-size: .95rem; font-weight: 500;
+  transition: transform .2s ease;
+}
+.skip-link:focus-visible { transform: translate(-50%, 0); outline: none; }
+/* cil skip linku dostal tabindex="-1", aby na nej fokus opravdu skocil;
+   bez tohohle by prohlizec obtahl prstencem celou stranku */
+main:focus { outline: none; }
+
+/* ---------- fokus ----------
+   Jednotny prstenec pro vsechno, co jde zaostrit klavesnici. Do ted mel vlastni
+   jen pas oceneni, galerie, FAQ a lightbox - zbytek stranky (tlacitka, odkazy
+   v liste i v paticce, zalozky ceniku) bral vychozi cerny prstenec prohlizece,
+   ktery do olivove palety nesedi. :where() ma nulovou specificitu, takze ta
+   ctyri mistni pravidla dal vyhravaji. */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary-600);
+  outline-offset: 3px;
+}
+/* na tmave paticce by zelena splynula */
+.footer :where(a, button):focus-visible { outline-color: var(--cream); }
+
+/* ---------- typografie ---------- */
+h1, h2, h3, .h-medium {
+  font-family: var(--font-display);
+  font-weight: 700;
+  /* Baloo 2 ma vysoke svisle metriky, pod 1.15 se dvouradkove nadpisy
+     s ceskou diakritikou zacnou dotykat */
+  line-height: 1.18;
+  color: var(--dark);
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.6rem, 5.6vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 3.6vw, 2.6rem); }
+h3 { font-size: 1.5rem; line-height: 1.2; }
+.h-medium { font-size: 1.75rem; }
+/* <em> je v prohlizeci ve vychozim stavu kurzivou; Baloo 2 ji nema,
+   takze ji musime vypnout rucne - jinak by ji prohlizec zkosil sam */
+h1 em, h2 em, h3 em { font-style: normal; color: var(--primary-500); }
+p { max-width: 62ch; }
+.eyebrow {
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  /* --primary-700, ne 600: nadradek stoji i na salvejovem pozadi hera,
+     kde mel v 600 poměr 4,38:1 - tesne pod hranici 4,5. */
+  color: var(--primary-700);
+  margin-bottom: .75rem;
+}
+.lead { font-size: 1.2rem; color: var(--grey); }
+.muted { color: var(--text-3); }
+.center { text-align: center; }
+
+.ico { width: 1.25rem; height: 1.25rem; flex: none; }
+
+/* ---------- layout ---------- */
+.container { width: min(100% - var(--gutter) * 2, var(--container)); margin-inline: auto; }
+/* v centrovanych hlavickach musi byt vycentrovan i blok odstavce - p ma max-width 62ch,
+   bez margin-inline: auto by se text centroval jen uvnitr toho uzkeho bloku vlevo */
+.center p, .services__head p, .gallery__head p, .pricing__head p,
+.process__head p, .reviews__head p, .faq__head p { margin-inline: auto; }
+/* pas pres celou sirku okna, jen s bocnim okrajem - pouziva navigace */
+.container--wide { width: 100%; max-width: none; padding-inline: var(--gutter); margin-inline: 0; }
+section { position: relative; }
+.has-wave { padding-bottom: calc(var(--section-pad) + var(--wave-h) * .6); }
+.wave {
+  position: absolute; left: 0; bottom: -1px;
+  width: 100%; height: var(--wave-h);
+  pointer-events: none; z-index: 1;
+}
+.wave--flip { transform: scaleX(-1); }
+/* vlna hera musi zustat POD tvarem na hranici sekci - ten visi na .about,
+   takze pri z-index 1 by ho vlna pretala napul. Hero pod vlnou nic nema,
+   snizeni je bezpecne; ostatnich vln se to netyka. */
+.hero > .wave { z-index: 0; }
+
+/* ---------- tlačítka ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .85rem 1.7rem;
+  border-radius: var(--radius-btn);
+  border: 1.5px solid var(--primary-500);
+  font-weight: 500; font-size: .95rem; line-height: 1;
+  white-space: nowrap;
+  transition: background-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(109, 133, 74, .18); }
+.btn:active { transform: translateY(0); }
+/* Zelena je o stupen tmavsi nez --primary-500 z palety: bily text na 500 mel
+   4,11:1, WCAG AA chce u tehle velikosti pisma 4,5. Na 600 vyjde 5,28.
+   border-color se musi prepsat s nim - .btn ho ma na --primary-500 a jinak by
+   kolem tmavsiho tlacitka zustal svetlejsi prstenec. Totez plati pro hover. */
+.btn--primary { background: var(--primary-600); border-color: var(--primary-600); color: #fff; }
+.btn--primary:hover { background: var(--primary-700); border-color: var(--primary-700); }
+.btn--ghost { background: transparent; color: var(--primary-700); }
+.btn--ghost:hover { background: var(--primary-50); }
+.btn--light { border-color: rgba(255, 249, 241, .6); color: var(--cream); }
+.btn--light:hover { background: rgba(255, 249, 241, .1); box-shadow: none; }
+.btn--sm { padding: .7rem 1.35rem; font-size: .9rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn .ico { width: 1rem; height: 1rem; }
+/* Vyzvu ve velkych tlacitkach nese na desktopu ikona + cislo, sloveso by bylo
+   treti zpusob, jak rict totez (stejne jako v liste a v pate). Pod 768 px se
+   naopak skryva cislo (.btn__num) a sloveso se vraci - tap tam vytaci sam.
+   Obe casti se tedy nikdy nezobrazi zaroven, proto mezi nimi neni mezera. */
+.btn__verb { display: none; }
+
+.link-arrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-weight: 500; color: var(--primary-700);
+}
+.link-arrow .ico { transition: transform .25s ease; }
+.link-arrow:hover .ico { transform: translateX(4px); }
+
+/* ---------- logo ---------- */
+.logo { display: inline-flex; flex-direction: column; line-height: 1; }
+.logo__name {
+  /* TODO: logo je provizorni, pujde cele predelat */
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.85rem; letter-spacing: -.03em; color: var(--primary-700);
+}
+.logo__sub {
+  font-size: .6rem; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--peru); margin-top: .2rem; padding-left: .15rem;
+}
+.logo--light .logo__name { color: var(--cream); }
+.logo--light .logo__sub { color: var(--primary-300); }
+/* lockup v navigaci i paticce: znacka vlevo, napis "Besy" vpravo.
+   Zapsano dvema tridami zamerne. Drive to bylo nutne kvuli selektoru
+   ".footer__top > div > a", ktery davil odkazum v paticce display: block;
+   ten uz je pryc (nahradila ho .footer__link), ale dvojita trida stoji za to
+   podrzet - jakykoli budouci selektor tvaru ".neco a" ji uz neprebije. */
+.logo.logo--mark { display: inline-flex; flex-direction: row; align-items: center; gap: .6rem; }
+.logo__mark { height: 3rem; width: auto; }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 60;
+  /* nahore splyva s hero (stejna zelena) -> pusobi jako pruhledna lista,
+     po odscrollovani prepne na kremovou s rozostrenim */
+  background: var(--primary-100);
+  transition: background-color .3s ease, box-shadow .3s ease;
+}
+/* Nad herem ma lista stejne pozadi jako sekce, takze salvejova pilulka by
+   v ni zmizela - dokud se neodscrolluje, kresli se aktivni sekce tmavsi.
+   Prakticky jde jen o prvni obrazovku: vys nez #o-nas se pilulka neukaze. */
+.nav:not(.is-scrolled) .nav__links > a.is-current,
+.nav:not(.is-scrolled) .nav__group-btn.is-current { background: var(--primary-200); }
+.nav.is-scrolled {
+  background: rgba(255, 249, 241, .9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(58, 60, 54, .06);
+}
+.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 5rem; }
+.nav__menu, .nav__links { display: flex; align-items: center; }
+.nav__menu { gap: 2.25rem; }
+/* Mezery mezi odkazy nese padding pilulek, ne gap - jinak by se pilulky
+   pod kurzorem dotykaly. Pri zmene paddingu dorovnej i gap. */
+.nav__links { gap: .4rem; }
+.nav__links > a, .nav__group-btn {
+  padding: .5rem .7rem; border-radius: var(--radius-btn);
+  /* 1.05rem/600, ne .95rem/500: lista je vysoka 5 rem a logo ma 1.85 rem,
+     drobnejsi odkazy v ni cetly jako popisky, ne jako navigace */
+  font-size: 1.05rem; font-weight: 600; color: var(--dark);
+  transition: background-color .2s ease, color .2s ease;
+}
+/* Hover je o stupen jemnejsi nez aktivni sekce - kdyby byly stejne, pod
+   kurzorem by se ztratila informace, kde na strance navstevnik prave je. */
+.nav__links > a:hover, .nav__group-btn:hover,
+.nav__group:hover > .nav__group-btn { background: var(--primary-50); color: var(--primary-600); }
+.nav__links > a.is-current, .nav__group-btn.is-current {
+  background: var(--primary-100); color: var(--primary-700);
+}
+/* CTA drzi vahu proti 5rem liste - .btn--sm samo o sobe delalo pilulku
+   presne v pulce jeji vysky a tlacitko v ni plavalo */
+.nav__cta { margin-left: .5rem; padding: .95rem 1.5rem; font-size: .97rem; }
+/* v liste je pill uzky prvek vedle sedmi odkazu - vyzvu tam nese ikona,
+   sloveso se pripina az ve vysunutem panelu pod 1200 px */
+.nav__cta-verb { display: none; }
+.nav__cta .ico { width: 1.05rem; height: 1.05rem; }
+/* Desktopova lista: .nav__menu se rozpusti (display: contents), takze logo,
+   odkazy a CTA jsou tri sourozenci primo v .nav__inner.
+   Hranice 1201 px musi sedet s hamburgerem nize - kdyby se rozesly, v mezere
+   by lista byla zaroven radka i vysunuty mobilni panel. */
+@media (min-width: 1201px) {
+  .nav__menu { display: contents; }
+  .nav__cta { margin-left: 0; }
+}
+/* Siroke okno: odkazy presne na stredu listy (mrizka 1fr auto 1fr), jako na
+   referenci. Plati az od 1400 px, protoze symetricka mrizka si na obou
+   stranach rezervuje sloupec siroky jako telefonni tlacitko - to je pres
+   500 px na 156px logo a 267px tlacitko. Pod 1400 px by se odkazy o CTA
+   drhly, takze se centrovani pousti a rozestupy vyrovna space-between
+   ze zakladniho .nav__inner. */
+@media (min-width: 1400px) {
+  .nav__inner { display: grid; grid-template-columns: 1fr auto 1fr; }
+  .nav__links { justify-self: center; }
+  .nav__cta { justify-self: end; }
+}
+.nav__toggle { display: none; width: 2.75rem; height: 2.75rem; border-radius: 50%; place-items: center; color: var(--dark); }
+.nav__toggle .ico { width: 1.5rem; height: 1.5rem; }
+.nav__toggle .ico--close { display: none; }
+.nav--open .nav__toggle .ico--menu { display: none; }
+.nav--open .nav__toggle .ico--close { display: block; }
+
+/* ---------- .nav__drop - rozbalovaci nabidka sluzeb ---------- */
+/* Podseznam ma v menu jedina polozka, a to zamerne: sluzby jsou jediny obsah
+   stranky schovany ve vychozim stavu (v ceniku je videt 1 z 5 panelu), takze
+   z lista jinak nepozna, ze se tu treba trimuje. Ceny se berou z .tab__price,
+   pri zmene ceniku se musi prepsat na obou mistech. */
+/* --drop-gap posouva kartu pod spodni hranu listy (spoustec je flex polozka
+   vysoka jen na radek textu, takze top: 100% konci uprostred listy) a zaroven
+   udava vysku mustku - obe hodnoty musi zustat stejne. */
+.nav__group { position: relative; --drop-gap: 1.75rem; }
+.nav__group-btn { display: inline-flex; align-items: center; gap: .3rem; }
+.nav__group-btn .ico--caret { width: .8rem; height: .8rem; transition: transform .2s; }
+.nav__group:hover .ico--caret,
+.nav__group:focus-within .ico--caret,
+.nav__group.is-open .ico--caret { transform: rotate(180deg); }
+.nav__drop {
+  position: absolute; top: calc(100% + var(--drop-gap)); left: 50%; z-index: 70;
+  display: flex; flex-direction: column;
+  min-width: 22rem; padding: .5rem;
+  /* bila jako ostatni karty (.panel, .review, .pair) - kremova by se po
+     odscrollovani slila s listou i s kremovym pozadim sekce pod ni */
+  background: #fff; border-radius: var(--radius-card); box-shadow: var(--shadow-lg);
+  opacity: 0; visibility: hidden;
+  transform: translateX(-50%) translateY(-.4rem);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+/* Neviditelny mustek pres mezeru mezi spoustecem a kartou - bez nej hover
+   cestou dolu propadne do prazdna a nabidka se zavre pod kurzorem.
+   Visi na .nav__group, ne na .nav__drop: karta je siroka 22rem a centrovana
+   na spoustec, takze mustek na ni sahal az pod sousedni odkaz Galerie a pri
+   otevrene nabidce ho neslo kliknout. Takhle je siroky jen jako spoustec. */
+.nav__group::after {
+  content: ""; position: absolute; left: -1rem; right: -1rem;
+  top: 100%; height: var(--drop-gap);
+}
+.nav__group:hover .nav__drop,
+.nav__group:focus-within .nav__drop,
+.nav__group.is-open .nav__drop {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+/* Zavreni Escapem. Fokus se po nem vraci na spoustec uvnitr .nav__group, takze
+   pravidlo vys pres :focus-within by kartu drzelo dal otevrenou. Stejna
+   specificita (0-3-0) jako ta tri nad tim - proto to musi zustat POD nimi.
+   Tridu nasazuje a zase snima main.js, sekce "rozbalovaci nabidka sluzeb". */
+.nav__group.is-dismissed .nav__drop {
+  opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(-.4rem);
+}
+.nav__group.is-dismissed .ico--caret { transform: none; }
+.nav__drop > a {
+  display: grid; grid-template-columns: 1.15rem 1fr auto; align-items: center; gap: .7rem;
+  padding: .6rem .7rem; border-radius: .65rem;
+  font-size: .95rem; font-weight: 500; color: var(--dark);
+  transition: background-color .15s, color .15s;
+}
+.nav__drop > a:hover { background: var(--primary-50); color: var(--primary-600); }
+.nav__drop .ico { width: 1.15rem; height: 1.15rem; color: var(--primary-500); }
+.nav__drop b { font-weight: 600; font-size: .85rem; color: var(--text-3); white-space: nowrap; }
+.nav__flag {
+  margin-left: .45rem; padding: .1rem .45rem; border-radius: var(--radius-btn);
+  background: var(--orange); color: var(--primary-950);
+  font-size: .65rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap;
+}
+
+/* uzsi desktop: sedm polozek vedle telefonniho cisla se vejde jen po stazeni
+   pisma a paddingu pilulek. Pod 1151 px uz ani to nestaci a lista se sklada
+   do hamburgeru. I tady zustavaji odkazy vetsi nez puvodnich .95rem/500. */
+@media (min-width: 1201px) and (max-width: 1340px) {
+  .nav__links { gap: .25rem; }
+  .nav__links > a, .nav__group-btn { font-size: 1rem; padding: .5rem .55rem; }
+  .nav__cta { padding: .85rem 1.25rem; }
+}
+
+/* ---------- lista pod 1200 px: hamburger a vysunuty panel ---------- */
+/* Hranice je 1200, ne 768 jako u ostatnich rozlozeni - sedm polozek vedle
+   telefonniho cisla se pod ni uz do jedne radky nevejde bez toho, aby se
+   odkazy dotykaly loga a tlacitka. */
+@media (max-width: 1200px) {
+  .nav__toggle { display: grid; }
+  .nav__menu {
+    position: fixed; inset: 5rem 0 0; z-index: 55;
+    display: none; flex-direction: column; align-items: flex-start; gap: 1.5rem;
+    padding: 1.5rem var(--gutter) 3rem; background: var(--cream);
+    overflow-y: auto; /* se sluzbami je panel vyssi nez maly telefon */
+  }
+  .nav--open .nav__menu { display: flex; }
+  .nav--open { background: var(--cream); }
+  /* Tri veci, ktere musi platit jen pri otevrenem menu. Vsechny potrebuji
+     specificitu 0,2,0, aby prebily .nav.is-scrolled.
+     1) backdrop-filter dela z listy containing block pro position: fixed -
+        vysunuty panel by se kotvil k liste misto k oknu a po odscrollovani
+        by se slozil na par pixelu mimo obrazovku. Pri otevrenem menu ma
+        lista kryci kremove pozadi, takze se rozostrenim nic neztrati.
+     2) body dostane .no-scroll s overflow: hidden a tim prestane fungovat
+        position: sticky - lista by i s krizkem odjela na zacatek dokumentu
+        a menu by neslo zavrit. Proto se na dobu otevreni pribije napevno.
+     3) pruhledne pozadi by nechalo prosvitat obsah stranky pod listou. */
+  .nav--open.is-scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav.nav--open { position: fixed; top: 0; left: 0; right: 0; }
+  .nav--open.is-scrolled, .nav--open:not(.is-scrolled) { background: var(--cream); }
+  .nav__links { flex-direction: column; align-items: flex-start; gap: 1.25rem; width: 100%; }
+  .nav__links > a, .nav__group-btn { font-size: 1.2rem; padding: .35rem .6rem; }
+  .nav__drop { margin-left: .6rem; }
+  /* Telefon patri nad odkazy, ne pod ne. Se sedmi polozkami a rozbalenymi
+     sluzbami je panel vyssi nez maly telefon a tlacitko by skoncilo pod
+     ohybem - pritom je to jedina cesta, jak se objednat. */
+  .nav__cta { order: -1; font-size: 1.1rem; margin: 0 0 .5rem; }
+  /* Ve vysunutem panelu uz pill neni drobny prvek listy, ale plnohodnotne
+     tlacitko nad odkazy - dostane proto sloveso jako hero a CTA. Cislo za nim
+     zmizi az na 768 px spolu s ostatnimi (.btn__num). */
+  .nav__cta-verb { display: inline; }
+
+  /* V hamburgeru se sluzby nerozbaluji - podseznam je rovnou videt mensim pismem.
+     Druha harmonika vedle te v ceniku by byla jen dalsi vec na proklikani. */
+  .nav__group { width: 100%; }
+  .nav__group-btn .ico--caret { display: none; }
+  .nav__drop {
+    position: static; opacity: 1; visibility: visible; transform: none;
+    min-width: 0; margin: .9rem 0 0; padding: 0;
+    background: none; border-radius: 0; box-shadow: none;
+    /* na mobilu neni karta - podseznam jen odsazeny zelenou linkou */
+    border-left: 2px solid var(--primary-200); padding-left: 1rem;
+  }
+  .nav__group::after { content: none; }
+  .nav__drop > a { padding: .4rem 0; font-size: .95rem; }
+  .nav__drop > a:hover { background: none; }
+}
+
+/* ---------- .blob-figure – fotka v organickém tvaru ---------- */
+/* Tvary jsou skutečné SVG soubory z Blobs/, ne aproximace border-radiusem
+   ani generovaná path. Soubory se needitují – když tvar nesedí, mění se
+   pozicování, ne geometrie.
+
+   Tři vrstvy nad sebou:
+     z-index 1  .blob-figure__back   Blobs/Masks/za_obrz.svg  (tvar ZA fotkou)
+     z-index 2  .blob-figure__photo  fotka maskovaná přes Blobs/Masks/Obrz.svg
+     z-index 3  .blob-figure__deco   kontejner s akcenty
+
+   Každý soubor má jiný poměr stran, na sebe samy nesednou: kontejner drží
+   poměr masky (571/617) a tvar za fotkou se pozicuje procenty kontejneru
+   přes --back-w / --back-x / --back-y. Výchozí hodnoty nechají tvar
+   vykouknout vpravo a dole jako výrazný srpek; jdou přepsat inline. */
+.blob-figure {
+  --back-w: 88%;
+  --back-x: 24%;
+  --back-y: 34%;
+  --accent-scale: 1;
+  position: relative; isolation: isolate;
+  width: 100%;
+  aspect-ratio: 571 / 617;
+}
+.blob-figure__back {
+  position: absolute; z-index: 1;
+  left: var(--back-x); top: var(--back-y);
+  width: var(--back-w); height: auto; max-width: none;
+  pointer-events: none;
+}
+/* Maska je doslovna kopie Blobs/Masks/Obrz.svg vlozena jako data: URI.
+   Odkaz na soubor (url("../Blobs/Masks/Obrz.svg")) tady NEFUNGUJE - pri
+   otevreni stranky pres file:// prohlizec externi SVG masku blokuje jako
+   cross-origin, maska vyjde prazdna a fotka zmizi cela. Kdyz se Obrz.svg
+   zmeni, prepis i tenhle retezec (postup v BRIEF.md, sekce 5). */
+.blob-figure__photo {
+  position: absolute; inset: 0; z-index: 2;
+  width: 100%; height: 100%; object-fit: cover;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg width='571' height='617' viewBox='0 0 571 617' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M160.878 3.30522C341.067 -16.3904 490.72 54.5487 555.889 146.637C559.808 152.175 562.948 158.185 564.602 164.764C589.523 263.862 531.757 616.088 411.094 616.088C146.281 624.998 -196.442 140.963 139.65 8.51125C146.348 5.87196 153.722 4.08738 160.878 3.30522Z' fill='black'/%3E %3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg width='571' height='617' viewBox='0 0 571 617' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M160.878 3.30522C341.067 -16.3904 490.72 54.5487 555.889 146.637C559.808 152.175 562.948 158.185 564.602 164.764C589.523 263.862 531.757 616.088 411.094 616.088C146.281 624.998 -196.442 140.963 139.65 8.51125C146.348 5.87196 153.722 4.08738 160.878 3.30522Z' fill='black'/%3E %3C/svg%3E") center / contain no-repeat;
+}
+.blob-figure__deco { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+/* Sada akcentů i jejich pozice patří k instanci, ne ke komponentě – každý
+   akcent si nese --x, --y, --w a --rotate inline. */
+.blob-figure__accent {
+  position: absolute;
+  left: var(--x, 0%); top: var(--y, 0%);
+  width: calc(var(--w, 10%) * var(--accent-scale));
+  height: auto; max-width: none;
+  transform: rotate(var(--rotate, 0deg));
+  pointer-events: none;
+}
+
+
+/* ---------- tvary vytékající z okraje sekce ---------- */
+/* Blobs/Sections/*.svg – obojí má rovnou hranu na x=0, takže sedí na okraj
+   sekce; přes --flip se překlopí na pravý okraj. Rodičovská sekce musí mít
+   overflow: hidden, aby tvar nerozšířil stránku. */
+.section-shape {
+  position: absolute; z-index: 0;
+  height: auto; max-width: none;
+  pointer-events: none;
+  transform: scaleX(var(--flip, 1));
+}
+/* Oba tvary vytékají z levého okraje sekce pod herem, jako na předloze.
+   Vyšší sedí obkročmo na hranici hero / o nás – proto záporný top a proto
+   .about nesmí nic ořezávat. */
+.section-shape--edge-top { left: 0; top: -9rem; width: clamp(4rem, 7vw, 7.5rem); }
+/* Kolik tvar vyleze nahoru nad hranici, urcuje volne misto pod textem hera -
+   to se s uzsim oknem ztenci, protoze hero drzi vysku fotka. Nad 1200 px se
+   vejde cely presah, niz uz by tvar lezel na .hero .btn-row. */
+@media (max-width: 1200px) {
+  .section-shape--edge-top { top: -2.5rem; }
+}
+/* Spodni tvar visi na .services, ne na .about, prestoze vizualne patri
+   k hranici mezi nimi. Na .about by ho krémove pozadi .services useklo rovnou
+   hranou - .services se kresli az po ni. Takhle se kresli po svem pozadi
+   a nahoru pretece volne. */
+.section-shape--edge-bottom { left: 0; top: -2.5rem; width: clamp(2.75rem, 4.5vw, 4.5rem); }
+/* skupinové akcenty mimo fotku (Blobs/Groups/*.svg) */
+.section-accent { position: absolute; z-index: 1; height: auto; pointer-events: none; }
+/* kolecka sedi vpravo v urovni tlacitka "Vice recenzi" - vys by lezela
+   na posledni karte recenze */
+.section-accent--reviews { right: 8vw; bottom: 0; width: clamp(3rem, 5vw, 5rem); opacity: .9; }
+
+/* ---------- hero ---------- */
+.hero { background: var(--primary-100); padding-top: clamp(1rem, 3vw, 2.5rem); overflow: hidden; }
+.hero.has-wave { padding-bottom: calc(var(--section-pad) * .55 + var(--wave-h) * .6); }
+.hero__grid {
+  display: grid; grid-template-columns: 1fr 1.15fr;
+  align-items: center; gap: clamp(2rem, 4vw, 4rem);
+}
+/* hero nese vetsi typografii nez zbytek stranky, aby textovy sloupec unesl velkou fotku */
+.hero .eyebrow { font-size: clamp(.85rem, 1.1vw, 1rem); margin-bottom: 1rem; }
+/* Nad ~1430 px se h1 drzelo na 4.5rem a radky textu koncily hluboko pred fotkou -
+   mezi sloupci vznikala prazdna chodba. Strop je proto 5rem; sklon 5.6vw zustava,
+   takze mensi okna se nemeni. */
+.hero h1 { font-size: clamp(2.6rem, 5.6vw, 5rem); }
+/* Lead ma vyjit na sirokem okne na jeden radek - proto zadny uzky max-width;
+   ram tvori sloupec mrizky. Uzsi okna ho zalomi a `balance` rozdeli radky rovnomerne,
+   aby na druhem nezustalo jedno slovo. */
+.hero .lead { margin: 1.35rem 0 2.25rem; max-width: none; font-size: clamp(1.15rem, 1.4vw, 1.32rem); text-wrap: balance; }
+.hero .btn { padding: 1rem 1.9rem; font-size: 1rem; }
+.blob-figure--hero { max-width: 38rem; margin-left: auto; }
+
+/* načtení hero – zpožděné rozjezdy */
+.js .hero__a { opacity: 0; transform: translateY(18px); animation: rise .8s cubic-bezier(.2, .7, .2, 1) forwards; }
+.js .hero__a:nth-child(2) { animation-delay: .1s; }
+.js .hero__a:nth-child(3) { animation-delay: .2s; }
+.js .hero__a:nth-child(4) { animation-delay: .3s; }
+.js .hero__b { opacity: 0; transform: scale(.94) translateY(12px); animation: pop 1s cubic-bezier(.2, .7, .2, 1) .15s forwards; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes pop { to { opacity: 1; transform: none; } }
+
+/* ---------- o nás ---------- */
+/* zadny overflow - tvary u leveho okraje musi pretect pres hranici sekce,
+   jinak je Chrome usekne rovnou hranou. Sirku stranky hlida overflow-x: clip
+   na html/body a tvary sedi na left: 0, takze ven z okna nelezou. */
+.about { background: var(--cream); padding-block: var(--section-pad); }
+.about__grid {
+  position: relative;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: clamp(2rem, 6vw, 6rem);
+}
+.blob-figure--about { max-width: 30rem; }
+.about__copy p + p { margin-top: 1rem; }
+.about__copy .btn { margin-top: 1.75rem; }
+.about__copy h2 { margin-bottom: 1.25rem; }
+
+/* vitrina oceneni pod textem o Marii - vodorovny pas, ne mrizka */
+/* --award-per-view: kolik dlaždic se vejde do pásu. Celé číslo = žádná
+   useknutá dlaždice na kraji, protože každá pozice posunu i konec pásu
+   vyjdou na násobek jedné dlaždice. Na mobilu je záměrně desetinné –
+   šipky tam nejsou a odkrojená dlaždice je jediné, co napoví, že se pás
+   posouvá. */
+.awards { --award-gap: 1.5rem; --award-per-view: 5; margin-top: var(--section-pad); }
+.awards__head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: .5rem 2rem; margin-bottom: 1.5rem;
+}
+.awards__note { color: var(--text-3); font-size: .95rem; margin-top: .4rem; max-width: 34rem; }
+.awards__link { margin-top: .6rem; font-size: .9rem; }
+.awards__nav { display: flex; gap: .5rem; margin-left: auto; }
+.awards__arrow {
+  width: 2.75rem; height: 2.75rem;
+  display: grid; place-items: center;
+  border-radius: 50%; background: #fff; color: var(--primary-600);
+  box-shadow: var(--shadow);
+  transition: box-shadow .25s ease, color .25s ease, opacity .25s ease;
+}
+.awards__arrow:hover:not(:disabled) { box-shadow: var(--shadow-lg); color: var(--primary-700); }
+.awards__arrow:disabled { opacity: .3; cursor: default; box-shadow: none; }
+.awards__arrow--prev .ico { transform: rotate(180deg); }
+
+.awards__row {
+  display: flex; gap: var(--award-gap);
+  overflow-x: auto; overscroll-behavior-x: contain;
+  /* mandatory, ne proximity - po posunu musí dlaždice vždy sednout na hranu,
+     jinak zůstane useknutá */
+  scroll-snap-type: x mandatory; scroll-padding-left: 1px;
+  padding-bottom: .5rem;
+  /* posuvník schovaný - orientaci drží šipky a napůl viditelná další dlaždice */
+  scrollbar-width: none; -ms-overflow-style: none;
+  cursor: grab;
+}
+.awards__row::-webkit-scrollbar { display: none; }
+/* behem tazeni mysi: snap vypnout (jinak pas odskakuje zpatky po kazdem pixelu),
+   text nechytat do vyberu; po pusteni dosedne na dlazdici JS */
+.awards__row.is-dragging { cursor: grabbing; user-select: none; }
+/* snap musí být vypnutý i po puštění, dokud pás plynule nedojede na dlaždici -
+   jinak ho prohlížeč v tu ránu přisaje a z dojezdu není nic vidět */
+.awards__row.is-dragging, .awards__row.is-settling { scroll-snap-type: none; }
+.awards__row:focus-visible { outline: 2px solid var(--primary-500); outline-offset: 4px; border-radius: .5rem; }
+.award {
+  flex: 0 0 calc((100% - (var(--award-per-view) - 1) * var(--award-gap)) / var(--award-per-view));
+  scroll-snap-align: start;
+}
+.award img {
+  width: 100%; aspect-ratio: 1; height: auto; object-fit: cover;
+  border-radius: var(--radius-card);
+  background: var(--primary-50);
+  box-shadow: var(--shadow);
+}
+.award b { display: block; margin-top: .8rem; font-size: .95rem; font-weight: 600; color: var(--dark); }
+.award span { display: block; margin-top: .1rem; font-size: .85rem; color: var(--text-3); }
+
+/* ---------- služby ---------- */
+.services { background: var(--cream); padding: 0 0 var(--section-pad); display: flow-root; }
+.services__head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
+.services__head p { margin: 1rem auto 0; color: var(--text-2); }
+.services__layout { --tabs-gap: 2rem; display: grid; grid-template-columns: 17rem 1fr; gap: var(--tabs-gap); align-items: start; }
+
+.tabs { display: flex; flex-direction: column; gap: .6rem; }
+.tab {
+  position: relative;
+  display: flex; align-items: center; gap: .9rem; text-align: left;
+  padding: .85rem 1rem; border-radius: .75rem;
+  background: #fff; box-shadow: var(--shadow);
+  border-left: 4px solid transparent;
+  font-weight: 500; font-size: .95rem; color: var(--dark);
+  transition: box-shadow .25s ease, border-color .25s ease, transform .25s ease;
+}
+.tab:hover { box-shadow: var(--shadow-lg); transform: translateX(2px); }
+.tab.is-active { border-left-color: var(--orange); box-shadow: var(--shadow-lg); }
+/* vybrana zalozka se prilepi k panelu: prava strana se narovna a mustek prekleni mezeru */
+.tab.is-active {
+  border-top-right-radius: 0; border-bottom-right-radius: 0;
+  z-index: 2;
+}
+.tab.is-active:hover { transform: none; }
+.tab.is-active::after {
+  content: ""; position: absolute; top: 0; bottom: 0;
+  left: 100%; width: calc(var(--tabs-gap) + 2px);
+  background: #fff;
+}
+.panels { z-index: 1; }
+/* prvni zalozka sedi presne na horni hrane panelu - zaobleny roh by napojeni prerusil */
+.panel:first-child.is-active { border-top-left-radius: 0; }
+.tab__icon {
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; flex: none;
+  display: grid; place-items: center;
+  background: var(--primary-50); color: var(--primary-600);
+}
+.tab.is-active .tab__icon { background: var(--primary-100); }
+
+.panels { position: relative; }
+.panel {
+  display: none; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: center;
+  background: #fff; border-radius: 1.25rem; box-shadow: var(--shadow-lg);
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+.panel.is-active { display: grid; }
+/* animuje se jen obsah, bila karta naskoci hned - jinak se napojeni na zalozku dotahuje se zpozdenim */
+.panel.is-active > * { animation: panel-in .4s cubic-bezier(.2, .7, .3, 1) both; }
+/* fotka o chlup pozadu - prepnuti je pak citit jako pohyb, ne jako blik */
+.panel.is-active > * + * { animation-delay: .06s; }
+/* vlastni keyframe s delsi drahou, at ji nezdedi modal a lightbox - ty jedou na fade */
+@keyframes panel-in { from { opacity: 0; transform: translateY(10px); } }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } }
+.panel h3 { margin-bottom: 1rem; }
+.panel p { margin-bottom: 1.5rem; font-size: .95rem; }
+/* dukaz remesla u vystavnich uprav - zluty prah misto boxu, aby si nekonkuroval
+   s .panel__prices, ktery uz sedi na primary-50 */
+.panel__proof {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .5rem;
+  border-left: 3px solid var(--orange); padding-left: .9rem;
+}
+.panel__proof .link-arrow { font-size: .9rem; }
+.blob-figure--service { max-width: 22rem; margin-left: auto; }
+
+/* cenovka primo v zalozce - vsech pet cen je videt bez klikani */
+.tab__label { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
+.tab__price { font-size: .78rem; font-weight: 500; color: var(--primary-600); }
+.tab.is-active .tab__price { color: var(--primary-700); }
+/* stitek "Specialita" sedi na radku s cenou, ne u nazvu - v 17rem sloupci
+   by se vedle nazvu sluzby nevesel a zalozka by se zalamovala do dvou radku */
+.tab__meta { display: flex; align-items: center; flex-wrap: wrap; gap: .45rem; }
+.tab__flag {
+  flex: none;
+  padding: .1rem .45rem; border-radius: var(--radius-btn);
+  background: var(--orange); color: var(--primary-950);
+  font-size: .65rem; font-weight: 600; letter-spacing: .02em;
+}
+
+/* ceny uvnitr panelu sluzby */
+.panel__prices {
+  background: var(--primary-50); border-radius: var(--radius-card);
+  padding: 1.1rem 1.35rem; margin-bottom: 1.5rem;
+}
+.panel__prices .price-rows li { font-size: .88rem; padding: .5rem 0; }
+.panel .panel__dur {
+  display: flex; align-items: flex-start; gap: .5rem;
+  margin: .9rem 0 0; padding-top: .85rem;
+  border-top: 1px solid var(--primary-100);
+  font-size: .8rem; color: var(--text-3);
+}
+.panel .panel__dur .ico { flex: none; width: 1rem; height: 1rem; margin-top: .15rem; color: var(--primary-400); }
+
+/* ---------- recenze ---------- */
+/* Spodni odsazeni musi zustat - bez nej sedi tlacitko Vice recenzi presne na
+   hranici sekce a nasledujici FAQ prekryje jeho stin pri hoveru. */
+.reviews { background: var(--cream); padding-block: var(--section-pad); }
+.reviews__head { text-align: center; }
+/* Dva odznaky vedle sebe. Obe znacky jsou vysazene pismem, ne logem -
+   Google barevnymi pismeny, Firmy.cz kurzivou v seznamacke cervene. */
+.rating-badges { display: flex; align-items: stretch; justify-content: center; gap: 1.75rem; margin: 1.25rem 0 .9rem; flex-wrap: wrap; }
+.rating-badges__sep { width: 1px; background: #ece1d0; }
+.rating-badge {
+  display: flex; flex-direction: column; align-items: center; gap: .2rem;
+  padding: .5rem .85rem; border-radius: .75rem;
+  transition: background .2s ease;
+}
+.rating-badge:hover { background: #fdf3e6; }
+.firmy-word { font-weight: 700; font-size: 1.6rem; letter-spacing: -.035em; line-height: 1; color: #c00; font-style: italic; }
+.firmy-word span { font-style: normal; font-weight: 600; }
+/* zdroj na kartě: u Googlu ikona, u Firmy.cz zmenšená slovní značka */
+.firmy-mark { font-weight: 700; font-size: .78rem; font-style: italic; letter-spacing: -.02em; line-height: 1; color: #c00; }
+.firmy-mark span { font-style: normal; font-weight: 600; }
+
+.reviews__ask { max-width: 34rem; margin: 0 auto 2.5rem; font-size: .9rem; color: var(--text-3); }
+.reviews__ask a { color: var(--primary-700); text-decoration: underline; text-underline-offset: 3px; }
+.reviews__ask a:hover { color: var(--primary-500); }
+.google-word { font-weight: 600; font-size: 1.6rem; letter-spacing: -.03em; line-height: 1; }
+.google-word b { font-weight: 600; }
+.google-word b:nth-child(1) { color: #4285F4; }
+.google-word b:nth-child(2) { color: #EA4335; }
+.google-word b:nth-child(3) { color: #FBBC05; }
+.google-word b:nth-child(4) { color: #4285F4; }
+.google-word b:nth-child(5) { color: #34A853; }
+.google-word b:nth-child(6) { color: #EA4335; }
+.google-rating { display: flex; align-items: center; gap: .5rem; font-size: .85rem; }
+.google-rating strong { color: var(--dark); }
+.stars { display: inline-flex; gap: 1px; color: var(--orange); }
+.stars .ico { width: .95rem; height: .95rem; }
+
+/* Radky se schvalne NEsjednocuji (zadne grid-auto-rows) - hodnoceni bez
+   komentare jsou az za zlomem, takze prvni dve rady zustanou stejne vysoke
+   a zkrati se jen ty vzadu. Kdyby se vysky srovnaly, kratke karty by zely
+   prazdnotou. */
+.reviews__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+/* Pred rozbalenim je videt prvni rada a pul: 8 karet na desktopu, 4 na
+   tabletu, 2 na mobilu. Cisla musi sedet s poctem sloupcu v breakpointech niz. */
+.reviews__grid:not(.is-open) .review:nth-child(n+9) { display: none; }
+.review {
+  background: #fff; border-radius: var(--radius-card); box-shadow: var(--shadow);
+  padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.review:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.review__top { display: flex; align-items: center; justify-content: space-between; }
+.ico--g { width: 1.1rem; height: 1.1rem; }
+/* display:flex + align-items:center citaci svisle vystredi, takze kratke
+   vety typu "Pohoda!" nesedi nahore s prazdnem pod sebou. */
+.review__quote {
+  font-family: var(--font-display);
+  font-size: 1.2rem; line-height: 1.3; color: var(--dark); flex: 1;
+  display: flex; align-items: center;
+}
+.review__author { display: flex; align-items: center; gap: .65rem; font-size: .78rem; line-height: 1.35; color: var(--text-3); }
+.review__author b { font-weight: 500; color: var(--dark); }
+.review__name { flex: 1; min-width: 0; }
+/* fotka, kterou k recenzi nahrál zákazník – otevírá se v .photobox.
+   Zůstává to <a> s href na plnou fotku, aby bez JS fungoval aspoň prostý odkaz. */
+.review__photo {
+  flex: none; display: block; cursor: zoom-in;
+  border-radius: .45rem; overflow: hidden; border: 1px solid #f0e7d9;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.review__photo img { width: 2.6rem; height: 2.6rem; object-fit: cover; }
+.review__photo:hover { border-color: var(--primary-400); transform: scale(1.06); }
+.review__photo:focus-visible { outline: 2px solid var(--primary-600); outline-offset: 2px; }
+.avatar { width: 2.1rem; height: 2.1rem; border-radius: 50%; object-fit: cover; flex: none; }
+.avatar--initial {
+  display: grid; place-items: center; font-size: .7rem; font-weight: 600;
+  background: var(--primary-100); color: var(--primary-700);
+}
+
+/* ---------- kontakt / lokace ---------- */
+.location { background: var(--primary-100); padding-top: var(--section-pad); }
+.location__grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.location h2 { margin-bottom: 2rem; }
+.contact-list { display: grid; gap: 1.5rem; }
+.contact { display: flex; gap: 1rem; }
+.contact > .ico { color: var(--grey); margin-top: .2rem; }
+.contact h3 { font-size: 1.15rem; margin-bottom: .3rem; }
+.contact p { font-size: .95rem; }
+.contact a:hover { color: var(--primary-500); }
+.note { font-size: .8rem; color: var(--text-2); margin-top: .6rem; max-width: 40ch; }
+.map {
+  border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3; background: var(--primary-200);
+  /* kontaktni sloupec je delsi nez mapa - mapa jde s nim */
+  position: sticky; top: 6.5rem;
+}
+.map__canvas { width: 100%; height: 100%; background: var(--primary-200); }
+/* filtr jen na dlazdice - marker, bublina a ovladaci prvky zustavaji barevne */
+.map__canvas .leaflet-tile-pane { filter: grayscale(1) sepia(.18) saturate(.75) brightness(1.02); }
+.map__canvas.leaflet-container { font: inherit; background: var(--primary-200); }
+.map__canvas .leaflet-div-icon { background: none; border: 0; }
+/* napoveda po zarolovani bez Ctrl - stejny princip jako u vlozene Google mapy */
+.map__hint {
+  position: absolute; inset: 0; z-index: 450;
+  display: grid; place-items: center; padding: 1.5rem;
+  background: rgba(58, 60, 54, .45);
+  color: var(--cream); font-size: .95rem; font-weight: 500; text-align: center;
+  pointer-events: none;
+  opacity: 0; visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.map__hint.is-visible { opacity: 1; visibility: visible; }
+.map__fallback {
+  display: grid; place-items: center; width: 100%; height: 100%;
+  padding: 2rem; text-align: center; color: var(--primary-700); text-decoration: underline;
+}
+/* marker: zeleny puntik s bilym logem a spickou dolu.
+   Cely dohromady je presne 44x56 px - musi sedet s iconSize a iconAnchor v main.js,
+   jinak spicka neukazuje na dum. */
+.map-pin {
+  position: relative; display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--primary-500); box-shadow: var(--shadow-lg);
+}
+.map-pin::after {
+  content: ""; position: absolute; top: 40px; left: 50%; transform: translateX(-50%);
+  border-left: 8px solid transparent; border-right: 8px solid transparent;
+  border-top: 16px solid var(--primary-500);
+}
+.map-pin img { width: 24px; height: 24px; }
+/* ovladaci prvky Leafletu do palety webu */
+.map__canvas .leaflet-bar {
+  border: 0; border-radius: var(--radius-card-sm); overflow: hidden; box-shadow: var(--shadow);
+}
+.map__canvas .leaflet-bar a {
+  background: var(--cream); color: var(--primary-700); border-bottom-color: var(--primary-100);
+}
+.map__canvas .leaflet-bar a:hover { background: var(--primary-50); color: var(--primary-700); }
+.map__canvas .leaflet-popup-content-wrapper {
+  border-radius: var(--radius-card-sm); box-shadow: var(--shadow-lg); color: var(--text-2);
+}
+.map__canvas .leaflet-popup-content { margin: .85rem 1.1rem; font-size: .9rem; line-height: 1.55; }
+.map__canvas .leaflet-popup-content b { display: block; font-weight: 600; color: var(--dark); }
+.map__canvas .leaflet-popup-content a { color: var(--primary-700); text-decoration: underline; }
+.map__canvas .leaflet-control-attribution {
+  font-size: .7rem; background: rgba(255, 249, 241, .85); color: var(--text-3);
+}
+.map__canvas .leaflet-control-attribution a { color: var(--primary-700); }
+
+/* ---------- galerie pred/po ---------- */
+.gallery { background: var(--cream); padding-top: var(--section-pad); }
+.gallery__head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
+.gallery__head p { margin-top: 1rem; color: var(--text-2); }
+.gallery__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.pair {
+  background: #fff; border-radius: var(--radius-card); box-shadow: var(--shadow);
+  overflow: hidden; transition: transform .3s ease, box-shadow .3s ease;
+}
+.pair:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.pair__imgs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  background: var(--primary-200);
+  position: relative; width: 100%; padding: 0; border: 0;
+  cursor: zoom-in; font: inherit; color: inherit; text-align: inherit;
+}
+.pair__imgs:focus-visible { outline: 3px solid var(--primary-500); outline-offset: -3px; }
+.pair__zoom {
+  position: absolute; right: .6rem; bottom: .6rem; z-index: 2;
+  width: 2.1rem; height: 2.1rem; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255, 249, 241, .93); color: var(--primary-700);
+  box-shadow: var(--shadow); transition: background .25s ease, color .25s ease;
+}
+.pair__zoom .ico { width: 1.05rem; height: 1.05rem; }
+.pair:hover .pair__zoom { background: var(--primary-600); color: #fff; }
+.pair__side { position: relative; }
+/* ctverec: skutecne fotky ze salonu jsou michane na vysku i na sirku,
+   5:6 by je orezavalo prilis agresivne */
+.pair__side img {
+  width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;
+  /* vyrez posunuty nahoru - u psich fotek je podstatna hlava a srst, ne podlaha */
+  object-position: 50% 30%;
+}
+.pair__tag {
+  position: absolute; left: .6rem; top: .6rem;
+  font-size: .66rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  padding: .25rem .6rem; border-radius: 2rem;
+  background: rgba(255, 249, 241, .93); color: var(--text-3);
+}
+.pair__tag--after { background: var(--primary-600); color: #fff; }
+.pair figcaption { padding: 1.1rem 1.25rem 1.35rem; font-size: .88rem; color: var(--dark); }
+.pair figcaption b { font-weight: 600; }
+.pair__breed {
+  display: inline-block; margin-left: .45rem; padding: .1rem .55rem;
+  border-radius: 2rem; border: 1px solid var(--primary-200);
+  font-size: .7rem; font-weight: 500; color: var(--primary-700);
+}
+.pair__desc { display: block; margin-top: .4rem; font-size: .85rem; color: var(--text-3); }
+
+/* ---------- ceny: sdilene prvky (zit uvnitr sekce sluzeb) ---------- */
+.price-rows li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  padding: .62rem 0; font-size: .92rem;
+  border-bottom: 1px dashed var(--primary-200);
+}
+.price-rows li:last-child { border-bottom: 0; padding-bottom: 0; }
+.price-rows b { white-space: nowrap; font-weight: 600; color: var(--primary-700); }
+.price-rows em { display: block; font-style: normal; font-size: .77rem; color: var(--text-3); }
+
+/* spolecna poznamka pod zalozkami sluzeb */
+.price-note {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2.5rem;
+  margin-top: 2rem;
+  background: var(--primary-50); border-radius: var(--radius-card);
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+.price-note h3 { font-size: 1.4rem; margin-bottom: 1.1rem; }
+.note-list { display: grid; gap: .5rem; font-size: .9rem; }
+.note-list li { position: relative; padding-left: 1.4rem; }
+.note-list li::before {
+  content: ""; position: absolute; left: 0; top: .58em;
+  width: .45rem; height: .45rem; border-radius: 50%; background: var(--primary-400);
+}
+.surcharge { font-size: .85rem; color: var(--text-2); margin-bottom: .8rem; }
+.surcharge:last-child { margin-bottom: 0; }
+.surcharge b { font-weight: 600; color: var(--dark); }
+.promise {
+  grid-column: 1 / -1;
+  /* prebiji globalni p { max-width: 62ch } - tohle je celosiroky pruh, ne odstavec */
+  max-width: none;
+  display: flex; gap: .6rem; align-items: flex-start;
+  margin-top: .25rem; padding-top: 1.1rem; border-top: 1px solid var(--primary-200);
+  font-size: .9rem; color: var(--dark);
+}
+.promise .ico { flex: none; margin-top: .2rem; color: var(--orange); }
+
+/* ---------- jak to probiha ---------- */
+.process { background: var(--primary-100); padding-top: var(--section-pad); }
+.process__head { text-align: center; max-width: 40rem; margin: 0 auto 3rem; }
+.process__head p { margin-top: 1rem; color: var(--text-2); }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; align-items: start; }
+.step { background: var(--cream); border-radius: var(--radius-card); box-shadow: var(--shadow); padding: 1.75rem 1.5rem; }
+.step__num {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem; margin-bottom: 1rem;
+  /* --primary-600 stejne jako u tlacitek - bily text na 500 nedosahl na 4,5:1 */
+  border-radius: 50%; background: var(--primary-600); color: #fff;
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; line-height: 1;
+}
+.step h3 { font-size: 1.3rem; margin-bottom: .6rem; }
+.step p { font-size: .9rem; }
+.step p + p, .step .checklist { margin-top: .8rem; }
+.step__note { font-size: .82rem; color: var(--text-3); }
+.checklist { display: grid; gap: .45rem; font-size: .87rem; }
+.checklist li { position: relative; padding-left: 1.5rem; }
+.checklist li::before {
+  content: ""; position: absolute; left: .15rem; top: .78em;
+  width: .5rem; height: .28rem; transform: translateY(-50%) rotate(-45deg);
+  border-left: 2px solid var(--primary-500); border-bottom: 2px solid var(--primary-500);
+}
+
+/* ---------- caste dotazy ---------- */
+.faq { background: var(--cream); padding-top: var(--section-pad); }
+.faq__head { text-align: center; margin-bottom: 2.5rem; }
+.faq__list { max-width: 48rem; margin-inline: auto; }
+.faq__item { border-bottom: 1px solid var(--primary-100); }
+.faq__item summary {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem;
+  padding: 1.15rem 0; cursor: pointer; list-style: none;
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 500; line-height: 1.35; color: var(--dark);
+  transition: color .2s;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: ""; flex: none; width: .6rem; height: .6rem; margin-top: .5rem;
+  border-right: 2px solid var(--primary-500); border-bottom: 2px solid var(--primary-500);
+  transform: rotate(45deg); transition: transform .25s ease;
+}
+.faq__item[open] summary::after { transform: rotate(-135deg); }
+.faq__item summary:hover { color: var(--primary-600); }
+.faq__item summary:focus-visible { outline: 2px solid var(--primary-500); outline-offset: 3px; border-radius: .25rem; }
+.faq__body { padding: 0 2.25rem 1.35rem 0; font-size: .95rem; color: var(--text-2); }
+
+/* ---------- kontakt: doplnky ---------- */
+.notice {
+  margin-bottom: 2.5rem; padding: .9rem 1.25rem;
+  border-radius: var(--radius-card-sm); border-left: 4px solid var(--orange);
+  background: var(--cream); font-size: .9rem;
+}
+.notice b { font-weight: 600; color: var(--dark); }
+.contact .contact__big {
+  font-family: var(--font-display);
+  font-size: 1.55rem; font-weight: 500; line-height: 1.2; color: var(--dark);
+}
+.contact .btn { margin-top: .9rem; }
+.hours { border-collapse: collapse; font-size: .95rem; }
+.hours th { text-align: left; font-weight: 400; padding: .12rem 1.75rem .12rem 0; }
+.hours td { text-align: right; font-weight: 600; color: var(--dark); }
+.hours__closed { font-weight: 400; color: var(--text-3); }
+.contact .contact__socials { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: .9rem; font-size: .85rem; }
+.contact__socials a { display: inline-flex; align-items: center; gap: .4rem; font-weight: 500; color: var(--primary-700); }
+.contact__socials a:hover { color: var(--primary-500); }
+
+/* ---------- mobilni lista ---------- */
+.callbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  display: none; gap: .6rem;
+  padding: .6rem .9rem calc(.6rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(255, 249, 241, .96);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--primary-200);
+  transform: translateY(115%); transition: transform .3s ease;
+}
+.callbar.is-visible { transform: none; }
+.callbar .btn { flex: 1; justify-content: center; padding: .8rem 1rem; font-size: .95rem; }
+.callbar .btn:hover { transform: none; box-shadow: none; }
+.callbar .btn--primary { flex: 1.7; }
+/* .no-scroll nastavuje main.js pri otevrenem menu i modalu */
+body.no-scroll .callbar { display: none !important; }
+/* Krizek nastavuje main.js po kliknuti. Schovava se pres display, ne pres
+   .is-visible - jinak by lista pri dalsim scrollu zase vyjela. */
+.callbar.is-off { display: none !important; }
+
+/* Krizek je zamerne drobny a sedy: je to uhybka, ne treti volba vedle
+   Zavolat a Ceniku. Tapovaci plocha ma presto 2.75rem, aby se do ni dalo
+   palcem trefit. */
+.callbar__close {
+  flex: 0 0 auto; display: grid; place-items: center;
+  width: 2.75rem; height: 2.75rem; margin-right: -.5rem;
+  border-radius: 50%; color: var(--text-3);
+  transition: background-color .2s ease, color .2s ease;
+}
+.callbar__close .ico { width: 1.05rem; height: 1.05rem; }
+.callbar__close:hover { background: var(--primary-50); color: var(--dark); }
+
+/* Lista se zapina na stejne hranici jako hamburger, ne na 768 px. Jakmile se
+   navigace slozi, telefonni tlacitko zmizi do vysunuteho panelu a v mezere
+   769-1200 px nezbyvala na obrazovce zadna cesta k vytoceni cisla.
+   Pravidlo musi zustat tady pod .callbar, ne v bloku hamburgeru u navigace -
+   ten je v souboru vyse a zdejsi display: none by ho prebil. */
+@media (max-width: 1200px) {
+  .callbar { display: flex; }
+  body { padding-bottom: 4.75rem; }
+  /* Kdyz si navstevnik listu odklikne, prebytecne misto pod patickou uz nema
+     co drzet. */
+  body.callbar-off { padding-bottom: 0; }
+}
+
+/* Na tabletu ma lista pres 1100 px sirky - roztazena tlacitka by v ni
+   vypadala jako dva pruhy. Nad 768 px se proto obsah scvrkne a vycentruje. */
+@media (min-width: 769px) {
+  .callbar { justify-content: center; }
+  .callbar .btn { flex: 0 1 15rem; }
+  .callbar .btn--primary { flex: 0 1 18rem; }
+  /* Krizek jde z toku ven k pravemu okraji - jinak by dvojici tlacitek
+     odsunul o svou sirku doleva a ta by pak nesedela na osu stranky. */
+  .callbar__close {
+    position: absolute; right: var(--gutter); top: 50%;
+    margin-right: 0; transform: translateY(-50%);
+  }
+}
+
+/* ---------- CTA ---------- */
+.cta { background: var(--cream); padding-top: var(--section-pad); }
+/* Mrizka NESMI dostat vlastni max-width ani margin-inline:auto. Zkouseli jsme to
+   kvuli prazdnu mezi textem a fotkou a rozbilo to osu stranky: CTA se vycentrovalo
+   uvnitr kontejneru, nadpis se posunul o 150 px doprava a prestal licovat s logem
+   v navigaci i s nadpisy vsech sekci nad sebou. Prazdno se resi velikosti fotky
+   a obsahem, ne zuzenim radku. */
+.cta__grid { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: clamp(2rem, 5vw, 5rem); }
+.cta h2 { font-size: clamp(2.4rem, 5vw, 3.75rem); }
+.cta .lead { margin: 1.25rem 0 2rem; max-width: 34rem; }
+/* zvetseno z 26rem - fotka v zaveru stranky drzela mensi vahu nez fotka
+   v "o nas" (30rem) i v hero (38rem), i kdyz je to hlavni vyzva k objednani */
+.blob-figure--cta { max-width: 34rem; margin-left: auto; }
+
+/* ---------- footer ---------- */
+.footer {
+  --footer-pad-top: clamp(3rem, 6vw, 4.5rem);
+  background: var(--dark); color: var(--primary-100);
+  padding: var(--footer-pad-top) 0 2rem;
+}
+/* Tri sloupce: znacka s kontaktem, sluzby, navigace. Ctvrty sloupec tu byl
+   drive, ale musel se vycpavat odkazy na kotvy, ktere uz mel soused. */
+.footer__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+/* Byly to <h4>, ale nad nimi je v dokumentu naposledy <h2> - preskocena uroven.
+   Jako <h3> spadnou do pravidla "h1, h2, h3", ktere jim vnuti Baloo 2 / 700 /
+   --dark; nadpisky sloupcu maji zustat drobne popisky, proto se to tady vraci. */
+.footer h3 {
+  font-family: var(--font-body); font-size: .85rem; font-weight: 500;
+  line-height: 1.65; color: var(--primary-300); margin-bottom: .9rem;
+}
+/* Vlastni trida, ne ".footer__top > div > a". Ten selektor (0-1-2) prebijel
+   .footer__cta (0-1-0), takze telefonni tlacitko dostavalo display: block,
+   roztahlo se pres cely sloupec a ikona vypadla z radku. */
+.footer__link { display: block; font-size: .92rem; margin-bottom: .55rem; opacity: .92; transition: color .2s, opacity .2s; }
+.footer__link:hover { color: #fff; opacity: 1; }
+.footer__tagline { font-size: .85rem; color: var(--primary-300); margin-top: .75rem; }
+.footer__addresses { display: grid; grid-template-columns: repeat(2, minmax(0, 11rem)); gap: 1.5rem; margin-top: 2rem; font-size: .9rem; }
+.socials { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 2rem; font-size: .8rem; }
+.socials a { display: inline-flex; align-items: center; gap: .4rem; opacity: .9; }
+.socials a:hover { opacity: 1; color: #fff; }
+.socials .ico { width: 1.1rem; height: 1.1rem; }
+.footer__cta { display: inline-flex; margin-top: 2rem; }
+.pill {
+  display: inline-block; vertical-align: middle;
+  font-size: .62rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  padding: .2rem .5rem; margin-left: .35rem; border-radius: 1rem;
+  background: var(--orange); color: var(--primary-950);
+}
+.footer__legal {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem;
+  margin-top: 3.5rem; padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 249, 241, .12);
+  font-size: .75rem; color: var(--primary-300);
+}
+.footer__legal a:hover { color: #fff; }
+.footer__credit a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+  text-decoration-color: rgba(255, 249, 241, .35);
+  transition: text-decoration-color .2s;
+}
+.footer__credit a:hover { text-decoration-color: var(--cream); }
+
+/* ---------- odhalovani paticky ----------
+   Paticka stoji prisplendlena u spodku okna, <main> jede pres ni nahoru
+   a postupne ji odkryva. Tridu .footer-reveal i --footer-h nastavuje
+   main.js - jen na desktopu a jen kdyz se paticka do okna vejde i s pruhem
+   pod vlnou, jinak by ji neslo dorolovat az na konec. */
+.footer-reveal main {
+  position: relative; z-index: 1;
+  background: var(--cream);
+  margin-bottom: var(--footer-h, 0px);
+}
+.footer-reveal .footer {
+  position: fixed; left: 0; bottom: 0; width: 100%; z-index: 0;
+  /* O vysku vlny vic, aby vlna na konci scrollu nedosedla primo na logo. */
+  padding-top: calc(var(--footer-pad-top) + var(--wave-h));
+}
+
+/* Vlna nad patickou. V beznem toku je to tmavy tvar uvnitr .cta (dalsi barva
+   vzlina nahoru). Pri odhalovani ale <main> paticku PREKRYVA, takze tmavy tvar
+   uvnitr nej schova i obsah paticky a ten se pak zase objevi na rovne spodni
+   hrane <main> - to je ta rovna cara pres logo. Proto se vlna prehodi:
+   zavesi se POD <main>, prebarvi na krem a otoci zpatky (symbol #d-wave ma
+   rotate(180) zapecene v ceste). Krem tim konci zvlnenou hranou a paticka se
+   odhaluje po krivce - jedina hrana, zadny rovny rez. */
+.cta .wave { color: var(--dark); }
+.footer-reveal .cta .wave {
+  color: var(--cream);
+  bottom: calc(var(--wave-h) * -1 + 1px);
+  transform: scaleY(-1);
+}
+.footer-reveal .cta .wave--flip { transform: scale(-1, -1); }
+
+/* Modal recenzí zrušen – „Více recenzí“ teď rozbaluje mřížku přímo v sekci,
+   takže čtenář neztratí kontext. Styly .modal* odstraněny s ním;
+   .no-scroll zůstává, používá ho ještě mobilní menu a lightbox galerie. */
+body.no-scroll { overflow: hidden; }
+
+/* ---------- lightbox: dvojice před/po ve větším ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 110;
+  display: grid; place-items: center;
+  padding: 1rem 5.5rem;                 /* po stranách místo pro šipky */
+  background: rgba(26, 33, 18, .88);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  animation: fade .25s ease;
+}
+.lightbox__box { width: min(100%, 100rem); max-height: 94vh; overflow: auto; text-align: center; }
+/* Obě fotky mají STEJNOU výšku, šířka se dopočítá z poměru stran – proto flex,
+   ne grid. Výšku řádku počítá main.js (lightboxLayout), aby se pár vešel
+   do šířky i do okna zároveň; 74vh je jen fallback, než se fotky načtou. */
+.lightbox__imgs {
+  display: flex; justify-content: center; align-items: center;
+  gap: 1rem; height: 74vh;
+}
+/* figure se smrští na velikost fotky, aby štítek Před/Po seděl na ní a ne vedle */
+.lightbox__side { position: relative; margin: 0; height: 100%; }
+/* žádný ořez – v lightboxu je fotka vidět celá */
+.lightbox__side img {
+  display: block; height: 100%; width: auto; max-width: 100%; max-height: 80vh;
+  border-radius: var(--radius-card); background: var(--primary-950);
+}
+.lightbox__side figcaption { position: absolute; left: .7rem; top: .7rem; }
+.lightbox__caption {
+  max-width: none; margin: 1.25rem auto 0; color: var(--cream); font-size: .95rem;
+}
+.lightbox__caption b { font-weight: 600; }
+.lightbox__caption .pair__breed { border-color: rgba(255, 249, 241, .35); color: var(--primary-300); }
+.lightbox__caption .pair__desc { color: var(--primary-300); }
+.lightbox__counter {
+  max-width: none; margin-top: .5rem;
+  font-size: .78rem; color: var(--primary-300); opacity: .75;
+}
+
+/* ---------- photobox: jedna fotka od zákazníka ----------
+   Vlastní, ne galerijní lightbox: ten je postavený na dvojici před/po
+   (dvě fotky stejné výšky, šipky, počítadlo) a pro jednu fotku by se
+   musel rozebrat. Tady stačí obrázek, popisek a křížek. */
+.photobox {
+  position: fixed; inset: 0; z-index: 110;
+  display: grid; place-items: center; padding: 1.5rem;
+  background: rgba(26, 33, 18, .88);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  animation: fade .25s ease;
+}
+.photobox__box { text-align: center; max-height: 92vh; }
+.photobox__img {
+  display: block; margin: 0 auto;
+  max-width: min(46rem, 92vw); max-height: 78vh; width: auto; height: auto;
+  border-radius: var(--radius-card); background: var(--primary-950);
+}
+/* max-width: none ruší globální p { max-width: 62ch } – jinak by byl užší
+   než fotka a text by se vystředil vůči němu, ne vůči obrázku. */
+.photobox__cap { max-width: none; margin-top: 1rem; color: var(--primary-300); font-size: .88rem; }
+.photobox__cap b { color: var(--cream); font-weight: 600; }
+
+.lightbox__close, .lightbox__nav, .photobox__close {
+  position: fixed; z-index: 2;
+  width: 2.9rem; height: 2.9rem; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255, 249, 241, .12); color: var(--cream);
+  transition: background .2s ease;
+}
+.lightbox__close:hover, .lightbox__nav:hover, .photobox__close:hover { background: rgba(255, 249, 241, .28); }
+.lightbox__close:focus-visible, .lightbox__nav:focus-visible, .photobox__close:focus-visible { outline: 3px solid var(--cream); outline-offset: 2px; }
+.lightbox__close, .photobox__close { top: 1rem; right: 1rem; }
+.lightbox__nav { top: 50%; transform: translateY(-50%); }
+.lightbox__nav--prev { left: 1rem; }
+.lightbox__nav--prev .ico { transform: rotate(180deg); }
+.lightbox__nav--next { right: 1rem; }
+
+/* ---------- scroll reveal ---------- */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
+.js .reveal.in-view { opacity: 1; transform: none; }
+.js .reviews__grid.reveal .review,
+.js .gallery__grid.reveal .pair,
+.js .steps.reveal .step {
+  opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease;
+}
+.js .reviews__grid.reveal.in-view .review,
+.js .gallery__grid.reveal.in-view .pair,
+.js .steps.reveal.in-view .step { opacity: 1; transform: none; }
+.js .reviews__grid.reveal.in-view .review:nth-child(2),
+.js .gallery__grid.reveal.in-view .pair:nth-child(2),
+.js .steps.reveal.in-view .step:nth-child(2) { transition-delay: .08s; }
+.js .reviews__grid.reveal.in-view .review:nth-child(3),
+.js .gallery__grid.reveal.in-view .pair:nth-child(3),
+.js .steps.reveal.in-view .step:nth-child(3) { transition-delay: .16s; }
+.js .reviews__grid.reveal.in-view .review:nth-child(4),
+.js .gallery__grid.reveal.in-view .pair:nth-child(4),
+.js .steps.reveal.in-view .step:nth-child(4) { transition-delay: .24s; }
+.js .reviews__grid.reveal.in-view .review:nth-child(5) { transition-delay: .12s; }
+.js .reviews__grid.reveal.in-view .review:nth-child(6) { transition-delay: .2s; }
+.js .reviews__grid.reveal.in-view .review:nth-child(7) { transition-delay: .28s; }
+.js .reviews__grid.reveal.in-view .review:nth-child(8) { transition-delay: .36s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal, .js .hero__a, .js .hero__b,
+  .js .reviews__grid.reveal .review, .js .gallery__grid.reveal .pair, .js .steps.reveal .step {
+    opacity: 1; transform: none; animation: none; transition: none;
+  }
+  .btn, .review, .tab, .tab::before, .pair, .pair__zoom, .faq__item summary, .faq__item summary::after,
+  .callbar, .lightbox, .lightbox__close, .lightbox__nav,
+  .panel.is-active > *, .panel.is-open > * { transition: none; animation: none; }
+}
+
+/* ---------- responsivita ---------- */
+@media (max-width: 1024px) {
+  /* Pozor: zadne pravidlo pro .nav__links sem uz nepatri. Pod 1200 px je lista
+     slozena do hamburgeru a odkazy si velikost berou z tamniho bloku - stara
+     radka s font-size .9rem se sem propadala az za nej a v panelu z odkazu
+     delala popisky. */
+  .reviews__grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews__grid:not(.is-open) .review:nth-child(n+5) { display: none; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  /* bocni vyber se jen zuzi - napojeni na panel drzi az k tabletu.
+     Vodorovny pas zalozek tu byl driv; posuvnou listu si nikdo nepropojí s panelem
+     a dve z peti cen zmizely za okrajem, takze se misto nej pod 768 px sklapi harmonika. */
+  .services__layout { --tabs-gap: 1.5rem; grid-template-columns: 15rem 1fr; }
+  .tab { padding: .75rem .85rem; gap: .7rem; font-size: .9rem; }
+  .tab__icon { width: 2.2rem; height: 2.2rem; }
+  /* panel je uz jen ~430 px siroky - fotka jde pod text, jinak by na nej zbyla par slov na radek.
+     Zaroven se zmensi: pod textem uz je to doveta, ne polovina rozlozeni, a v plne velikosti
+     by panel prerostl sloupec se zalozkami o par set pixelu. */
+  .panel { grid-template-columns: 1fr; }
+  .blob-figure--service { max-width: 13rem; margin: 0 auto; }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+  .awards { --award-per-view: 4; }
+}
+
+@media (max-width: 768px) {
+  /* lista ma vlastni breakpoint 1200 px, viz sekce .nav vyse */
+  .hero__grid, .about__grid, .location__grid, .cta__grid { grid-template-columns: 1fr; }
+  .map { position: static; }
+  .hero__grid { gap: 2.5rem; }
+  .blob-figure--hero, .blob-figure--about, .blob-figure--cta { max-width: 22rem; margin-inline: auto; }
+  /* pod 768 px je fotka u kraje okna – akcenty zmensit, at ji neprekryvaji;
+     maska fotky a tvar za ni zustavaji vzdycky */
+  .blob-figure { --accent-scale: .62; }
+  .blob-figure__accent--sm-hide { display: none; }
+  /* tvary u okraje jsou jen pro siroka okna - pod 768 px je obsah pres celou
+     sirku a na uzky prouzek u kraje uz neni misto */
+  .section-shape { display: none; }
+  /* zvetsena hero tlacitka jsou jen pro desktop – na mobilu by se zalamovala */
+  .hero .btn { padding: .85rem 1.7rem; font-size: .95rem; }
+  /* pod sebou jde nejdriv cely text (vcetne nadpisu) a az pod nim fotka -
+     jinak by fotka nadpis "Salon vede Marie" odstrcila dolu a sekce by
+     zacinala obrazkem bez uvodu */
+  .blob-figure--about { order: 1; }
+  /* pas oceneni dojede az k okraji okna - jinak nevypada, ze pokracuje */
+  .awards { --award-per-view: 1.9; }
+  .awards__row { margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-left: var(--gutter); }
+  .awards__nav { display: none; }
+  .panel { grid-template-columns: 1fr; }
+  .blob-figure--service { max-width: 12rem; margin: 0 auto; }
+
+  /* ---- harmonika ----
+     Pod 768 px se sloupec zalozek uz neuzivi (dlouhy nazev jako "Koupani a rozcesani"
+     by se lamal do tri radku) a vodorovny pas nechceme. Zalozka a jeji panel se proto
+     slozi pod sebe do jednoho prvku: display:contents rozpusti oba kontejnery, takze
+     vsech deset kusu jsou primo polozky .services__layout, a poradi dvojic sazi
+     main.js pres `order` (aby nova sluzba nepotrebovala dalsi radek v CSS). */
+  .services__layout { grid-template-columns: 1fr; gap: 0; }
+  .tabs, .panels { display: contents; }
+  /* scroll-margin drzi lista - bez nej by odkaz na sluzbu skoncil pod prilepenou navigaci */
+  .tab { margin-top: .5rem; padding: .8rem .9rem; font-size: .95rem; scroll-margin-top: 5.75rem; }
+  .tabs > .tab:first-child { margin-top: 0; }
+  .tab:hover { transform: none; }
+  /* sipka stejneho strihu jako v FAQ - napovi, ze se radek rozbaluje, ne prepina */
+  .tab::before {
+    content: ""; order: 1; flex: none; margin: .25rem 0 0 auto;
+    width: .5rem; height: .5rem;
+    border-right: 2px solid var(--primary-500); border-bottom: 2px solid var(--primary-500);
+    transform: rotate(45deg); transition: transform .25s ease;
+  }
+  .tab.is-open::before { margin-top: .5rem; transform: rotate(-135deg); }
+
+  /* O otevreni tu rozhoduje .is-open, ne .is-active: polozky jsou na sobe nezavisle,
+     po nacteni jsou vsechny zavrene a kazdou jde znovu zavrit. Prepnuti stavu ma na
+     starosti main.js, ktery pri prechodu do harmoniky .is-active sundava uplne.
+     Podminka html.js je kvuli chvili pred spustenim skriptu (a kvuli vypnutemu JS):
+     s JS se prvni panel neblikne otevreny, bez nej zustane otevreny jako jedina
+     cesta k obsahu. */
+  html.js .panel.is-active { display: none; }
+  html.js .panel.is-open { display: grid; }
+  .panel.is-open > * { animation: panel-in .4s cubic-bezier(.2, .7, .3, 1) both; }
+  .panel.is-open > * + * { animation-delay: .06s; }
+
+  /* napojeni se tu nekresli, ale doslova vznika: zalozce se narovnaji spodni rohy,
+     panelu horni a oranzovy prah pokracuje po jeho leve hrane */
+  .tab.is-open {
+    border-left-color: var(--orange);
+    border-top-right-radius: .75rem;
+    border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+    /* stin jen nahoru - dolu by nakreslil svetlou linku presne ve svaru s panelem */
+    box-shadow: 0 -6px 14px rgba(67, 73, 58, .05);
+  }
+  .tab.is-open .tab__icon { background: var(--primary-100); }
+  .tab.is-open .tab__price { color: var(--primary-700); }
+  .tab.is-active::after { display: none; }
+  .panel.is-open {
+    border-top-left-radius: 0; border-top-right-radius: 0;
+    border-left: 4px solid var(--orange);
+  }
+  .gallery__grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .price-note { grid-template-columns: 1fr; }
+  /* na mobilu fotky pod sebe, každá na plnou šířku – stejná výška tam nedává smysl */
+  .lightbox { padding: 1rem; }
+  .lightbox__imgs { flex-direction: column; height: auto !important; }
+  .lightbox__side { height: auto; width: 100%; }
+  .lightbox__side img { height: auto; width: 100%; max-height: 46vh; object-fit: contain; }
+  .lightbox__box { padding-bottom: 4rem; }
+  .lightbox__nav { top: auto; bottom: 1rem; transform: none; }
+  /* na mobilu vytaci cislo samotny tap na tlacitko, takze ho v nem netiskneme –
+     misto nej se vraci sloveso. Cislo je dal videt v kontaktech, v patickce
+     a ve vysunutem panelu listy; ctecka ho slysi z aria-label odkazu, ktery
+     se nemeni. */
+  .btn__num { display: none; }
+  .btn__verb { display: inline; }
+  .section-accent--reviews { display: none; }
+  .footer__addresses { grid-template-columns: 1fr 1fr; }
+  /* Prstem, ne mysi: odkazy v paticce mely radek vysoky 24 px. Vyska se resi
+     paddingem misto margin-bottom, aby se plochy zvetsily a sloupec zustal
+     stejne vysoky - odsazeni mezi radky bylo .55rem, ted ho nese padding. */
+  .footer__link { padding: .55rem 0; margin-bottom: 0; }
+  /* Samostatne stojici sipkove odkazy meli radek vysoky 24 px. Odkazy uvnitr
+     vety (na Google, e-mail) se nechavaji - u nich WCAG minimalni plochu
+     nevyzaduje a padding by rozhodil radkovani odstavce. */
+  .link-arrow { padding-block: .5rem; }
+}
+
+/* na mobilu uzsi okraj, at zbyde sirka na obsah (stejne jako na referenci) */
+@media (max-width: 600px) {
+  :root { --gutter: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .reviews__grid { grid-template-columns: 1fr; }
+  .reviews__grid:not(.is-open) .review:nth-child(n+3) { display: none; }
+  /* odznaky se zalomí pod sebe – svislá čárka mezi nimi by zůstala viset */
+  .rating-badges { gap: .5rem; }
+  .rating-badges__sep { display: none; }
+  /* Sloupce Sluzby a Navigace zustavaji vedle sebe i tady - jsou to kratke
+     seznamy a pod sebou by z paticky udelaly dalsi obrazovku scrollovani.
+     Znacka pres celou sirku resi uz pravidlo na 1024 px. */
+  .btn { width: 100%; justify-content: center; }
+  .nav__inner .btn, .footer .btn, .callbar .btn { width: auto; }
+  .hero .btn-row .btn { width: auto; }
+}
