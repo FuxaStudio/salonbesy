@@ -8,20 +8,17 @@
   <link rel="canonical" href="https://www.besy.cz/">
   <meta name="theme-color" content="#e7ecdb">
 
-  <!-- Favicon: zjednodušená silueta (favicon-simple ze sady) – detailní kresba se
-       v 16 px rozpadla na kaši, linky vyšly na méně než pixel.
-       Odkaz na favicon.svg je záměrně vypnutý: prohlížeč, který umí SVG, by si vzal
-       jeho a zjednodušená ikona by se nikdy neukázala. Samotný favicon.svg v kořeni
-       zůstává, na návrat detailní verze stačí vrátit ten jeden řádek.
-       Velké ikony (apple-touch, icon-192/512) mají dál detailní kresbu – tam je čitelná.
-       Absolutní cesty, soubory leží v kořeni webu. -->
+  <!-- Favicon: silueta pudla na olivovém čtverci. Plná silueta je čitelná
+       i v 16 px, takže všechny velikosti nesou stejnou kresbu
+       a zjednodušená verze pro malé ikony už není potřeba.
+       Soubory leží v kořeni webu. -->
   <!-- Pro výsledky Googlu: bere čtvercovou ikonu o velikosti násobku 48 px a sám
-       si ji zmenší na 48. V té velikosti je detailní kresba čitelná, tak mu ji
-       nabízíme – icon-192.png je přesně 4 × 48 a nese původní logo.
-       Uvedeno PŘED favicon.ico schválně: prohlížeče, které si z několika ikon
-       berou tu poslední, tak sáhnou po .ico se zjednodušenou siluetou. -->
+       si ji zmenší na 48 – icon-192.png je přesně 4 × 48.
+       Pořadí je záměrné: prohlížeč, který umí SVG, si vezme favicon.svg,
+       ostatní spadnou na .ico. -->
   <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
   <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta property="og:type" content="website">
@@ -201,7 +198,7 @@
            odkazu je v aria-label, jinak by ctecka precetla logo dvakrat.
            logo.svg s currentColor tady nejde - v <img> se vyhodnoti jako cerna. -->
       <img class="logo__mark" src="images/logo-black.svg" alt=""
-           width="47" height="48" decoding="async">
+           width="46" height="48" decoding="async">
       <span class="logo__name">Besy</span>
     </a>
     <nav class="nav__menu" id="nav-menu" aria-label="Hlavní navigace">
@@ -957,7 +954,7 @@
         <a href="./" class="logo logo--light logo--mark" aria-label="Besy – psí salon, domů">
           <!-- na tmave paticce (--dark) musi byt bila varianta znacky -->
           <img class="logo__mark" src="images/logo-white.svg" alt=""
-               width="47" height="48" loading="lazy" decoding="async">
+               width="46" height="48" loading="lazy" decoding="async">
           <span class="logo__name">Besy</span>
         </a>
         <p class="footer__tagline">Péče o&nbsp;psy se srdcem</p>

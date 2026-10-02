@@ -22,6 +22,10 @@ Salon/
   css/vendor/           lokálně, ne z CDN; needitovat, při aktualizaci přepsat celé
   images/demo/          DOČASNÉ cizí fotky před/po (maketa) – před spuštěním smazat,
                         viz images/demo/PUVOD.txt
+  images/logo-*.svg     značka (silueta pudla): logo-black.svg v liště, logo-white.svg
+                        v patičce a v markeru mapy
+  favicon.ico, favicon.svg, apple-touch-icon.png, icon-192.png, icon-512.png
+                        ikony webu, leží v kořeni; icon-* nese i site.webmanifest
   BRIEF.md              tento soubor
 ```
 
@@ -37,7 +41,8 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
 | `--primary-200` | `#d0dbbb` | světlé plochy, placeholder mapy |
 | `--primary-500` | `#6d854a` | akcent v&nbsp;nadpisech (`h1 em`), zelené tvary v&nbsp;`Blobs/`, marker mapy |
 | `--primary-600` | `#5c733d` | **plocha tlačítek**, číslo kroku, štítek „Po“ – všude, kde je bílý text na&nbsp;zelené |
-| `--primary-700` | `#485932` | logo, outline tlačítka, hover plných tlačítek, `.eyebrow` |
+| `--primary-700` | `#485932` | outline tlačítka, hover plných tlačítek, `.eyebrow` |
+| `--logo-ink` | `#111111` | nápis „Besy“ v&nbsp;liště – stejná černá jako silueta v&nbsp;`images/logo-black.svg`; při změně barvy značky přepsat obojí. V&nbsp;patičce je nápis krémový (`.logo--light`) |
 | `--cream` | `#fff9f1` | krémové pozadí sekcí |
 | `--orange` | `#f6ae2d` | hvězdy, žluté akcenty v `Blobs/`, aktivní záložka |
 | `--peru` | `#bd9058` | podtitul loga |

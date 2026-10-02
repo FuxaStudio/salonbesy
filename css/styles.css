@@ -18,6 +18,9 @@
   --orange: #f6ae2d;
   --peru: #bd9058;
   --dark: #3a3c36;
+  /* cerna znacky: stejna jako vypln siluety v images/logo-black.svg, aby
+     napis "Besy" a pudl vedle nej nebyly dve ruzne cerne */
+  --logo-ink: #111111;
   /* --grey a --text-3 jsou o stupen tmavsi, nez byly (#7a816f / #757575).
      V puvodnich hodnotach nedosahl doprovodny text na 4,5:1 podle WCAG AA:
      perex v hero mel 3,35, sedive popisky 4,25 az 4,40. Olivovy nadech
@@ -197,7 +200,7 @@ section { position: relative; }
 .logo__name {
   /* TODO: logo je provizorni, pujde cele predelat */
   font-family: var(--font-display); font-weight: 600;
-  font-size: 1.85rem; letter-spacing: -.03em; color: var(--primary-700);
+  font-size: 1.85rem; letter-spacing: -.03em; color: var(--logo-ink);
 }
 .logo__sub {
   font-size: .6rem; letter-spacing: .28em; text-transform: uppercase;
