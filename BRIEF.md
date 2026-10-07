@@ -437,10 +437,12 @@ Pod záložkami běží **dva režimy přístupnosti** a&nbsp;přepíná je `syn
 - **`images/demo/`** – cizí fotky (Psí salon Rájec‑Jestřebí), jen maketa. Nahradit vlastními a&nbsp;složku smazat, viz `images/demo/PUVOD.txt`.
 - **Facebook / Instagram** – řádky jsou zakomentované v&nbsp;`#kontakt` i&nbsp;v&nbsp;patičce. Až budou profily, vrátit je a&nbsp;doplnit `sameAs` v&nbsp;JSON‑LD.
 - **Zásady zpracování osobních údajů** – odkaz z&nbsp;patičky odstraněn. Web nemá formulář, cookies ani analytiku a&nbsp;objednává se telefonem, takže není co popisovat. **Až přibude formulář, pixel nebo měření návštěvnosti, stránku se zásadami napsat a&nbsp;odkaz do&nbsp;`.footer__legal` vrátit.**
-- **Parkování** u&nbsp;salonu a&nbsp;**platební metody** (hotovost + QR) – ověřit s&nbsp;Marií; platby jsou i&nbsp;v&nbsp;`#dotazy`, v&nbsp;kroku&nbsp;4 a&nbsp;v&nbsp;`paymentAccepted`.
+- **Platební metody** – možná se platí jen hotově, QR platba nejistá. Ověřit s&nbsp;Marií; platby jsou v&nbsp;`#dotazy`, v&nbsp;kroku&nbsp;4 a&nbsp;v&nbsp;`paymentAccepted`. (Parkování v&nbsp;ulici před domem je potvrzené.)
 - **Vitrína ocenění** v&nbsp;`#o-nas` – fotky pohárů i&nbsp;popisky jsou vymyšlené vzorky. Ověřit, jestli sekce vůbec má být.
 - **Fotky** – hero, služby, CTA a&nbsp;portrét Marie jsou pořád stock z&nbsp;Unsplash.
-- **Zbytek textu o&nbsp;Marii** – tvrzení „v&nbsp;salonu je vždycky jen jeden pes“ ověřit.
+- **Text o&nbsp;Marii** v&nbsp;`#o-nas` je od&nbsp;ní (10/2026). Marie upravuje doma (potvrzeno).
+- **„V&nbsp;salonu je vždycky jen jeden pes“** – z&nbsp;`#o-nas` vypadlo, ale zůstává v&nbsp;`meta description`, `og:description`, v&nbsp;kroku&nbsp;3 a&nbsp;v&nbsp;poznámce u&nbsp;otevírací doby. Ověřit, nebo vypustit i&nbsp;tam.
+- **Provozní údaje** – délky návštěv, příplatky, storno 50&nbsp;%, termíny „2–3 týdny dopředu“, štěňata od&nbsp;4&nbsp;měsíců, hárající feny, odpovědi na&nbsp;e‑mail a&nbsp;seznam doplňkových procedur jsou zatím odhad. Projít s&nbsp;Marií.
 
 ## 9. Časté úpravy – kde sáhnout
 
