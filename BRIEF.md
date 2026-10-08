@@ -13,6 +13,10 @@ Landing page (jedna stránka, žádné podstránky) pro psí salon **Besy** v&nb
 ```
 Salon/
   index.html            celá stránka + inline SVG (ikony, vlna)
+  404.html              chybová stránka; GitHub Pages ji servíruje na každé neexistující
+                        adrese. Je soběstačná (styly, logo i tvary vložené), protože
+                        relativní cesty by se na hlubší adrese rozbily; barvy a písma
+                        při změně palety přepsat i tady
   Blobs/                zdrojové SVG organických tvarů – maska fotky, tvar za ní,
                         tvary do sekcí, akcenty, hotové skupiny; NEEDITOVAT
   css/styles.css        tokeny, reset, komponenty, sekce, responsivita
@@ -26,7 +30,11 @@ Salon/
                         v patičce a v markeru mapy
   favicon.ico, favicon.svg, apple-touch-icon.png, icon-192.png, icon-512.png
                         ikony webu, leží v kořeni; icon-* nese i site.webmanifest
-  BRIEF.md              tento soubor
+  BRIEF.md              tento soubor (nepublikuje se, viz _config.yml)
+  _config.yml           GitHub Pages: vyloučí BRIEF.md a CLAUDE.md z webu. Nahradil
+                        .nojekyll – bez Jekyllu by se publikovalo úplně všechno.
+                        HTML/CSS/JS nemají front matter, takže je Jekyll jen kopíruje
+  .gitignore            .playwright-mcp/ (logy a screenshoty z testování)
 ```
 
 Skutečné fotky salonu patří do `images/` (ne do `images/demo/`). Stock fotky psů se pořád tahají z&nbsp;Unsplash přes URL – nahradí se, až budou vlastní.
@@ -61,9 +69,11 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
 
 **Pozor na kurzivu.** `Baloo 2` kurzivu nemá. Zvýrazněné slovo v&nbsp;nadpisu (`h1 em`) se proto odlišuje **jen zelenou barvou** a má explicitní `font-style: normal` – bez toho by ho prohlížeč zkosil sám, protože `<em>` je ve&nbsp;výchozím stavu kurzivou. Totéž platí pro `.logo__name`. Kdyby se na&nbsp;písma sahalo znovu, kandidát bez skutečné kurzivy tuhle výjimku potřebuje taky.
 
+**Zelené slovo v&nbsp;nadpisu jen na&nbsp;čtyřech místech: hero, Před a&nbsp;po, Kontakt a&nbsp;závěrečné CTA.** Dřív ho měly všechny nadpisy sekcí (8× stejný vzorec „slovo + zelené slovo“) a&nbsp;stránka tím působila šablonovitě. Ostatní nadpisy (`#o-nas`, vitrína ocenění, `#sluzby`, `#jak-to-probiha`, `#recenze`, `#dotazy`) jsou celé tmavé. Nové nadpisy zelené slovo nedostávají; když už, tak místo jednoho z&nbsp;těch čtyř, ne navíc.
+
 **Řádkování nadpisů je 1.18, ne míň.** `Baloo 2` má vysoké svislé metriky (font box 1,6&nbsp;em, inkoust s&nbsp;českou diakritikou 1,06&nbsp;em). Pod 1.15 se u&nbsp;dvouřádkových nadpisů začne háček na&nbsp;druhém řádku dotýkat dotažnice z&nbsp;prvního. Nadpisy taky nemají záporný `letter-spacing` – kulaté tučné písmo ho nepotřebuje.
 
-**Pozadí a přechody sekcí v pořadí.** Stránka má jen dvě barvy pozadí: **krémovou jako základ** a **šalvějovou jako rytmus** (3× – hero, jak to probíhá, kontakt). Bílá už není pozadím žádné sekce, zůstala jen pro karty. Vlna je vždycky tam, kde se barva mění; kde na sebe navazují dvě krémové sekce, je tvrdá hrana.
+**Pozadí a přechody sekcí v pořadí.** Stránka má jen dvě barvy pozadí: **krémovou jako základ** a **šalvějovou jako rytmus** (3× – hero, jak to probíhá, kontakt). Bílá už není pozadím žádné sekce, zůstala jen pro karty. Vlna je vždycky tam, kde se barva mění; kde na sebe navazují dvě krémové sekce, je tvrdá hrana. **U tvrdé hrany dělá mezeru jen spodní padding horní sekce, spodní sekce má `padding-top: 0`** (`.services`, `.gallery`, `.faq`). Dřív se oba paddingy sčítaly a mezi službami a galerií i mezi recenzemi a dotazy byla díra ~200&nbsp;px proti 96&nbsp;px jinde. Nadpis těchhle sekcí proto sedí hned u horní hrany a kotva z&nbsp;menu by ho přilepila k&nbsp;liště – `#sluzby, #galerie, #dotazy` mají vyšší `scroll-margin-top` (o&nbsp;2,5&nbsp;rem). Pozor na&nbsp;horní `margin` prvního potomka: bez paddingu proteče ven ze sekce (proto `.gallery__head h2 + p`, ne `.gallery__head p` – `.eyebrow` je taky `<p>`).
 
 | Sekce | Pozadí | Přechod dolů |
 |---|---|---|
@@ -84,7 +94,7 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
 
 ## 4. Struktura stránky (id sekcí a hlavní třídy)
 
-0. `<head>` – title s městem, description, canonical, OG. Dva `application/ld+json`: **LocalBusiness** (adresa, telefon, `openingHoursSpecification`, `priceRange`, `geo`, `sameAs`) a **FAQPage**. LocalBusiness je **záměrně bez `aggregateRating`** – Google zakazuje označovat vlastní recenze na vlastním webu a umí za to udělit manuální penalizaci. Hned pod `<body>` je blok `PŘED SPUŠTĚNÍM DOPLNIT` se seznamem všech placeholderů.
+0. `<head>` – title s městem, description, canonical, OG. Dva `application/ld+json`: **LocalBusiness** (adresa, telefon, `openingHoursSpecification`, `priceRange`, `geo`, `sameAs`) a **FAQPage**. LocalBusiness je **záměrně bez `aggregateRating`** – Google zakazuje označovat vlastní recenze na vlastním webu a umí za to udělit manuální penalizaci. Seznam všech placeholderů je v&nbsp;sekci&nbsp;8 tohohle souboru (dřív HTML komentář pod `<body>`, odstraněný, protože byl veřejně vidět ve&nbsp;zdrojovém kódu).
 1. `header.nav#nav` – sticky, po scrollu dostane `.is-scrolled`; pod 1200&nbsp;px hamburger `#nav-toggle` a menu `#nav-menu`. Menu kopíruje pořadí sekcí na stránce: **O&nbsp;mně · Služby a&nbsp;ceník ▾ · Galerie · Jak to&nbsp;probíhá · Recenze · Dotazy · Kontakt**, takže každá sekce `<main>` má svůj odkaz (`#objednat` pokrývá telefonní CTA). **CTA je viditelné telefonní číslo jako `tel:` odkaz**, ne tlačítko „Objednat se“.
 
    **Rozbalovací nabídka služeb – pozor na můstek.** Karta `.nav__drop` je široká
@@ -117,9 +127,9 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
 3. `section.about#o-nas` – `.section-shape--edge-top`, `figure.blob-figure--about` (portrét Marie, ne pes), text o&nbsp;Marii (roky praxe, kurzy, vlastní psi) a&nbsp;pod tím `div.container.awards` – vitrína ocenění: `.awards__head` (nadpis, `.awards__note` a&nbsp;`.awards__nav` se dvěma šipkami) a&nbsp;`ul.awards__row` – **vodorovně scrollovatelný pás** se čtvercovými fotkami pohárů. Bez vlny – služby pod ní jsou taky krémové. Žádné tlačítko. **Tvar u&nbsp;levého okraje visí na&nbsp;sekci, ne na&nbsp;mřížce** – sedí obkročmo na&nbsp;hranici s&nbsp;herem, proto `.about` nesmí nic ořezávat.
 4. `section.services#sluzby` – **služby i ceník v jedné sekci, samostatná sekce ceníku neexistuje.** `.services__head`, `.services__layout` = `.tabs` (5 tlačítek `role=tab`, každé nese `.tab__label` s `.tab__price`) + `.panels` (5 `.panel`). Záložky odpovídají skutečné nabídce: **Stříhání · Koupání a&nbsp;rozčesání · Trimování · Výstavní úpravy · Doplňkové procedury** (štěněcí seznámení je řádek v&nbsp;doplňkových procedurách, ne vlastní záložka). Každá záložka má jinou ikonu – při přidání služby ověř, že se ikona neopakuje. Každý panel má `.panel__prices` > `ul.price-rows` + `p.panel__dur`. Aktivní záložka se **vizuálně napojuje na panel**: má narovnané pravé rohy a&nbsp;pseudoprvek `.tab.is-active::after` (bílý můstek široký `--tabs-gap + 2 px`) překlene mezeru v&nbsp;gridu, takže záložka a&nbsp;panel tvoří jeden tvar. Proto má `.tab` `position: relative` a&nbsp;`z-index: 2` v&nbsp;aktivním stavu a&nbsp;`.panels` `z-index: 1` – jinak by přes můstek přetekl stín panelu. Šířka mezery žije v&nbsp;proměnné `--tabs-gap` na `.services__layout`, při její změně se můstek dorovná sám. Přepnutí záložky **neanimuje kartu, ale jen její obsah** (`.panel.is-active > *`) – kdyby se prolínal celý panel včetně bílého pozadí, můstek by chvíli visel v&nbsp;prázdnu a&nbsp;napojení by se dotahovalo se zpožděním. Ze stejného důvodu nemá `.tab` v&nbsp;`transition` `border-radius` – rohy se přepnou okamžitě. První záložka leží přesně na horní hraně panelu, takže při ní panel ztrácí zaoblení levého horního rohu (`.panel:first-child.is-active`) – jinak by se napojení v&nbsp;rohu přerušilo. Pod&nbsp;768&nbsp;px (harmonika) je můstek vypnutý a&nbsp;napojení dělá samo rozložení – podrobně v&nbsp;sekci&nbsp;7. **Výstavní úpravy jsou v&nbsp;seznamu odlišené**, protože je to nejsilnější důkaz řemesla, ne běžná položka: záložka `tab-4` má navíc `span.tab__flag` („Specialita“) zabalený se&nbsp;`.tab__price` do&nbsp;`span.tab__meta` – štítek sedí na&nbsp;řádku s&nbsp;cenou, protože vedle názvu služby se&nbsp;do&nbsp;17rem sloupce nevejde a&nbsp;záložka by se&nbsp;zalomila. Panel 4 má navíc `p.panel__proof` (žlutý práh, ne box – `.panel__prices` už sedí na&nbsp;`primary-50`) s&nbsp;odkazem na&nbsp;pás ocenění v&nbsp;`#o-nas`; opačným směrem vede z&nbsp;`p.awards__link` odkaz zpět. Ten nese `data-tab="tab-4"` a&nbsp;JS na&nbsp;něj rovnou přepne záložku (kotvu řeší prohlížeč, JS jen přehodí panel a&nbsp;pod 1024&nbsp;px doroluje posuvník záložek) – bez toho by návštěvník přistál na&nbsp;Stříhání. Pod záložkami je `div.price-note` (co cenu ovlivňuje, příplatky, `p.promise`) – platí pro všechny služby, proto stojí mimo panely.
 5. `section.gallery#galerie` – `.gallery__grid` se 4 `figure.pair`. `.pair__imgs` je **`<button>`**, který otevře lightbox (dva `.pair__side` se štítky `.pair__tag` / `.pair__tag--after` a `.pair__zoom` s lupou), pod ním `figcaption` (jméno, `.pair__breed`, `.pair__desc`). **Bez slideru** – táhací dělítko koliduje na mobilu se scrollem. Vlna dole.
-6. `section.process#jak-to-probiha` – šalvějová, `ol.steps` se 4 `li.step` (`.step__num`, `ul.checklist` v kroku 2), na konci tlačítko Zavolat. Vlna dole.
-7. `section.reviews#recenze` – nadpis s kurzívou, `.google-badge`, `.reviews__grid` (8 `article.review`), tlačítko `#open-reviews`. Bez vlny.
-8. `section.faq#dotazy` – `.faq__list` s 8 × `details.faq__item` > `summary` + `.faq__body`. **Nativní `<details>`, žádný JS.** Otázky musí odpovídat FAQPage v `<head>`. Vlna dole.
+6. `section.process#jak-to-probiha` – šalvějová, `ol.steps` se 4 `li.step` (`.step__num`, `ul.checklist` v kroku 2), na konci tlačítko Zavolat. Vlna dole. **Karty zůstávají.** V&nbsp;10/2026 se zkoušela varianta se třemi kroky bez karet (čísla na&nbsp;čárkované lince) a&nbsp;seznamem „Co si připravte k&nbsp;telefonu“ v&nbsp;samostatném boxu pod nimi; uživatel ji vrátil – čtyři karty jsou čitelnější. Nezkoušet znovu.
+7. `section.reviews#recenze` – nadpis bez zeleného slova, `.google-badge`, `.reviews__grid` (8 `article.review`), tlačítko `#open-reviews`. Bez vlny.
+8. `section.faq#dotazy` – `.faq__list` se **dvěma sloupci `div.faq__col` po&nbsp;4** × `details.faq__item` > `summary` + `.faq__body` (pod&nbsp;768&nbsp;px jeden sloupec). Sloupce jsou dva samostatné bloky, ne grid s&nbsp;osmi položkami – v&nbsp;gridu by otevřená odpověď natáhla celý řádek a&nbsp;soused by měl pod sebou díru. Pořadí ve&nbsp;FAQPage = levý sloupec shora, pak pravý; novou otázku přidat do&nbsp;kratšího sloupce. **Nativní `<details>`, žádný JS.** Otázky musí odpovídat FAQPage v `<head>`. Vlna dole.
 9. `section.location#kontakt` – šalvějové pozadí, `p.notice` („Aktuálně“), `.location__grid` = `.contact-list` (telefon, otevírací doba, adresa + parkování + „Kudy ke&nbsp;mně“, e‑mail) a `.map` (na desktopu `position: sticky`, protože kontaktní sloupec je delší než mapa). Mapa **není vložená Google mapa, ale Leaflet** (`div#map-canvas`, vykreslení v&nbsp;`js/main.js`, sekce „mapa“) nad dlaždicemi z&nbsp;OpenStreetMap. Důvod: marker má být logo salonu na&nbsp;zeleném puntíku (`.map-pin`) a&nbsp;do&nbsp;iframu s&nbsp;Google mapou se&nbsp;zvenčí sáhnout nedá – vlastní marker umí až&nbsp;Maps JavaScript API, které chce placený účet. Souřadnice salonu jsou v&nbsp;`data-lat` / `data-lng` na&nbsp;`#map-canvas`, ne v&nbsp;JS. **Rozměry markeru v&nbsp;CSS (44×56&nbsp;px) musí sedět s&nbsp;`iconSize` a&nbsp;`iconAnchor` v&nbsp;JS**, jinak špička neukazuje na&nbsp;dům. Dlaždice sráží do&nbsp;palety filtr na&nbsp;`.leaflet-tile-pane` (na&nbsp;marker a&nbsp;ovládání nesmí sáhnout). Zoomovat jde kolečkem s&nbsp;drženým **Ctrl** (na&nbsp;Macu Cmd), dvojklikem, tlačítky `+`/`−` a&nbsp;na&nbsp;mobilu dvěma prsty. Samotné kolečko schválně scrolluje stránku, jinak by na&nbsp;mapě uvízl scroll – kdo zaroluje bez&nbsp;Ctrl, uvidí přes mapu nápovědu `.map__hint`. Leafletí `scrollWheelZoom` zůstává vypnutý a&nbsp;zoom se&nbsp;počítá ručně v&nbsp;`wheel` posluchači; kdyby se&nbsp;handler zapínal až&nbsp;při stisku Ctrl, ztratila by se&nbsp;první otočka kolečka. Dlaždice se&nbsp;stahují až&nbsp;při doscrollování ke&nbsp;kontaktům (IntersectionObserver). Dlaždicový server OpenStreetMap je zdarma a&nbsp;bez klíče, ale je to cizí služba s&nbsp;férovým limitem – při větší návštěvnosti se&nbsp;přejde na&nbsp;placeného poskytovatele dlaždic, mění se&nbsp;jen URL v&nbsp;`L.tileLayer`. Vlna dole. **`table.hours` v&nbsp;téhle sekci není** – salon nemá pevnou otevírací dobu, místo tabulky je `p.contact__big` s&nbsp;textem „Jen na&nbsp;objednávku“. Styl `.hours` v&nbsp;CSS zůstává pro případ, že by se pevná doba někdy zavedla. `.contact__socials` je zakomentovaný, dokud nebudou známé profily na&nbsp;sítích – totéž `.socials` v&nbsp;patičce a&nbsp;`sameAs` v&nbsp;JSON‑LD.
 10. `section.cta#objednat` – nadpis, tlačítko `tel:`, `figure.blob-figure--cta`.
 11. `footer.footer` – **tři sloupce, ne čtyři**: `.footer__brand` (logo, tagline, `.footer__addresses` s&nbsp;„Salon a&nbsp;sídlo“ + otevírací dobou, zakomentované sítě, `tel:` tlačítko `.footer__cta`), pak **Služby** (5&nbsp;odkazů s&nbsp;`data-tab`) a&nbsp;**Navigace** (6&nbsp;odkazů). Dole `.footer__legal`: vlevo právní řádek, vpravo `p.footer__credit` s&nbsp;odkazem na&nbsp;autora webu.
@@ -410,7 +420,72 @@ Pod záložkami běží **dva režimy přístupnosti** a&nbsp;přepíná je `syn
 
 ## 8. Co je doplněné a co ještě chybí
 
-**Závazný seznam je v&nbsp;`index.html` hned pod `<body>` v&nbsp;bloku `STAV DOPLNĚNÍ ÚDAJŮ`.** Jednotlivá zbývající místa jsou navíc označená `<!-- TODO -->`.
+**Závazný seznam je tady níž v&nbsp;bloku `STAV DOPLNĚNÍ ÚDAJŮ`.** Jednotlivá zbývající místa jsou navíc označená `<!-- TODO -->` v&nbsp;`index.html`.
+
+Do&nbsp;10/2026 ten blok visel jako HTML komentář hned pod `<body>` v&nbsp;`index.html` – jenže komentáře vidí každý ve&nbsp;zdrojovém kódu stránky a&nbsp;byly v&nbsp;něm interní věci (vymyšlené ceny, nenárokovaný Google profil, rodné příjmení Marie). **Interní poznámky patří sem, ne do&nbsp;`index.html`.** BRIEF.md i&nbsp;CLAUDE.md jsou v&nbsp;repu, ale `_config.yml` je vylučuje z&nbsp;GitHub Pages, takže se nepublikují.
+
+```
+STAV DOPLNĚNÍ ÚDAJŮ
+---------------------------------------------------------
+HOTOVO (ověřeno z Google profilu, Firmy.cz a od Marie):
+[x] Název firmy      Besy · psí salon – Marie Kasanová
+[x] Adresa           Dr. Janského 668, 537 01 Chrudim II
+[x] Telefon          +420 603 332 056  (7 míst + JSON-LD)
+[x] E-mail           pudlin@seznam.cz  (potvrzeno Marií, sedí s Firmy.cz)
+[x] IČO              65703278
+[x] geo lat/lng      49.9446138 / 15.8050175
+[x] Mapa: q= i destination= v odkazech
+[x] Město Chrudim v title, description, OG, H2 a JSON-LD
+[x] Otevírací doba   pevná není, vše na domluvený termín
+                     (proto v JSON-LD žádný openingHoursSpecification)
+[x] Nabídka služeb   stříhání, koupání, trimování, výstavní úpravy
+[x] Praxe            od 17 let, celkem 33 let
+[x] Google odznak    5,0 · 12 recenzí (odkaz maps.google.com/?cid=2442423570293532531)
+[x] Firmy.cz odznak  5,0 · 2 hodnocení (obě 5*, ověřeno na profilu)
+[x] Recenze v #recenze – všech 14 skutečných z Googlu a Firmy.cz,
+                   bez dat, texty doslovné (opravena jen interpunkce
+                   a verzálky). Profilovky a 2 fotky v images/reviews/.
+
+ZBÝVÁ DOPLNIT / OVĚŘIT:
+[ ] VŠECHNY CENY – 5 panelů v #sluzby, cenovky v záložkách
+                   a priceRange v JSON-LD. Čísla jsou zatím vymyšlená!
+[ ] !! Google profil NENÍ NÁROKOVANÝ – Mapy nabízejí „Nárokovat tuto firmu“.
+                   Proto tam nejde doplnit web, fotky ani odpovídat na recenze.
+                   Nárokování je zdarma (ověření telefonem/pohlednicí).
+                   Až bude hotové: (1) doplnit web do profilu, (2) vzít
+                   z administrace krátký odkaz g.page/r/<kód>/review
+                   a nahradit jím „na Google“ v .reviews__ask.
+[ ] Doména webu – canonical, og:url a @id ukazují na https://www.besy.cz/,
+                  do Google profilu ji nejde vložit, dokud není nárokovaný
+[x] Recenze Ivety Ježkové chválí „paní Beranovou“ – to je Marie,
+                   Beranová je její rodné příjmení. Karta zůstává.
+[ ] !! images/demo/ – CIZÍ FOTKY (Psí salon Rájec-Jestřebí), jen maketa.
+                   Nahradit fotkami z našeho salonu a složku SMAZAT.
+                   Viz images/demo/PUVOD.txt
+[ ] Odkazy na Facebook / Instagram – řádky jsou zatím odstraněné z #kontakt
+                   i z footeru; až budou profily, vrátit i do sameAs v JSON-LD.
+                   Marie má jen osobní Facebook – zeptat se, jestli ho na web chce.
+[x] Parkování u salonu – v ulici před domem (potvrzeno)
+[ ] Platební metody – možná se platí JEN hotově, QR nejisté. Po potvrzení
+                   upravit #dotazy, krok 4 a paymentAccepted v JSON-LD.
+[ ] Fotky psů (hero, služby, CTA) – zatím Unsplash
+[ ] Portrét Marie v #o-nas – zatím stock žena se psem
+[ ] Fotky pohárů + popisky ocenění v #o-nas – vymyšlené vzorky,
+                   ověřit, jestli vitrína ocenění vůbec má být
+[x] Soutěže v ÚPRAVĚ psů – potvrzeno textem od Marie („přes 70 pohárů
+                   a titulů za vítězství v úpravě psů“), .awards__note upravena
+[x] Text o Marii v #o-nas – nahrazen textem od Marie (10/2026)
+[x] „Domácí prostředí“ v #o-nas – potvrzeno, Marie upravuje doma
+[ ] „Jen jeden pes v salonu“ – z #o-nas vypadlo, ale pořád je
+                   v meta description, og:description, v kroku 3
+                   v #jak-to-probiha a v poznámce u otevírací doby
+                   v #kontakt. Ověřit, nebo vypustit i tam.
+[ ] Provozní údaje, které jsou zatím odhad: délky návštěv, příplatky
+                   (zacuchaná srst, neklidný pes, 50 % za nedostavení),
+                   termíny „2–3 týdny dopředu“, štěňata od 4 měsíců,
+                   hárající feny, e-mail „odpovídám jednou za pár dní“,
+                   seznam doplňkových procedur. Projít s Marií.
+```
 
 **Doplněno ze skutečných zdrojů** (Google profil, Firmy.cz, informace od&nbsp;Marie):
 
@@ -457,7 +532,7 @@ Pod záložkami běží **dva režimy přístupnosti** a&nbsp;přepíná je `syn
 | zvýraznit jinou službu štítkem | do její `.tab__label` zabalit `.tab__price` a nový `span.tab__flag` do `span.tab__meta` (vzor: `tab-4`) |
 | přepnout galerii na posuvník | postavit komponentu podle receptu v sekci 5 (CSS + 5 řádků JS) – ale až budou sesazené páry |
 | změnit cenu | `ul.price-rows` v příslušném `.panel__prices` **a** `.tab__price` v odpovídající záložce **a** `priceRange` v JSON‑LD |
-| přidat otázku do FAQ | nový `details.faq__item` v `.faq__list` **a** stejná otázka do `FAQPage` JSON‑LD v `<head>` |
+| přidat otázku do FAQ | nový `details.faq__item` do kratšího `.faq__col` **a** stejná otázka do `FAQPage` JSON‑LD v `<head>` |
 | změnit telefon | 7 `href="tel:"` odkazů + viditelné texty + `telephone` v JSON‑LD (`grep -c 'tel:' index.html`) |
 | změnit adresu / IČO | `#kontakt`, `.footer__addresses`, `.footer__legal`, `address` + `geo` + `hasMap` v JSON‑LD, `destination=` v odkazu „Kudy ke mně“ a `q=` v `iframe` mapy |
 | změnit otevírací dobu | text v `#kontakt` (`p.contact__big` + `.note`), `.footer__addresses` a případně nový `openingHoursSpecification` v JSON‑LD |
@@ -485,4 +560,4 @@ Pod záložkami běží **dva režimy přístupnosti** a&nbsp;přepíná je `syn
 9. Ověřit JSON‑LD v [Rich Results Testu](https://search.google.com/test/rich-results) – bez chyb a **bez `aggregateRating`**. Zkontrolovat, že otázky ve `FAQPage` sedí s `#dotazy`.
 10. Zkontrolovat, že nové texty mají `&nbsp;` po jednopísmenných předložkách a uvozovky „ “, mluví v první osobě jednotného čísla a nemají vsuvku za pomlčkou.
 10b. **Když se sáhlo na barvu textu nebo pozadí**, přeměřit kontrast (DevTools → Elements → barevný čtvereček u `color`). Běžný text potřebuje 4,5:1, velký a tučný 3:1. Nejmenší rezervu má `--grey` na šalvějovém pozadí (4,59:1). Podrobnosti v sekci 3.
-11. Projít blok `PŘED SPUŠTĚNÍM DOPLNIT` v `index.html` a odškrtat, co už je hotové.
+11. Projít blok `STAV DOPLNĚNÍ ÚDAJŮ` v&nbsp;sekci&nbsp;8 a odškrtat, co už je hotové. Do&nbsp;HTML komentářů nepsat nic interního – zdrojový kód je veřejný.

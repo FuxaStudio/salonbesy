@@ -1,0 +1,7 @@
+# GitHub Pages. Jekyll tu nic nesestavuje – index.html, 404.html, CSS ani JS
+# nemají front matter, takže je jen zkopíruje. Jediný důvod souboru je exclude:
+# interní poznámky jsou v repu, ale nesmí se publikovat na web.
+# (Nahradil .nojekyll, se kterým se publikovalo úplně všechno.)
+exclude:
+  - BRIEF.md
+  - CLAUDE.md
