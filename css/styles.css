@@ -2,7 +2,38 @@
    Besy · psí salon – styly
    Tokeny převzaty z palety originálu (upperhound.co.uk)
    ========================================================= */
+
+/* ---------- písma ----------
+   Uložená u webu (fonts/), ne z Google Fonts: návštěvník tak nepošle svou
+   IP adresu Googlu a stránka nezávisí na cizím serveru. Soubory jsou ty, které
+   servíruje Google Fonts (subsety latin + latin-ext, česká diakritika je
+   v obou), licence OFL je vedle nich. Obě písma jsou variabilní, jeden soubor
+   pokryje všechny řezy, proto font-weight jako rozsah. unicode-range zajistí,
+   že se latin-ext stáhne jen pro znaky, které v latin nejsou (č, ř, ě, ů…). */
+@font-face {
+  font-family: "Baloo 2"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("../fonts/baloo2-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Baloo 2"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("../fonts/baloo2-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Karla"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("../fonts/karla-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Karla"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("../fonts/karla-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
+  /* jen svetla verze, viz <meta name="color-scheme"> v index.html */
+  color-scheme: only light;
   --primary-50: #f4f7ee;
   --primary-100: #e7ecdb;
   --primary-200: #d0dbbb;
@@ -21,13 +52,14 @@
   /* cerna znacky: stejna jako vypln siluety v images/logo-black.svg, aby
      napis "Besy" a pudl vedle nej nebyly dve ruzne cerne */
   --logo-ink: #111111;
-  /* --grey a --text-3 jsou o stupen tmavsi, nez byly (#7a816f / #757575).
-     V puvodnich hodnotach nedosahl doprovodny text na 4,5:1 podle WCAG AA:
-     perex v hero mel 3,35, sedive popisky 4,25 az 4,40. Olivovy nadech
-     --grey zustal, jen ztmavl - je to porad ta sama barva, ne nova. */
-  --grey: #646b5b;
+  /* --grey a --text-3 jsou uz podruhe ztmavene. Puvodne #7a816f / #757575
+     (pod 4,5:1 WCAG AA), pak #646b5b / #6b6b6b (AA tesne: 4,59 a 5,09).
+     V 10/2026 jeste o stupen niz, aby drobny sedy text cetl i na slunci
+     na mobilu: --grey 5,86:1 na salvejove a 6,75 na kremove, --text-3
+     7,13 na kremove. Olivovy nadech --grey zustal. Neposvetlovat. */
+  --grey: #545b4b;
   --text-2: #3b3b3b;
-  --text-3: #6b6b6b;
+  --text-3: #555555;
 
   /* display = nadpisy a logo, body = bezny text; nazvy popisuji roli, ne tvar,
      protoze obe pisma jsou bezpatkova */
@@ -128,7 +160,7 @@ h3 { font-size: 1.5rem; line-height: 1.2; }
 h1 em, h2 em, h3 em { font-style: normal; color: var(--primary-500); }
 p { max-width: 62ch; }
 .eyebrow {
-  font-size: .8rem;
+  font-size: .875rem;
   font-weight: 500;
   letter-spacing: .01em;
   /* --primary-700, ne 600: nadradek stoji i na salvejovem pozadi hera,
@@ -138,6 +170,10 @@ p { max-width: 62ch; }
 }
 .lead { font-size: 1.2rem; color: var(--grey); }
 .muted { color: var(--text-3); }
+/* Spodni hranice drobneho textu: cokoli, co se cte (ceny, jmena, poznamky,
+   pravni radek), ma aspon .875rem = 14 px. Mensi jsou jen stitky v pilulkach
+   (Specialita, Pred/Po, plemeno) - jedno dve kratka slova. Zvetseno v 10/2026
+   kvuli citelnosti na mobilu na slunci, nezmensovat zpatky. */
 .center { text-align: center; }
 
 .ico { width: 1.25rem; height: 1.25rem; flex: none; }
@@ -348,11 +384,11 @@ section { position: relative; }
 }
 .nav__drop > a:hover { background: var(--primary-50); color: var(--primary-600); }
 .nav__drop .ico { width: 1.15rem; height: 1.15rem; color: var(--primary-500); }
-.nav__drop b { font-weight: 600; font-size: .85rem; color: var(--text-3); white-space: nowrap; }
+.nav__drop b { font-weight: 600; font-size: .9rem; color: var(--text-3); white-space: nowrap; }
 .nav__flag {
   margin-left: .45rem; padding: .1rem .45rem; border-radius: var(--radius-btn);
   background: var(--orange); color: var(--primary-950);
-  font-size: .65rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap;
+  font-size: .72rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap;
 }
 
 /* uzsi desktop: sedm polozek vedle telefonniho cisla se vejde jen po stazeni
@@ -602,7 +638,7 @@ section { position: relative; }
   box-shadow: var(--shadow);
 }
 .award b { display: block; margin-top: .8rem; font-size: .95rem; font-weight: 600; color: var(--dark); }
-.award span { display: block; margin-top: .1rem; font-size: .85rem; color: var(--text-3); }
+.award span { display: block; margin-top: .1rem; font-size: .9rem; color: var(--text-3); }
 
 /* ---------- služby ---------- */
 .services { background: var(--cream); padding: 0 0 var(--section-pad); display: flow-root; }
@@ -670,7 +706,7 @@ section { position: relative; }
 
 /* cenovka primo v zalozce - vsech pet cen je videt bez klikani */
 .tab__label { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
-.tab__price { font-size: .78rem; font-weight: 500; color: var(--primary-600); }
+.tab__price { font-size: .875rem; font-weight: 500; color: var(--primary-600); }
 .tab.is-active .tab__price { color: var(--primary-700); }
 /* stitek "Specialita" sedi na radku s cenou, ne u nazvu - v 17rem sloupci
    by se vedle nazvu sluzby nevesel a zalozka by se zalamovala do dvou radku */
@@ -679,7 +715,7 @@ section { position: relative; }
   flex: none;
   padding: .1rem .45rem; border-radius: var(--radius-btn);
   background: var(--orange); color: var(--primary-950);
-  font-size: .65rem; font-weight: 600; letter-spacing: .02em;
+  font-size: .72rem; font-weight: 600; letter-spacing: .02em;
 }
 
 /* ceny uvnitr panelu sluzby */
@@ -687,12 +723,12 @@ section { position: relative; }
   background: var(--primary-50); border-radius: var(--radius-card);
   padding: 1.1rem 1.35rem; margin-bottom: 1.5rem;
 }
-.panel__prices .price-rows li { font-size: .88rem; padding: .5rem 0; }
+.panel__prices .price-rows li { font-size: .94rem; padding: .5rem 0; }
 .panel .panel__dur {
   display: flex; align-items: flex-start; gap: .5rem;
   margin: .9rem 0 0; padding-top: .85rem;
   border-top: 1px solid var(--primary-100);
-  font-size: .8rem; color: var(--text-3);
+  font-size: .875rem; color: var(--text-3);
 }
 .panel .panel__dur .ico { flex: none; width: 1rem; height: 1rem; margin-top: .15rem; color: var(--primary-400); }
 
@@ -717,7 +753,7 @@ section { position: relative; }
 .firmy-mark { font-weight: 700; font-size: .78rem; font-style: italic; letter-spacing: -.02em; line-height: 1; color: #c00; }
 .firmy-mark span { font-style: normal; font-weight: 600; }
 
-.reviews__ask { max-width: 34rem; margin: 0 auto 2.5rem; font-size: .9rem; color: var(--text-3); }
+.reviews__ask { max-width: 34rem; margin: 0 auto 2.5rem; font-size: .95rem; color: var(--text-3); }
 .reviews__ask a { color: var(--primary-700); text-decoration: underline; text-underline-offset: 3px; }
 .reviews__ask a:hover { color: var(--primary-500); }
 .google-word { font-weight: 600; font-size: 1.6rem; letter-spacing: -.03em; line-height: 1; }
@@ -728,19 +764,19 @@ section { position: relative; }
 .google-word b:nth-child(4) { color: #4285F4; }
 .google-word b:nth-child(5) { color: #34A853; }
 .google-word b:nth-child(6) { color: #EA4335; }
-.google-rating { display: flex; align-items: center; gap: .5rem; font-size: .85rem; }
+.google-rating { display: flex; align-items: center; gap: .5rem; font-size: .9rem; }
 .google-rating strong { color: var(--dark); }
 .stars { display: inline-flex; gap: 1px; color: var(--orange); }
 .stars .ico { width: .95rem; height: .95rem; }
 
-/* Radky se schvalne NEsjednocuji (zadne grid-auto-rows) - hodnoceni bez
-   komentare jsou az za zlomem, takze prvni dve rady zustanou stejne vysoke
-   a zkrati se jen ty vzadu. Kdyby se vysky srovnaly, kratke karty by zely
-   prazdnotou. */
+/* Na webu je 8 recenzi, vsechny s textem (hodnoceni bez komentare jsou
+   od 10/2026 pryc). Na desktopu jsou videt vsechny a tlacitko Vice recenzi
+   se schova; na tabletu 4, na mobilu 2 - cisla v breakpointech niz musi
+   sedet s poctem sloupcu. */
+/* margin-bottom i bez tlacitka: na desktopu pod mrizkou sedi akcent
+   .section-accent--reviews a bez mezery by se lepil na karty. */
 .reviews__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
-/* Pred rozbalenim je videt prvni rada a pul: 8 karet na desktopu, 4 na
-   tabletu, 2 na mobilu. Cisla musi sedet s poctem sloupcu v breakpointech niz. */
-.reviews__grid:not(.is-open) .review:nth-child(n+9) { display: none; }
+@media (min-width: 1025px) { .reviews__more { display: none; } }
 .review {
   background: #fff; border-radius: var(--radius-card); box-shadow: var(--shadow);
   padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;
@@ -756,7 +792,7 @@ section { position: relative; }
   font-size: 1.2rem; line-height: 1.3; color: var(--dark); flex: 1;
   display: flex; align-items: center;
 }
-.review__author { display: flex; align-items: center; gap: .65rem; font-size: .78rem; line-height: 1.35; color: var(--text-3); }
+.review__author { display: flex; align-items: center; gap: .65rem; font-size: .875rem; line-height: 1.35; color: var(--text-3); }
 .review__author b { font-weight: 500; color: var(--dark); }
 .review__name { flex: 1; min-width: 0; }
 /* fotka, kterou k recenzi nahrál zákazník – otevírá se v .photobox.
@@ -785,7 +821,7 @@ section { position: relative; }
 .contact h3 { font-size: 1.15rem; margin-bottom: .3rem; }
 .contact p { font-size: .95rem; }
 .contact a:hover { color: var(--primary-500); }
-.note { font-size: .8rem; color: var(--text-2); margin-top: .6rem; max-width: 40ch; }
+.note { font-size: .875rem; color: var(--text-2); margin-top: .6rem; max-width: 40ch; }
 .map {
   border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-lg);
   aspect-ratio: 4 / 3; background: var(--primary-200);
@@ -883,19 +919,19 @@ section { position: relative; }
 }
 .pair__tag {
   position: absolute; left: .6rem; top: .6rem;
-  font-size: .66rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
   padding: .25rem .6rem; border-radius: 2rem;
   background: rgba(255, 249, 241, .93); color: var(--text-3);
 }
 .pair__tag--after { background: var(--primary-600); color: #fff; }
-.pair figcaption { padding: 1.1rem 1.25rem 1.35rem; font-size: .88rem; color: var(--dark); }
+.pair figcaption { padding: 1.1rem 1.25rem 1.35rem; font-size: .94rem; color: var(--dark); }
 .pair figcaption b { font-weight: 600; }
 .pair__breed {
   display: inline-block; margin-left: .45rem; padding: .1rem .55rem;
   border-radius: 2rem; border: 1px solid var(--primary-200);
-  font-size: .7rem; font-weight: 500; color: var(--primary-700);
+  font-size: .78rem; font-weight: 500; color: var(--primary-700);
 }
-.pair__desc { display: block; margin-top: .4rem; font-size: .85rem; color: var(--text-3); }
+.pair__desc { display: block; margin-top: .4rem; font-size: .9rem; color: var(--text-3); }
 
 /* ---------- ceny: sdilene prvky (zit uvnitr sekce sluzeb) ---------- */
 .price-rows li {
@@ -905,7 +941,7 @@ section { position: relative; }
 }
 .price-rows li:last-child { border-bottom: 0; padding-bottom: 0; }
 .price-rows b { white-space: nowrap; font-weight: 600; color: var(--primary-700); }
-.price-rows em { display: block; font-style: normal; font-size: .77rem; color: var(--text-3); }
+.price-rows em { display: block; font-style: normal; font-size: .875rem; color: var(--text-3); }
 
 /* spolecna poznamka pod zalozkami sluzeb */
 .price-note {
@@ -915,13 +951,13 @@ section { position: relative; }
   padding: clamp(1.5rem, 3vw, 2rem);
 }
 .price-note h3 { font-size: 1.4rem; margin-bottom: 1.1rem; }
-.note-list { display: grid; gap: .5rem; font-size: .9rem; }
+.note-list { display: grid; gap: .5rem; font-size: .95rem; }
 .note-list li { position: relative; padding-left: 1.4rem; }
 .note-list li::before {
   content: ""; position: absolute; left: 0; top: .58em;
   width: .45rem; height: .45rem; border-radius: 50%; background: var(--primary-400);
 }
-.surcharge { font-size: .85rem; color: var(--text-2); margin-bottom: .8rem; }
+.surcharge { font-size: .92rem; color: var(--text-2); margin-bottom: .8rem; }
 .surcharge:last-child { margin-bottom: 0; }
 .surcharge b { font-weight: 600; color: var(--dark); }
 .promise {
@@ -947,10 +983,10 @@ section { position: relative; }
   font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; line-height: 1;
 }
 .step h3 { font-size: 1.3rem; margin-bottom: .6rem; }
-.step p { font-size: .9rem; }
+.step p { font-size: .95rem; }
 .step p + p, .step .checklist { margin-top: .8rem; }
-.step__note { font-size: .82rem; color: var(--text-3); }
-.checklist { display: grid; gap: .45rem; font-size: .87rem; }
+.step__note { font-size: .9rem; color: var(--text-3); }
+.checklist { display: grid; gap: .45rem; font-size: .92rem; }
 .checklist li { position: relative; padding-left: 1.5rem; }
 .checklist li::before {
   content: ""; position: absolute; left: .15rem; top: .78em;
@@ -1099,7 +1135,7 @@ body.no-scroll .callbar { display: none !important; }
    Jako <h3> spadnou do pravidla "h1, h2, h3", ktere jim vnuti Baloo 2 / 700 /
    --dark; nadpisky sloupcu maji zustat drobne popisky, proto se to tady vraci. */
 .footer h3 {
-  font-family: var(--font-body); font-size: .85rem; font-weight: 500;
+  font-family: var(--font-body); font-size: .9rem; font-weight: 500;
   line-height: 1.65; color: var(--primary-300); margin-bottom: .9rem;
 }
 /* Vlastni trida, ne ".footer__top > div > a". Ten selektor (0-1-2) prebijel
@@ -1107,9 +1143,9 @@ body.no-scroll .callbar { display: none !important; }
    roztahlo se pres cely sloupec a ikona vypadla z radku. */
 .footer__link { display: block; font-size: .92rem; margin-bottom: .55rem; opacity: .92; transition: color .2s, opacity .2s; }
 .footer__link:hover { color: #fff; opacity: 1; }
-.footer__tagline { font-size: .85rem; color: var(--primary-300); margin-top: .75rem; }
-.footer__addresses { display: grid; grid-template-columns: repeat(2, minmax(0, 11rem)); gap: 1.5rem; margin-top: 2rem; font-size: .9rem; }
-.socials { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 2rem; font-size: .8rem; }
+.footer__tagline { font-size: .9rem; color: var(--primary-300); margin-top: .75rem; }
+.footer__addresses { display: grid; grid-template-columns: repeat(2, minmax(0, 12.5rem)); gap: 1.5rem; margin-top: 2rem; font-size: .95rem; }
+.socials { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 2rem; font-size: .875rem; }
 .socials a { display: inline-flex; align-items: center; gap: .4rem; opacity: .9; }
 .socials a:hover { opacity: 1; color: #fff; }
 .socials .ico { width: 1.1rem; height: 1.1rem; }
@@ -1124,7 +1160,7 @@ body.no-scroll .callbar { display: none !important; }
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem;
   margin-top: 3.5rem; padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 249, 241, .12);
-  font-size: .75rem; color: var(--primary-300);
+  font-size: .875rem; color: var(--primary-300);
 }
 .footer__legal a:hover { color: #fff; }
 .footer__credit a {
@@ -1205,7 +1241,7 @@ body.no-scroll { overflow: hidden; }
 .lightbox__caption .pair__desc { color: var(--primary-300); }
 .lightbox__counter {
   max-width: none; margin-top: .5rem;
-  font-size: .78rem; color: var(--primary-300); opacity: .75;
+  font-size: .875rem; color: var(--primary-300);
 }
 
 /* ---------- photobox: jedna fotka od zákazníka ----------
@@ -1331,6 +1367,14 @@ body.no-scroll { overflow: hidden; }
   .awards__row { margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-left: var(--gutter); }
   .awards__nav { display: none; }
   .panel { grid-template-columns: 1fr; }
+  /* Upresneni pod nazvem ("do 10 kg – jorksir, maltezak…") jde pod nazev
+     i cenu pres celou sirku radku. V uzkem levem sloupci vedle ceny se po
+     zvetseni na 14 px lamalo do tri radku. span je display: contents, takze
+     nazev (holy text), <em> i cena jsou primo polozky mrizky. */
+  .price-rows li { display: grid; grid-template-columns: 1fr auto; gap: .1rem 1rem; align-items: baseline; }
+  .price-rows li > span { display: contents; }
+  .price-rows li > b { grid-column: 2; grid-row: 1; }
+  .price-rows em { grid-column: 1 / -1; }
   .blob-figure--service { max-width: 12rem; margin: 0 auto; }
 
   /* ---- harmonika ----

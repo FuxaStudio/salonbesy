@@ -8,20 +8,29 @@ Landing page (jedna stránka, žádné podstránky) pro psí salon **Besy** v&nb
 
 ## 2. Stack a soubory
 
-Čisté HTML + CSS + JS, bez buildu, bez frameworků. Jediné závislosti: Google Fonts a&nbsp;Leaflet (mapa, uložený lokálně v&nbsp;`js/vendor/` a&nbsp;`css/vendor/`) – Leaflet přibyl se&nbsp;souhlasem uživatele kvůli markeru s&nbsp;logem, viz sekce&nbsp;9.
+Čisté HTML + CSS + JS, bez buildu, bez frameworků. Jediná knihovna je Leaflet (mapa, uložený lokálně v&nbsp;`js/vendor/` a&nbsp;`css/vendor/`) – Leaflet přibyl se&nbsp;souhlasem uživatele kvůli markeru s&nbsp;logem, viz sekce&nbsp;9.
 
 ```
 Salon/
   index.html            celá stránka + inline SVG (ikony, vlna)
   404.html              chybová stránka; GitHub Pages ji servíruje na každé neexistující
-                        adrese. Je soběstačná (styly, logo i tvary vložené), protože
-                        relativní cesty by se na hlubší adrese rozbily; barvy a písma
-                        při změně palety přepsat i tady
+                        adrese, takže relativní cesty tu nejdou. css/styles.css se
+                        načítá od kořene (BASE v <head>, document.write), vlastní
+                        <style> má jen plakát „Hledá se“ s trhacími lístky (tel:,
+                        pro čtečky jen první). Lišta, patička a ikony jsou DOSLOVNÉ
+                        KOPIE z index.html – při jejich změně přepsat i tady. Liší se
+                        jen odkazy (data-home="#sekce", skript předřadí BASE), logo
+                        je vložené SVG a služby vedou na ?sluzba=N#sluzby, což na
+                        úvodu přepne záložku (main.js, hned za syncTabsMode).
+                        main.js se na 404 nenačítá; lištu obsluhuje inline skript
+                        (is-scrolled, hamburger, Esc, aria-expanded). .callbar tu není
   Blobs/                zdrojové SVG organických tvarů – maska fotky, tvar za ní,
                         tvary do sekcí, akcenty, hotové skupiny; NEEDITOVAT
   css/styles.css        tokeny, reset, komponenty, sekce, responsivita
   js/main.js            menu, záložky služeb, rozbalení recenzí, lightbox galerie,
                         scroll-reveal, sticky nav, mobilní lišta, mapa
+  fonts/                Baloo 2 a Karla (woff2, subsety latin + latin-ext) a jejich
+                        licence OFL; @font-face je na začátku css/styles.css
   js/vendor/            Leaflet 1.9.4 (mapa) – jediná knihovna v projektu, uložená
   css/vendor/           lokálně, ne z CDN; needitovat, při aktualizaci přepsat celé
   images/demo/          DOČASNÉ cizí fotky před/po (maketa) – před spuštěním smazat,
@@ -55,8 +64,8 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
 | `--orange` | `#f6ae2d` | hvězdy, žluté akcenty v `Blobs/`, aktivní záložka |
 | `--peru` | `#bd9058` | podtitul loga |
 | `--dark` | `#3a3c36` | nadpisy, footer |
-| `--grey` | `#646b5b` | podtitul v&nbsp;hero, ikony kontaktu |
-| `--text-2` / `--text-3` | `#3b3b3b` / `#6b6b6b` | běžný / sekundární text |
+| `--grey` | `#545b4b` | podtitul v&nbsp;hero, ikony kontaktu |
+| `--text-2` / `--text-3` | `#3b3b3b` / `#555555` | běžný / sekundární text |
 | `--radius-btn` | `2.5rem` | pilulková tlačítka |
 | `--radius-card` | `1rem` | karty |
 | `--shadow`, `--shadow-lg` | jemné olivové stíny | karty, hover |
@@ -65,7 +74,7 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
 | `--container` | `clamp(85rem, 53.125rem + 35.4vw, 120rem)` | max. šířka obsahu; kopíruje upperhound.co.uk – do&nbsp;1440&nbsp;px se neuplatní (řídí `--gutter`), nad ním roste s&nbsp;oknem (1360&nbsp;px @1440, 1530&nbsp;px @1920) |
 | `--gutter` | `2.5rem` (pod 600&nbsp;px `1.25rem`) | boční okraj stránky |
 
-**Fonty:** nadpisy a logo `Baloo 2` (nadpisy weight 700, `.logo__name` 600, drobnější prvky 400/500), text `Karla` (400/500/600). Načítají se z Google Fonts v `<head>`, obojí včetně subsetu latin-ext kvůli české diakritice. V `:root` jsou pod `--font-display` a `--font-body` – názvy popisují roli, ne tvar písma, protože obě jsou bezpatková. Nepoužívat Inter, Roboto, Arial.
+**Fonty:** nadpisy a logo `Baloo 2` (nadpisy weight 700, `.logo__name` 600, drobnější prvky 400/500), text `Karla` (400/500/600). **Jsou uložená u&nbsp;webu ve&nbsp;složce `fonts/`, ne načítaná z&nbsp;Google Fonts** (10/2026) – návštěvník tak neposílá svou IP adresu Googlu a&nbsp;web, který tvrdí, že nemá cookies ani měření, nemá ani tenhle přenos. `@font-face` je na začátku `css/styles.css`, obě písma jsou variabilní (jeden soubor na subset pokryje všechny řezy), každé má subset latin a&nbsp;latin-ext; `unicode-range` zařídí, že se latin-ext stáhne jen kvůli znakům jako č, ř, ě. V&nbsp;`<head>` je `preload` jen pro oba soubory latin. `404.html` skládá stejné `@font-face` v&nbsp;inline skriptu od&nbsp;kořene webu (proměnná `BASE`), protože relativní cesta by se na hlubší adrese rozbila. Nové písmo nebo řez: stáhnout woff2 ze stejného CSS, které by vydal Google Fonts, a&nbsp;doplnit na&nbsp;obě místa. V `:root` jsou pod `--font-display` a `--font-body` – názvy popisují roli, ne tvar písma, protože obě jsou bezpatková. Nepoužívat Inter, Roboto, Arial.
 
 **Pozor na kurzivu.** `Baloo 2` kurzivu nemá. Zvýrazněné slovo v&nbsp;nadpisu (`h1 em`) se proto odlišuje **jen zelenou barvou** a má explicitní `font-style: normal` – bez toho by ho prohlížeč zkosil sám, protože `<em>` je ve&nbsp;výchozím stavu kurzivou. Totéž platí pro `.logo__name`. Kdyby se na&nbsp;písma sahalo znovu, kandidát bez skutečné kurzivy tuhle výjimku potřebuje taky.
 
@@ -88,7 +97,9 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
 | objednat (CTA) | `--cream` | vlna--flip → `--dark` (poslední prvek `<main>`) |
 | footer | `--dark` | – |
 
-**Barvy prošly kontrastní kontrolou, neposvětlovat je.** `--grey`, `--text-3`, plocha plných tlačítek a `.eyebrow` mají hodnoty vybrané tak, aby text splnil WCAG&nbsp;AA (běžný text 4,5:1, velký a&nbsp;tučný 3:1). Konkrétně: `--grey` byl `#7a816f` (3,35:1 na&nbsp;šalvějové – nejhorší nález na&nbsp;stránce), `--text-3` byl `#757575` (4,25:1), `.btn--primary` stálo na&nbsp;`--primary-500` (4,11:1) a&nbsp;`.eyebrow` na&nbsp;`--primary-600` (4,38:1). Když se některá z&nbsp;nich bude měnit, přeměřit – nejmenší rezervu má `--grey` na&nbsp;šalvějovém pozadí (4,59:1). `.btn--primary` musí přepisovat i&nbsp;`border-color`, protože `.btn` ho má na&nbsp;`--primary-500` a&nbsp;kolem tmavší plochy by zůstal světlejší prstenec. Jediná výjimka jsou písmena loga Google u&nbsp;recenzí (žluté „o“ má 1,63:1) – logotypy jsou z&nbsp;WCAG vyňaté a&nbsp;přebarvit logo Google jeho podmínky zakazují.
+**Barvy prošly kontrastní kontrolou, neposvětlovat je.** `--grey`, `--text-3`, plocha plných tlačítek a `.eyebrow` mají hodnoty vybrané tak, aby text splnil WCAG&nbsp;AA (běžný text 4,5:1, velký a&nbsp;tučný 3:1). Konkrétně: `--grey` byl `#7a816f` (3,35:1 na&nbsp;šalvějové – nejhorší nález na&nbsp;stránce), `--text-3` byl `#757575` (4,25:1), `.btn--primary` stálo na&nbsp;`--primary-500` (4,11:1) a&nbsp;`.eyebrow` na&nbsp;`--primary-600` (4,38:1). V&nbsp;10/2026 šly `--grey` a&nbsp;`--text-3` ještě o&nbsp;stupeň níž (z&nbsp;`#646b5b` / `#6b6b6b`), protože AA s&nbsp;rezervou 0,1 nestačí na&nbsp;drobný text na&nbsp;mobilu na&nbsp;slunci: teď má `--grey` 5,86:1 na&nbsp;šalvějové a&nbsp;6,75:1 na&nbsp;krémové, `--text-3` 7,13:1 na&nbsp;krémové. Současně se zvětšil drobný text – **spodní hranice pro cokoli, co se čte (ceny, jména, poznámky, právní řádek), je `.875rem` = 14&nbsp;px**; menší jsou jen štítky v&nbsp;pilulkách (Specialita, Před/Po, plemeno). Nezmenšovat zpátky. Když se některá barva bude měnit, přeměřit – nejmenší rezervu má teď `--grey` na&nbsp;šalvějovém pozadí (5,86:1). `.btn--primary` musí přepisovat i&nbsp;`border-color`, protože `.btn` ho má na&nbsp;`--primary-500` a&nbsp;kolem tmavší plochy by zůstal světlejší prstenec. Jediná výjimka jsou písmena loga Google u&nbsp;recenzí (žluté „o“ má 1,63:1) – logotypy jsou z&nbsp;WCAG vyňaté a&nbsp;přebarvit logo Google jeho podmínky zakazují.
+
+**Web je jen světlý a prohlížeč ho nesmí přebarvit.** V&nbsp;`<head>` obou stránek je `<meta name="color-scheme" content="only light">` a&nbsp;v&nbsp;`:root` totéž jako `color-scheme: only light`. Bez toho Samsung Internet a&nbsp;Chrome s&nbsp;volbou tmavých webů stránku na tmavém telefonu samy přebarví: pozadí ztmavne, ale krémové vlny (barva přes `currentColor`) zůstanou světlé, šipky v&nbsp;FAQ skoro zmizí a&nbsp;obrysová tlačítka vyblednou (ověřeno 10/2026 v&nbsp;Chromiu s&nbsp;`WebContentsForceDark`). **Neodstraňovat.** Vlastní tmavý motiv web nemá a&nbsp;nemá mít – krémová patří ke&nbsp;značce.
 
 **Bílá je jen barva karet, ne sekcí** – `.panel`, `.review`, `.pair`, `.tab`. Kdyby některá sekce dostala zpátky `#fff`, karty na ní zmizí. Ze stejného důvodu má `.panel` (bílá karta na krémové sekci) uvnitř cenový box `.panel__prices` ve `--primary-50`, ne v bílé.
 
@@ -128,7 +139,7 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
 4. `section.services#sluzby` – **služby i ceník v jedné sekci, samostatná sekce ceníku neexistuje.** `.services__head`, `.services__layout` = `.tabs` (5 tlačítek `role=tab`, každé nese `.tab__label` s `.tab__price`) + `.panels` (5 `.panel`). Záložky odpovídají skutečné nabídce: **Stříhání · Koupání a&nbsp;rozčesání · Trimování · Výstavní úpravy · Doplňkové procedury** (štěněcí seznámení je řádek v&nbsp;doplňkových procedurách, ne vlastní záložka). Každá záložka má jinou ikonu – při přidání služby ověř, že se ikona neopakuje. Každý panel má `.panel__prices` > `ul.price-rows` + `p.panel__dur`. Aktivní záložka se **vizuálně napojuje na panel**: má narovnané pravé rohy a&nbsp;pseudoprvek `.tab.is-active::after` (bílý můstek široký `--tabs-gap + 2 px`) překlene mezeru v&nbsp;gridu, takže záložka a&nbsp;panel tvoří jeden tvar. Proto má `.tab` `position: relative` a&nbsp;`z-index: 2` v&nbsp;aktivním stavu a&nbsp;`.panels` `z-index: 1` – jinak by přes můstek přetekl stín panelu. Šířka mezery žije v&nbsp;proměnné `--tabs-gap` na `.services__layout`, při její změně se můstek dorovná sám. Přepnutí záložky **neanimuje kartu, ale jen její obsah** (`.panel.is-active > *`) – kdyby se prolínal celý panel včetně bílého pozadí, můstek by chvíli visel v&nbsp;prázdnu a&nbsp;napojení by se dotahovalo se zpožděním. Ze stejného důvodu nemá `.tab` v&nbsp;`transition` `border-radius` – rohy se přepnou okamžitě. První záložka leží přesně na horní hraně panelu, takže při ní panel ztrácí zaoblení levého horního rohu (`.panel:first-child.is-active`) – jinak by se napojení v&nbsp;rohu přerušilo. Pod&nbsp;768&nbsp;px (harmonika) je můstek vypnutý a&nbsp;napojení dělá samo rozložení – podrobně v&nbsp;sekci&nbsp;7. **Výstavní úpravy jsou v&nbsp;seznamu odlišené**, protože je to nejsilnější důkaz řemesla, ne běžná položka: záložka `tab-4` má navíc `span.tab__flag` („Specialita“) zabalený se&nbsp;`.tab__price` do&nbsp;`span.tab__meta` – štítek sedí na&nbsp;řádku s&nbsp;cenou, protože vedle názvu služby se&nbsp;do&nbsp;17rem sloupce nevejde a&nbsp;záložka by se&nbsp;zalomila. Panel 4 má navíc `p.panel__proof` (žlutý práh, ne box – `.panel__prices` už sedí na&nbsp;`primary-50`) s&nbsp;odkazem na&nbsp;pás ocenění v&nbsp;`#o-nas`; opačným směrem vede z&nbsp;`p.awards__link` odkaz zpět. Ten nese `data-tab="tab-4"` a&nbsp;JS na&nbsp;něj rovnou přepne záložku (kotvu řeší prohlížeč, JS jen přehodí panel a&nbsp;pod 1024&nbsp;px doroluje posuvník záložek) – bez toho by návštěvník přistál na&nbsp;Stříhání. Pod záložkami je `div.price-note` (co cenu ovlivňuje, příplatky, `p.promise`) – platí pro všechny služby, proto stojí mimo panely.
 5. `section.gallery#galerie` – `.gallery__grid` se 4 `figure.pair`. `.pair__imgs` je **`<button>`**, který otevře lightbox (dva `.pair__side` se štítky `.pair__tag` / `.pair__tag--after` a `.pair__zoom` s lupou), pod ním `figcaption` (jméno, `.pair__breed`, `.pair__desc`). **Bez slideru** – táhací dělítko koliduje na mobilu se scrollem. Vlna dole.
 6. `section.process#jak-to-probiha` – šalvějová, `ol.steps` se 4 `li.step` (`.step__num`, `ul.checklist` v kroku 2), na konci tlačítko Zavolat. Vlna dole. **Karty zůstávají.** V&nbsp;10/2026 se zkoušela varianta se třemi kroky bez karet (čísla na&nbsp;čárkované lince) a&nbsp;seznamem „Co si připravte k&nbsp;telefonu“ v&nbsp;samostatném boxu pod nimi; uživatel ji vrátil – čtyři karty jsou čitelnější. Nezkoušet znovu.
-7. `section.reviews#recenze` – nadpis bez zeleného slova, `.google-badge`, `.reviews__grid` (8 `article.review`), tlačítko `#open-reviews`. Bez vlny.
+7. `section.reviews#recenze` – nadpis bez zeleného slova, `.google-badge`, `.reviews__grid` (8 `article.review`, všechny s&nbsp;textem), tlačítko `#reviews-more` jen do&nbsp;1024&nbsp;px. Bez vlny.
 8. `section.faq#dotazy` – `.faq__list` se **dvěma sloupci `div.faq__col` po&nbsp;4** × `details.faq__item` > `summary` + `.faq__body` (pod&nbsp;768&nbsp;px jeden sloupec). Sloupce jsou dva samostatné bloky, ne grid s&nbsp;osmi položkami – v&nbsp;gridu by otevřená odpověď natáhla celý řádek a&nbsp;soused by měl pod sebou díru. Pořadí ve&nbsp;FAQPage = levý sloupec shora, pak pravý; novou otázku přidat do&nbsp;kratšího sloupce. **Nativní `<details>`, žádný JS.** Otázky musí odpovídat FAQPage v `<head>`. Vlna dole.
 9. `section.location#kontakt` – šalvějové pozadí, `p.notice` („Aktuálně“), `.location__grid` = `.contact-list` (telefon, otevírací doba, adresa + parkování + „Kudy ke&nbsp;mně“, e‑mail) a `.map` (na desktopu `position: sticky`, protože kontaktní sloupec je delší než mapa). Mapa **není vložená Google mapa, ale Leaflet** (`div#map-canvas`, vykreslení v&nbsp;`js/main.js`, sekce „mapa“) nad dlaždicemi z&nbsp;OpenStreetMap. Důvod: marker má být logo salonu na&nbsp;zeleném puntíku (`.map-pin`) a&nbsp;do&nbsp;iframu s&nbsp;Google mapou se&nbsp;zvenčí sáhnout nedá – vlastní marker umí až&nbsp;Maps JavaScript API, které chce placený účet. Souřadnice salonu jsou v&nbsp;`data-lat` / `data-lng` na&nbsp;`#map-canvas`, ne v&nbsp;JS. **Rozměry markeru v&nbsp;CSS (44×56&nbsp;px) musí sedět s&nbsp;`iconSize` a&nbsp;`iconAnchor` v&nbsp;JS**, jinak špička neukazuje na&nbsp;dům. Dlaždice sráží do&nbsp;palety filtr na&nbsp;`.leaflet-tile-pane` (na&nbsp;marker a&nbsp;ovládání nesmí sáhnout). Zoomovat jde kolečkem s&nbsp;drženým **Ctrl** (na&nbsp;Macu Cmd), dvojklikem, tlačítky `+`/`−` a&nbsp;na&nbsp;mobilu dvěma prsty. Samotné kolečko schválně scrolluje stránku, jinak by na&nbsp;mapě uvízl scroll – kdo zaroluje bez&nbsp;Ctrl, uvidí přes mapu nápovědu `.map__hint`. Leafletí `scrollWheelZoom` zůstává vypnutý a&nbsp;zoom se&nbsp;počítá ručně v&nbsp;`wheel` posluchači; kdyby se&nbsp;handler zapínal až&nbsp;při stisku Ctrl, ztratila by se&nbsp;první otočka kolečka. Dlaždice se&nbsp;stahují až&nbsp;při doscrollování ke&nbsp;kontaktům (IntersectionObserver). Dlaždicový server OpenStreetMap je zdarma a&nbsp;bez klíče, ale je to cizí služba s&nbsp;férovým limitem – při větší návštěvnosti se&nbsp;přejde na&nbsp;placeného poskytovatele dlaždic, mění se&nbsp;jen URL v&nbsp;`L.tileLayer`. Vlna dole. **`table.hours` v&nbsp;téhle sekci není** – salon nemá pevnou otevírací dobu, místo tabulky je `p.contact__big` s&nbsp;textem „Jen na&nbsp;objednávku“. Styl `.hours` v&nbsp;CSS zůstává pro případ, že by se pevná doba někdy zavedla. `.contact__socials` je zakomentovaný, dokud nebudou známé profily na&nbsp;sítích – totéž `.socials` v&nbsp;patičce a&nbsp;`sameAs` v&nbsp;JSON‑LD.
 10. `section.cta#objednat` – nadpis, tlačítko `tel:`, `figure.blob-figure--cta`.
@@ -139,7 +150,7 @@ Spuštění: otevřít `index.html` v prohlížeči, nebo v adresáři `Salon` s
     **Sloupce Salon a&nbsp;Než přijedete jsou zrušené.** Byly to vymyšlené kategorie, které se musely vycpat: čtyři z&nbsp;jejich odkazů mířily na&nbsp;tutéž kotvu jako odkaz o&nbsp;řádek výš (`Co si připravit k telefonu` → `#jak-to-probiha`, `Zacuchaná srst` → `#dotazy`). Sloupec **Navigace** je zrcadlo lišty bez „Služby a&nbsp;ceník“ – ty mají vlastní sloupec vedle. Odkaz na&nbsp;galerii se jmenuje **Galerie**, stejně jako v&nbsp;liště (dřív „Před a&nbsp;po“).
 
     **Právní řádek: `© 2026 Besy · Marie Kasanová, IČO 65703278 · živnostenský rejstřík`.** §&nbsp;435 občanského zákoníku chce na&nbsp;webu podnikatele jméno, sídlo, IČO a&nbsp;údaj o&nbsp;zápisu do&nbsp;rejstříku – **nic z&nbsp;toho neškrtat**. Sídlo je táž adresa jako salon, proto je jednou nahoře v&nbsp;`.footer__addresses` pod popiskem „Salon a&nbsp;sídlo“ a&nbsp;ve&nbsp;spodním řádku se už neopakuje. **IČO se píše vcelku, bez mezer po&nbsp;trojicích** – je to identifikační číslo, ne běžná číslovka. Odkaz na&nbsp;zásady zpracování osobních údajů tu **není a&nbsp;nemá být**, dokud web nemá formulář, cookies ani analytiku; kdyby cokoli z&nbsp;toho přibylo, musí se vrátit.
-12. `button#reviews-more` – „Více recenzí“ rozbalí mřížku `#reviews-grid` **přímo v&nbsp;sekci** (třída `.is-open`), nepřepíná se do&nbsp;dialogu. Dřív tu byl `div.modal#reviews-modal`; zrušen, aby čtenář neztratil kontext, a&nbsp;styly `.modal*` odešly s&nbsp;ním. Ve&nbsp;výchozím stavu je vidět 8 ze&nbsp;14&nbsp;karet (pod&nbsp;480&nbsp;px jen 2), tlačítko přepíná i&nbsp;`aria-expanded` a&nbsp;vlastní popisek na&nbsp;„Méně recenzí“.
+12. `button#reviews-more` – „Více recenzí“ rozbalí mřížku `#reviews-grid` **přímo v&nbsp;sekci** (třída `.is-open`), nepřepíná se do&nbsp;dialogu. Dřív tu byl `div.modal#reviews-modal`; zrušen, aby čtenář neztratil kontext, a&nbsp;styly `.modal*` odešly s&nbsp;ním. Na&nbsp;webu je **8 recenzí, všechny s&nbsp;textem**. Hodnocení bez komentáře (jen hvězdy a&nbsp;jméno, 5×) a&nbsp;jednoslovné „Super“ jsou od&nbsp;10/2026 pryč – po&nbsp;rozbalení ukazovala skoro prázdné bílé karty. Celkový počet (12 + 2) nesou odznaky nahoře, odkud vede cesta na&nbsp;profily. Nad&nbsp;1024&nbsp;px je vidět všech 8 a&nbsp;obal tlačítka `.reviews__more` je skrytý; na&nbsp;tabletu jsou vidět 4, pod&nbsp;480&nbsp;px 2 a&nbsp;tlačítko rozbalí zbytek. Přepíná i&nbsp;`aria-expanded` a&nbsp;vlastní popisek na&nbsp;„Méně recenzí“. Přibude‑li devátá recenze, na&nbsp;desktopu se objeví sama v&nbsp;dalším řádku – tlačítko by se pak muselo vrátit i&nbsp;tam (`nth-child(n+9)`).
 13. `div.lightbox#lightbox` – dvojice před/po ve větším. Otevírá se klikem na `.pair__imgs`, listuje se šipkami `#lightbox-prev` / `#lightbox-next` i klávesnicí, zavírá Esc, křížkem nebo klikem mimo fotky.
 14. `div.callbar#callbar` – mobilní fixní lišta (Zavolat + Ceník → `#sluzby` + křížek), **do&nbsp;1200&nbsp;px – stejná hranice jako hamburger, ne 768&nbsp;px**; `js/main.js` jí přidá `.is-visible` po odscrollování 60 % výšky okna. Hranice musí sedět s&nbsp;navigací: jakmile se lišta složí, telefonní tlačítko zmizí do&nbsp;vysunutého panelu a&nbsp;v&nbsp;mezeře 769–1200&nbsp;px by na&nbsp;obrazovce nezbyla žádná cesta k&nbsp;vytáčení čísla. **Pravidlo `.callbar { display: flex }` musí zůstat v&nbsp;`css/styles.css` pod&nbsp;základní deklarací `.callbar`, ne v&nbsp;bloku hamburgeru u&nbsp;navigace** – ten je v&nbsp;souboru výš a&nbsp;zdejší `display: none` by ho přebil. Nad&nbsp;768&nbsp;px se obsah scvrkne a&nbsp;vycentruje (jinak dva pruhy přes celý tablet) a&nbsp;křížek jde `position: absolute` k&nbsp;pravému okraji, aby dvojici tlačítek neodsunul z&nbsp;osy stránky.
     **Křížek `.callbar__close`** lištu schová do&nbsp;konce návštěvy: `main.js` dá `.is-off` na&nbsp;lištu, `.callbar-off` na&nbsp;`body` (shodí rezervovaný `padding-bottom`) a&nbsp;zapamatuje si to v&nbsp;`sessionStorage` pod&nbsp;klíčem `besy-callbar-off`. **Záměrně `sessionStorage`, ne `localStorage`** – kdo si lištu odklikne, chce mít klid teď; za&nbsp;týden je to zase nejrychlejší cesta k&nbsp;objednání a&nbsp;natrvalo zapamatované odmítnutí by mu ji vzalo, aniž by o&nbsp;tom věděl. Přístup k&nbsp;`sessionStorage` je v&nbsp;`try/catch` – v&nbsp;privátním režimu některých prohlížečů hodí výjimku a&nbsp;shodil by zbytek skriptu. Křížek je drobný a&nbsp;šedý záměrně – je to uhýbka, ne třetí volba vedle Zavolat a&nbsp;Ceníku – ale má tapovací plochu 2,75&nbsp;rem.
@@ -442,9 +453,10 @@ HOTOVO (ověřeno z Google profilu, Firmy.cz a od Marie):
 [x] Praxe            od 17 let, celkem 33 let
 [x] Google odznak    5,0 · 12 recenzí (odkaz maps.google.com/?cid=2442423570293532531)
 [x] Firmy.cz odznak  5,0 · 2 hodnocení (obě 5*, ověřeno na profilu)
-[x] Recenze v #recenze – všech 14 skutečných z Googlu a Firmy.cz,
+[x] Recenze v #recenze – 8 skutečných s textem z Googlu a Firmy.cz,
                    bez dat, texty doslovné (opravena jen interpunkce
                    a verzálky). Profilovky a 2 fotky v images/reviews/.
+                   Hodnocení bez textu jsou z webu pryč (10/2026).
 
 ZBÝVÁ DOPLNIT / OVĚŘIT:
 [ ] VŠECHNY CENY – 5 panelů v #sluzby, cenovky v záložkách
@@ -469,6 +481,14 @@ ZBÝVÁ DOPLNIT / OVĚŘIT:
 [ ] Platební metody – možná se platí JEN hotově, QR nejisté. Po potvrzení
                    upravit #dotazy, krok 4 a paymentAccepted v JSON-LD.
 [ ] Fotky psů (hero, služby, CTA) – zatím Unsplash
+[ ] Náhledový obrázek pro sdílení (og:image) – až budou vlastní fotky.
+                   1200 × 630 px, JPG do ~300 kB, uložit jako images/og.jpg.
+                   Motiv: pes ze salonu + nápis „Besy · psí salon Chrudim“,
+                   důležité věci do středu (Messenger/WhatsApp ořezávají
+                   na čtverec). V index.html přepsat og:image na absolutní
+                   URL (https://<doména>/images/og.jpg), doplnit
+                   og:image:width/height a og:image:alt, a totéž do "image"
+                   v LocalBusiness JSON-LD. Ověřit v developers.facebook.com/tools/debug
 [ ] Portrét Marie v #o-nas – zatím stock žena se psem
 [ ] Fotky pohárů + popisky ocenění v #o-nas – vymyšlené vzorky,
                    ověřit, jestli vitrína ocenění vůbec má být
@@ -502,7 +522,7 @@ ZBÝVÁ DOPLNIT / OVĚŘIT:
 | Praxe | od&nbsp;17&nbsp;let, celkem 33&nbsp;let |
 | Google | 5,0 · 12&nbsp;recenzí |
 | Firmy.cz | 5,0 · 2&nbsp;hodnocení |
-| Recenze | všech 14 skutečných, texty doslovné |
+| Recenze | 8 skutečných s&nbsp;textem, doslovně |
 | Kontrast | WCAG&nbsp;AA prověřeno a&nbsp;dorovnáno (viz sekce&nbsp;3) |
 
 **Zbývá doplnit / ověřit:**
@@ -525,7 +545,7 @@ ZBÝVÁ DOPLNIT / OVĚŘIT:
 |---|---|
 | vyměnit fotku | `src` u příslušného `img.blob-figure__photo` v `index.html`; maska ji ořízne sama (`object-fit: cover`) |
 | přidat službu | nový `<button class="tab" role="tab" aria-controls="panel-6" id="tab-6">` do `.tabs` + nový `.panel#panel-6` do `.panels`; JS to načte automaticky včetně pořadí v&nbsp;harmonice. Doplnit i&nbsp;řádek do&nbsp;ceníku a&nbsp;cenovku `.tab__price` |
-| přidat recenzi | zkopírovat `article.review` v `.reviews__grid`; karty bez textu vynechají `.review__quote` a&nbsp;dostanou `.review--brief` |
+| přidat recenzi | zkopírovat `article.review` v `.reviews__grid`; jen recenze s&nbsp;textem; devátá na&nbsp;desktopu vyžaduje vrátit tlačítko (viz bod&nbsp;12 struktury) |
 | přidat dvojici před/po | zkopírovat `figure.pair` v `.gallery__grid`; fotku dát do `images/`, výřez řeší CSS |
 | přidat ocenění | zkopírovat `li.award` v `.awards__row`; šipky i krok posunu se dopočítají samy, fotku do `images/`, čtverec řeší CSS |
 | odkázat odjinud na konkrétní službu | `<a href="#sluzby" data-tab="tab-4">` – JS přepne záložku sám; bez `data-tab` odkaz skončí na Stříhání |
@@ -540,7 +560,7 @@ ZBÝVÁ DOPLNIT / OVĚŘIT:
 | změnit tvar vlny | cesta v `<symbol id="d-wave">` v `index.html`; musí být vyplněná odspodu (jinak ji otoč `transform="rotate(180 …)"`) |
 | přidat sekci s vlnou | `<section class="nova has-wave">` + `svg.wave` na konci + CSS `.nova { background: …; padding-top: var(--section-pad); }` |
 | vypnout odhalování patičky | smazat blok `.footer-reveal` v `css/styles.css` a odpovídající blok v `js/main.js` |
-| změnit palety/fonty | `:root` v `styles.css` a `<link>` na Google Fonts v `<head>` |
+| změnit palety/fonty | `:root` v `styles.css`, `@font-face` na začátku `styles.css` + soubory ve `fonts/` + `preload` v `<head>`; `404.html` načítá `styles.css`, takže se změní sama |
 | jiný tvar blobu | vyměnit soubor v `Blobs/` za jiný z&nbsp;dodaných; path data nikdy negenerovat ručně |
 | jiná maska fotky | vyměnit `Blobs/Masks/Obrz.svg` **a** přegenerovat `data:` URI v `.blob-figure__photo` (sekce&nbsp;5) |
 | posunout tvar za fotkou | `--back-w` / `--back-x` / `--back-y` inline na `.blob-figure` |
@@ -559,5 +579,5 @@ ZBÝVÁ DOPLNIT / OVĚŘIT:
 8. **Vitrína ocenění:** šipky posouvají o dvě dlaždice; pás jde chytit myší a posunout, po puštění dosedne na dlaždici; po každém posunu musí dlaždice sedět na hraně, nikde nesmí zůstat odkrojená; tažení nesmí označovat text ani spouštět drag and drop fotky; **listování je nekonečné** – po posledním ocenění musí plynule přijít zase první, a to oběma směry, šipkami, tažením i prstem, bez viditelného skoku; pás jde projet i klávesnicí a na mobilu dojede k okraji okna.
 9. Ověřit JSON‑LD v [Rich Results Testu](https://search.google.com/test/rich-results) – bez chyb a **bez `aggregateRating`**. Zkontrolovat, že otázky ve `FAQPage` sedí s `#dotazy`.
 10. Zkontrolovat, že nové texty mají `&nbsp;` po jednopísmenných předložkách a uvozovky „ “, mluví v první osobě jednotného čísla a nemají vsuvku za pomlčkou.
-10b. **Když se sáhlo na barvu textu nebo pozadí**, přeměřit kontrast (DevTools → Elements → barevný čtvereček u `color`). Běžný text potřebuje 4,5:1, velký a tučný 3:1. Nejmenší rezervu má `--grey` na šalvějovém pozadí (4,59:1). Podrobnosti v sekci 3.
+10b. **Když se sáhlo na barvu textu nebo pozadí**, přeměřit kontrast (DevTools → Elements → barevný čtvereček u `color`). Běžný text potřebuje 4,5:1, velký a tučný 3:1. Nejmenší rezervu má `--grey` na šalvějovém pozadí (5,86:1). Drobný text nezmenšovat pod 14 px. Podrobnosti v sekci 3.
 11. Projít blok `STAV DOPLNĚNÍ ÚDAJŮ` v&nbsp;sekci&nbsp;8 a odškrtat, co už je hotové. Do&nbsp;HTML komentářů nepsat nic interního – zdrojový kód je veřejný.

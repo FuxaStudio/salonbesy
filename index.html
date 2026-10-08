@@ -7,6 +7,10 @@
   <meta name="description" content="Stříhám, koupu a trimuju psy v Chrudimi, letos třiatřicátým rokem. Dělám i výstavní úpravy. V salonu je vždycky jen jeden pes. Objednávky na +420 603 332 056.">
   <link rel="canonical" href="https://www.besy.cz/">
   <meta name="theme-color" content="#e7ecdb">
+  <!-- Web je jen světlý. "only light" zakáže prohlížeči (Samsung Internet, Chrome
+       s tmavými weby) přebarvit stránku na tmavou samovolně – krémové vlny by
+       zůstaly světlé a ovládací prvky by vybledly. -->
+  <meta name="color-scheme" content="only light">
 
   <!-- Favicon: silueta pudla na olivovém čtverci. Plná silueta je čitelná
        i v 16 px, takže všechny velikosti nesou stejnou kresbu
@@ -29,9 +33,11 @@
   <meta property="og:url" content="https://www.besy.cz/">
   <meta property="og:image" content="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&h=630&q=80">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Písma jsou uložená u webu (fonts/, @font-face v css/styles.css). Preload jen
+       pro základní latinku – nadpis i text hera ji potřebují hned; latin-ext
+       (č, ř, ě…) si prohlížeč stáhne sám podle unicode-range. -->
+  <link rel="preload" href="fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/karla-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/vendor/leaflet.css">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -646,12 +652,12 @@
 
     <!-- Recenze jsou doslovne z Google a Firmy.cz profilu, opravena je jen
          interpunkce (chybejici mezery, "4roky") a verzalky u Firmy.cz.
-         Prvnich 8 je videt hned, zbytek (vcetne hodnoceni bez komentare) az
-         po kliknuti na Vice recenzi. Na zacatku stoji karty s celym jmenem
+         Na webu je jen 8 recenzi s textem. Hodnoceni bez komentare (5 hvezd
+         a jmeno) a jednoslovne "Super" jsou v 10/2026 pryc - po rozbaleni
+         ukazovala skoro prazdne karty. Celkovy pocet nesou odznaky nahore. Na zacatku stoji karty s celym jmenem
          a fotkou (Kosinova, Ka Cu Le) - na mobilu jsou videt jen dve a prezdivka
          "Sendingcheckpikron" jako prvni dojem pusobila jako spam. Dal zhruba
-         od nejdelsiho textu.
-         Karty bez textu nemaji .review__quote, proto jsou nizsi - to je zamer. -->
+         od nejdelsiho textu. -->
     <div class="reviews__grid reveal" id="reviews-grid">
       <article class="review">
         <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
@@ -712,42 +718,11 @@
         <p class="review__quote">Pohoda!</p>
         <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">JD</span><b class="review__name">Jiří Drábek</b></footer>
       </article>
-
-      <!-- ===== od tohoto mista az po kliknuti na Vice recenzi ===== -->
-
-      <article class="review">
-        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
-        <p class="review__quote">Super</p>
-        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">EK</span><b class="review__name">Eva Kucerova</b></footer>
-      </article>
-
-      <article class="review review--brief">
-        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
-        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">KH</span><b class="review__name">Kateřina Hanesová</b></footer>
-      </article>
-
-      <article class="review review--brief">
-        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
-        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">JH</span><b class="review__name">Jan Hloušek</b></footer>
-      </article>
-
-      <article class="review review--brief">
-        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
-        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">PB</span><b class="review__name">Peter Blazo</b></footer>
-      </article>
-
-      <article class="review review--brief">
-        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><svg class="ico ico--g"><use href="#i-google"/></svg></div>
-        <footer class="review__author"><span class="avatar avatar--initial" aria-hidden="true">JP</span><b class="review__name">Jiří Pazdera</b></footer>
-      </article>
-
-      <article class="review review--brief">
-        <div class="review__top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><span class="firmy-mark" aria-label="Firmy.cz">Firmy<span>.cz</span></span></div>
-        <footer class="review__author"><img class="avatar" src="images/reviews/alena-novakova.jpg" alt="" width="96" height="96" loading="lazy"><b class="review__name">Alena Nováková</b></footer>
-      </article>
     </div>
 
-    <div class="center reveal">
+    <!-- Tlačítko jen do 1024 px: na desktopu je vidět všech 8 karet, na tabletu 4
+         a na mobilu 2 (viz .reviews__grid:not(.is-open) v CSS). -->
+    <div class="center reveal reviews__more">
       <button class="btn btn--ghost" id="reviews-more" type="button"
               aria-expanded="false" aria-controls="reviews-grid">Více recenzí</button>
     </div>

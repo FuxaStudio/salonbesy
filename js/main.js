@@ -302,6 +302,24 @@
   syncTabsMode();
   window.addEventListener('resize', syncTabsMode);
 
+  /* 404.html zalozky nema, takze jeji odkazy na sluzby nesou cislo v adrese:
+     ?sluzba=4#sluzby. Na kotvu odscrolluje prohlizec, tady se jen prepne zalozka
+     (v harmonice otevre a doscrolluje az po nacteni, jinak by ho kotva prebila)
+     a parametr se z adresy uklidi. */
+  var wantedTab = /[?&]sluzba=(\d+)/.exec(window.location.search);
+  wantedTab = wantedTab && document.getElementById('tab-' + wantedTab[1]);
+  if (wantedTab && tabs.indexOf(wantedTab) > -1) {
+    if (accordion) {
+      setOpen(wantedTab, true);
+      window.addEventListener('load', function () { wantedTab.scrollIntoView({ block: 'start' }); });
+    } else {
+      activateTab(wantedTab, false);
+    }
+    if (window.history.replaceState) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+    }
+  }
+
   /* ---------- sdílený focus-trap pro dialogy ---------- */
   function trapFocus(box, e) {
     if (e.key !== 'Tab') return;
